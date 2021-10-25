@@ -1,0 +1,60 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<!-- configFragment 선언 -->
+<th:block th:fragment="configFragment">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="shortcut icon" th:href="@{/images/favicon.ico}">
+	<title>저수지운영관리시스템</title>
+	
+	<link id="contextPathHolder" th:data-contextPath="${#httpServletRequest.getContextPath()}"/>
+	
+	<!-- Global stylesheets -->
+	<link th:href="@{https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900}" rel="stylesheet" type="text/css">
+	<link th:href="@{/limitless/css/icons/icomoon/styles.min.css}" rel="stylesheet" type="text/css">
+	<link th:href="@{/limitless/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+	<link th:href="@{/limitless/css/bootstrap_limitless.min.css}" rel="stylesheet" type="text/css">
+	<link th:href="@{/limitless/css/layout.min.css}" rel="stylesheet" type="text/css">
+	<link th:href="@{/limitless/css/components.min.css}" rel="stylesheet" type="text/css">
+	<link th:href="@{/limitless/css/colors.min.css}" rel="stylesheet" type="text/css">
+	<!-- /Global stylesheets -->
+		
+	<!-- Common stylesheets -->
+	<link rel="stylesheet" th:href="@{/css/common/common.css}">
+	<!-- /Common stylesheets -->
+
+	<!-- Content Page의 CSS fragment 삽입 -->
+	<th:block layout:fragment="css"></th:block>
+	
+	<!-- Core JS files -->
+	<script th:src="@{/limitless/js/main/jquery.min.js}"></script>
+	<script th:src="@{/limitless/js/main/bootstrap.bundle.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/loaders/blockui.min.js}"></script>
+	<!-- /Core JS files -->
+	
+	<!-- Theme JS files -->
+	<script th:src="@{/limitless/js/plugins/tables/datatables/datatables.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/tables/datatables/extensions/buttons.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/tables/datatables/extensions/jszip/jszip.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/forms/selects/select2.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/ui/moment/moment.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/ui/moment/moment_locales.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/pickers/daterangepicker.js}"></script>
+	<script th:src="@{/limitless/js/plugins/forms/styling/uniform.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/notifications/sweet_alert.min.js}"></script>
+	<script th:src="@{/limitless/js/plugins/visualization/echarts/echarts.min.js}"></script>
+	
+	<script th:src="@{/limitless/js/app.js}"></script>
+	<!-- /Theme JS files -->
+	
+	<!-- Common JS files -->
+	<script th:src="@{/js/common/common.js}"></script>
+	<!-- /Common JS files -->
+	
+	<script>
+		const contextPath = $('#contextPathHolder').attr('data-contextPath') ? $('#contextPathHolder').attr('data-contextPath') : '';
+	</script>
+</th:block>
+</html>
