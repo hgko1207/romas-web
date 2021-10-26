@@ -1,13 +1,232 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default_layout">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default_layout">
 
-    <th:block layout:fragment="css">
-    </th:block>
-    
-    <th:block layout:fragment="content">
-    </th:block>
-    
-    <th:block layout:fragment="script">
-    </th:block>
+<th:block layout:fragment="css">
+</th:block>
+
+<th:block layout:fragment="content">
+	<div class="rm-container mobile">
+		<!-- left section -->
+		<div class="rm-panel left mobile">
+			<div class="rm-panel-wrap mobile">
+				<div class="rm-panel-area first nobg mobile">
+					<div class="rm-panel-box">
+						<div class="rm-panel-inner mr4">
+							<div class="rm-content">
+								<!-- 현재시간 -->
+								<h2 class="rm-time-tit">현재시간</h2>
+								<div class="rm-time-group mobile">
+									<strong class="rm-time mobile">09:41:18</strong> 
+									<span class="rm-date">2021년 3월 12일<em class="rm-day">화요일</em></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="rm-panel-inner ml4">
+							<div class="rm-content nobg">
+								<div class="rm-content-wrap mb4">
+									<!-- 기상특보 -->
+									<h2 class="rm-weather-tit">기상특보</h2>
+									<span class="rm-weather-date">2021.3.11</span> 
+									<strong class="rm-weather-txt">강풍주의보 발표</strong>
+								</div>
+								<div class="rm-content-wrap mt4">
+									<!-- 홍수단계 -->
+									<h2 class="rm-flood-tit">홍수단계</h2>
+									<span class="rm-flood-status-txt care mobile">관심</span>
+									<div class="rm-flood-status-group mobile">
+										<span class="rm-flood-status care mobile"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="rm-panel-area middle white-bg mobile">
+					<!-- 기상청 -->
+					<div class="rm-weather-center-group">
+						<img src="images/img_weather_center.png" alt="기상청데이타"> 
+						<span class="rm-weather-center-date">Date Time : 2021. 09 .04</span>
+					</div>
+				</div>
+				<div class="rm-panel-area mb0 last mobile">
+					<!-- 뉴시스 -->
+					<div class="rm-news-group rm-scroll mobile">
+						<article>
+							<h2 class="rm-news-title">보령댐 가뭄 경계단계 진입충남도, 선제 대응체계 가동</h2>
+							<p class="rm-news-txt">[홍성=뉴시스] 충남도, 보령댐 가뭄상황 보고회 모습. *재판매 및
+								DB 금지[홍성=뉴시스] 유효상 기자 = 보령댐이 가뭄 경계단계에 진입했다. 이에 따라 충남도는 도내 서부권
+								충남도, 보령댐 가뭄상황 보고회 모습. *재판매 및 DB 금지[홍성=뉴시스] 유효상 기자 = 보령댐이 가뭄
+								경계단계에 진입했다. 이에 따라 충남도는 도내 서부권</p>
+							<em class="rm-news-region">충청남도 보령시</em> 
+							<span class="rm-news-date">뉴시스 2021-08-18</span>
+						</article>
+						<article>
+							<h2 class="rm-news-title">보령댐 가뭄 경계단계 진입충남도, 선제 대응체계 가동</h2>
+							<p class="rm-news-txt">[홍성=뉴시스] 충남도, 보령댐 가뭄상황 보고회 모습. *재판매 및
+								DB 금지[홍성=뉴시스] 유효상 기자 = 보령댐이 가뭄 경계단계에 진입했다. 이에 따라 충남도는 도내 서부권
+								충남도, 보령댐 가뭄상황 보고회 모습. *재판매 및 DB 금지[홍성=뉴시스] 유효상 기자 = 보령댐이 가뭄
+								경계단계에 진입했다. 이에 따라 충남도는 도내 서부권</p>
+							<em class="rm-news-region">충청남도 보령시</em> 
+							<span class="rm-news-date">뉴시스 2021-08-18</span>
+						</article>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- center section -->
+		<div class="rm-panel center mobile">
+			<div class="rm-panel-wrap">
+				<div class="rm-panel-area mb0 mobile">
+					<!-- 맵차트 -->
+					<div class="rm-mapchart mobile">
+						<img src="images/img_map_chart.png" alt="맵차트">
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- right section -->
+		<div class="rm-panel right mobile">
+			<div class="rm-panel-wrap">
+				<div class="rm-panel-area first nobg mobile">
+					<div class="rm-panel-box">
+						<div class="rm-panel-inner mr4">
+							<div class="rm-content">
+								<!-- 저수율현황1 -->
+								<div class="rm-reservoir-rate-group status-down mobile">
+									<span class="rm-reservoir-region">전국</span> <span
+										class="rm-reservoir-rate reservoir-down">734</span> <span
+										class="rm-reservoir-gap reservoir-down">83%</span>
+								</div>
+							</div>
+						</div>
+						<div class="rm-panel-inner ml4">
+							<div class="rm-content">
+								<!-- 저수율현황2 -->
+								<div class="rm-reservoir-rate-group status-down mobile">
+									<span class="rm-reservoir-region">경기</span> <span
+										class="rm-reservoir-rate reservoir-down">673</span> <span
+										class="rm-reservoir-gap reservoir-down">70%</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="rm-panel-area middle mobile">
+					<!-- 지역/지사/시설 -->
+					<div class="rm-region-btn-wrap mobile">
+						<button class="selected">지역</button>
+						<button>지사검색</button>
+						<button>시설검색</button>
+					</div>
+					<span class="rm-region-period mobile">기간: 21.05.23 ~ 21.09.25</span>
+					<div class="rm-region-table-group rm-scroll mobile">
+						<table class="rm-region-table">
+							<caption class="blind">지역/지사/시 저수율현</caption>
+							<colgroup>
+								<col>
+								<col>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">구분</th>
+									<th scope="col">관심</th>
+									<th scope="col">주의</th>
+									<th scope="col">경계</th>
+									<th scope="col">심각</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">경기</th>
+									<td><span class="rm-region-status care">673</span></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">강원</th>
+									<td><span class="rm-region-status care">526</span></td>
+									<td><span class="rm-region-status caution">417</span></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">충북</th>
+									<td><span class="rm-region-status"></span></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">충남</th>
+									<td><span class="rm-region-status care">535</span></td>
+									<td></td>
+									<td></td>
+									<td><span class="rm-region-status serious">103</span></td>
+								</tr>
+								<tr>
+									<th scope="row">전북</th>
+									<td><span class="rm-region-status care">673</span></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">전남</th>
+									<td><span class="rm-region-status"></span></td>
+									<td><span class="rm-region-status caution">470</span></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">경북</th>
+									<td><span class="rm-region-status care">570</span></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">경남</th>
+									<td><span class="rm-region-status"></span></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+								<tr>
+									<th scope="row">제주</th>
+									<td><span class="rm-region-status care">610</span></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="rm-panel-area mb0 last mobile">
+					<!-- 평년대비저수율 -->
+					<div class="rm-reservoir_graph_group">
+						<img src="images/img_reservoir_graph.png" alt="기상청데이타"> 
+							<span class="rm-reservoir_graph_txt">전국 평년대비 저수율: <em>123%</em>
+							(금일:81%, 평년:66%))
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</th:block>
+
+<th:block layout:fragment="script">
+<script>
+	
+</script>
+</th:block>
 </html>

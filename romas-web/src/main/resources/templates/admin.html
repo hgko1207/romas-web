@@ -1,13 +1,342 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default_layout">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default_layout">
 
-    <th:block layout:fragment="css">
-    </th:block>
-    
-    <th:block layout:fragment="content">
-    </th:block>
-    
-    <th:block layout:fragment="script">
-    </th:block>
+<th:block layout:fragment="css">
+</th:block>
+
+<th:block layout:fragment="content">
+	<div class="rm-sub-container mobile">
+		<!-- section -->
+		<div class="rm-sub-panel left admin mobile">
+			<div class="rm-sub-panel-wrap">
+				<!-- 관리자 검색영역 -->
+				<div class="rm-search-wrap">
+					<div>
+						<label for="seltPeriod" class="mobile">조회기간</label> 
+						<select id="seltPeriod" class="mobile">
+							<option value="" selected>본부</option>
+							<option value="">선택1</option>
+							<option value="">선택2</option>
+						</select> 
+						
+						<label for="seltBranch" class="mobile">지사</label> 
+						<select id="seltBranch" class="mobile">
+							<option value="" selected>지사</option>
+							<option value="">선택1</option>
+							<option value="">선택2</option>
+						</select> 
+						
+						<label for="seltBranch2" class="mobile">지점</label> 
+						<select id="seltBranch2" class="mobile">
+							<option value="" selected>지점</option>
+							<option value="">선택1</option>
+							<option value="">선택2</option>
+						</select> 
+						
+						<label for="inptBranch2Name" class="mobile">지점명</label>
+						<div class="rm_input_select_group mobile">
+							<input id="inptBranch2Name" type="text"> 
+							<label for="seltBranch2Name" class="blind">지점명선택</label> 
+							<select id="seltBranch2Name" class="mobile">
+								<option value="" selected>선택</option>
+								<option value="">선택1</option>
+								<option value="">선택2</option>
+							</select>
+						</div>
+						
+						<div class="rm-button-group mobile">
+							<button class="rm-primary-btn mr12">검색</button>
+							<button class="rm-secondary-btn">입력</button>
+						</div>
+					</div>
+				</div>
+				<!-- 관리자 검색결과 -->
+				<div class="rm-result-table-group rm-scroll mobile">
+					<table class="rm-result-table">
+						<caption class="blind">관리자 검색결과</caption>
+						<colgroup>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col>
+							<col style="width: 100px;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">순번</th>
+								<th scope="col">본부</th>
+								<th scope="col">지사</th>
+								<th scope="col">지점</th>
+								<th scope="col">유역면적(ha)</th>
+								<th scope="col">논비율(%)</th>
+								<th scope="col">밭비율(%)</th>
+								<th scope="col">산림비율(%)</th>
+								<th scope="col">기타비율(%)</th>
+								<th scope="col">수정</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>경기</td>
+								<td>여주,이천</td>
+								<td>금사(장흥)</td>
+								<td>794.00</td>
+								<td>3.32</td>
+								<td>3.99</td>
+								<td>87.56</td>
+								<td>5.14</td>
+								<td><button class="rm-inner-btn">수정</button></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- 페이지네이션 -->
+				<div class="rm-pagination mobile">
+					<a href="javascript:void(0);" class="first"><span class="blind">처음</span></a>
+					<a href="javascript:void(0);" class="prev"><span class="blind">이전</span></a>
+					<a href="javascript:void(0);" class="on">1</a> 
+					<a href="javascript:void(0);">2</a> 
+					<a href="javascript:void(0);">3</a>
+					<a href="javascript:void(0);">4</a> 
+					<a href="javascript:void(0);">5</a>
+					<a href="javascript:void(0);">6</a> 
+					<a href="javascript:void(0);">7</a>
+					<a href="javascript:void(0);">8</a> 
+					<a href="javascript:void(0);">9</a>
+					<a href="javascript:void(0);">10</a> 
+					<a href="javascript:void(0);" class="next"><span class="blind">다음</span></a> 
+					<a href="javascript:void(0);" class="last"><span class="blind">마지막</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</th:block>
+
+<th:block layout:fragment="script">
+</th:block>
 </html>

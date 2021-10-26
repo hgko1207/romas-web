@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * 메인 화면
+ * 관리자 화면
  * 
  * @author hgko
  *

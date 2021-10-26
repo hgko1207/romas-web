@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * 메인 화면
+ * 가뭄단계현황 화면
  * 
  * @author hgko
  *
@@ -20,6 +20,6 @@ public class HomeController {
 	
 	@GetMapping("/home")
 	public void home(Model model) {
-
+		model.addAttribute("view", "home");
 	}
 }

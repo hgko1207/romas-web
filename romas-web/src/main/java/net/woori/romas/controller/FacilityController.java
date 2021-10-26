@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 /**
- * 시설 화면
+ * 시설별현황 화면
  * 
  * @author hgko
  *

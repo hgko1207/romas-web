@@ -1,13 +1,195 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/default_layout">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default_layout">
 
-    <th:block layout:fragment="css">
-    </th:block>
-    
-    <th:block layout:fragment="content">
-    </th:block>
-    
-    <th:block layout:fragment="script">
-    </th:block>
+<th:block layout:fragment="css">
+</th:block>
+
+<th:block layout:fragment="content">
+	<div class="rm-sub-container mobile">
+		<!-- left section -->
+		<div class="rm-sub-panel left facility mobile">
+			<div class="rm-sub-panel-wrap">
+				<!-- 시설정보, 시설관리... -->
+				<div class="rm-basic-table-group rm-scroll">
+					<h3 class="rm-basic-title-03">시설정보</h3>
+					<table class="rm-basic-table">
+						<caption class="blind">시설정보</caption>
+						<colgroup>
+							<col style="width: 118px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">시설명</th>
+								<td>부리 저수지</td>
+							</tr>
+							<tr>
+								<th scope="row">소재지</th>
+								<td>경기도 양평군 개군면 부리</td>
+							</tr>
+							<tr>
+								<th scope="row">수원 공구분</th>
+								<td>주수원</td>
+							</tr>
+							<tr>
+								<th scope="row">제체길이</th>
+								<td>104m</td>
+							</tr>
+							<tr>
+								<th scope="row">제체높이</th>
+								<td>7.7m</td>
+							</tr>
+							<tr>
+								<th scope="row">총저수</th>
+								<td>31.6천m<sup>2</sup></td>
+							</tr>
+							<tr>
+								<th scope="row">유요저수</th>
+								<td>31.6천m<sup>2</sup></td>
+							</tr>
+							<tr>
+								<th scope="row">금일저수량</th>
+								<td>79%</td>
+							</tr>
+							<tr>
+								<th scope="row">유역면적</th>
+								<td>97ha(만m<sup>3</sup>)
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">수혜면적</th>
+								<td>17.8ha(만m<sup>3</sup>)
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">만수면적</th>
+								<td>1ha(만m<sup>3</sup>)
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3 class="rm-basic-title-03">시설관리</h3>
+					<table class="rm-basic-table">
+						<caption class="blind">시설관리</caption>
+						<colgroup>
+							<col style="width: 118px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">연락처</th>
+								<td>031-770-8004</td>
+							</tr>
+							<tr>
+								<th scope="row">관리자</th>
+								<td>양평, 광주, 서울지사</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3 class="rm-basic-title-03">시설현황</h3>
+					<table class="rm-basic-table">
+						<caption class="blind">시설현황</caption>
+						<colgroup>
+							<col style="width: 118px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">착공일</th>
+								<td>1942.10.20</td>
+							</tr>
+							<tr>
+								<th scope="row">준공일</th>
+								<td>1942.12.20</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3 class="rm-basic-title-03">안전점검결과</h3>
+					<table class="rm-basic-table">
+						<caption class="blind">안전점검결과</caption>
+						<colgroup>
+							<col style="width: 118px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">점검일자</th>
+								<td>2020.09.17</td>
+							</tr>
+							<tr>
+								<th scope="row">점검결과</th>
+								<td>C(보통)</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3 class="rm-basic-title-03">급수예고</h3>
+					<table class="rm-basic-table">
+						<caption class="blind">급수예고</caption>
+						<colgroup>
+							<col style="width: 118px;">
+							<col>
+						</colgroup>
+						<thead>
+							<tr>
+								<th scope="col">일자</th>
+								<th scope="col">급수간선</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2021.08.11</td>
+								<td>부리간선</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<!-- right section -->
+		<div class="rm-sub-panel right facility mobile">
+			<div class="rm-sub-panel-wrap">
+				<!-- 관측결과 -->
+				<h2 class="rm-basic-title-02">관측결과[연산1]</h2>
+				<!-- 검색영역 -->
+				<div class="rm-search-wrap">
+					<ul class="rm-search-by-period-btn mobile">
+						<li><button>일별</button></li>
+						<li><button class="selected">순별</button></li>
+						<li><button>월별</button></li>
+						<li><button>연별</button></li>
+						<li><button>시간별</button></li>
+					</ul>
+					<div class="mt20">
+						<label for="inptPeriodStart" class="mobile">조회기간</label>
+						<div class="rm-search-period-input mobile">
+							<input id="inptPeriodStart" type="text" value=""> 
+							<span>~</span>
+							<label for="inptPeriodEnd" class="blind">조회기간 마지막</label> 
+							<input id="inptPeriodEnd" type="text" value="">
+						</div>
+						<ul class="rm-search-period-btn mobile">
+							<li><button>6개월</button></li>
+							<li><button class="selected">1년</button></li>
+							<li><button>2년</button></li>
+						</ul>
+						<div class="rm-button-group mobile">
+							<button class="rm-primary-btn">검색</button>
+						</div>
+					</div>
+				</div>
+				<!-- 관측결과 그래프 -->
+				<div class="rm-result-wrap mobile">
+					<img src="images/img_result_graph.png" alt="관측결과 그래프">
+				</div>
+			</div>
+		</div>
+	</div>
+</th:block>
+
+<th:block layout:fragment="script">
+</th:block>
 </html>

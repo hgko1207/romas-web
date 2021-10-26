@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+svg {
+    display: inline-block !important;
+}
+
+svg:not(:root) {
+    overflow: hidden !important;
+}
+
+h1 .rm-logo svg:first-child {
+    display: none !important;
+}
+
+nav a:hover {
+	opacity: 1 !important;
+	color: white;
+}
