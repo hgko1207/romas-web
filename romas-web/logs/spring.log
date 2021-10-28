@@ -1,8 +1,52 @@
-2021-10-26 05:00:15.734  INFO 26996 --- [http-nio-8080-exec-6] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2021-10-27 00:13:32.518  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 26996 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-10-27 00:13:32.520  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-10-27 00:13:32.687  INFO 26996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-27 00:13:32.688  INFO 26996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-27 00:13:32.688  INFO 26996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-10-27 00:13:32.698  INFO 26996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-10-27 00:13:32.698  INFO 26996 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 174 ms
+2021-10-27 00:13:32.743  INFO 26996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-27 00:13:32.749  INFO 26996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-10-27 00:13:32.751  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.257 seconds (JVM running for 94985.591)
+2021-10-27 00:13:32.752  INFO 26996 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-10-27 00:13:40.664  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 26996 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-10-27 00:13:40.664  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-10-27 00:13:40.774  INFO 26996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-27 00:13:40.775  INFO 26996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-27 00:13:40.775  INFO 26996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-10-27 00:13:40.782  INFO 26996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-10-27 00:13:40.782  INFO 26996 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 116 ms
+2021-10-27 00:13:40.815  INFO 26996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-27 00:13:40.819  INFO 26996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-10-27 00:13:40.821  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.177 seconds (JVM running for 94993.661)
+2021-10-27 00:13:40.822  INFO 26996 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-10-27 00:13:52.853  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 26996 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-10-27 00:13:52.853  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-10-27 00:13:52.965  INFO 26996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-27 00:13:52.966  INFO 26996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-27 00:13:52.966  INFO 26996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-10-27 00:13:52.973  INFO 26996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-10-27 00:13:52.973  INFO 26996 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 118 ms
+2021-10-27 00:13:53.007  INFO 26996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-27 00:13:53.012  INFO 26996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-10-27 00:13:53.014  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.18 seconds (JVM running for 95005.853)
+2021-10-27 00:13:53.014  INFO 26996 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-10-27 00:14:01.942  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 26996 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-10-27 00:14:01.942  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-10-27 00:14:02.050  INFO 26996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-10-27 00:14:02.051  INFO 26996 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-10-27 00:14:02.051  INFO 26996 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-10-27 00:14:02.058  INFO 26996 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-10-27 00:14:02.058  INFO 26996 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 115 ms
+2021-10-27 00:14:02.094  INFO 26996 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-27 00:14:02.099  INFO 26996 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-10-27 00:14:02.101  INFO 26996 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.179 seconds (JVM running for 95014.941)
+2021-10-27 00:14:02.102  INFO 26996 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-10-27 04:09:12.376  INFO 26996 --- [http-nio-8080-exec-3] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
  Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
 
-java.lang.IllegalArgumentException: Invalid character found in the request target [/index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP21 ]. The valid characters are defined in RFC 7230 and RFC 3986
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:494) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+java.lang.IllegalArgumentException: Invalid character found in the request target [/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh" ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:502) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.54.jar:9.0.54]
 	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.54.jar:9.0.54]
@@ -13,3 +57,4 @@ java.lang.IllegalArgumentException: Invalid character found in the request targe
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.54.jar:9.0.54]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
 
+2021-10-27 09:18:07.003  INFO 26996 --- [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
