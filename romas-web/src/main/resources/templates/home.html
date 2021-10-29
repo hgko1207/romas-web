@@ -49,7 +49,7 @@
 					<!-- 기상청 -->
 					<div class="rm-weather-center-group">
 						<img src="images/img_weather_center.png" alt="기상청데이타"> 
-						<span class="rm-weather-center-date">Date Time : 2021. 09 .04</span>
+						<span class="rm-weather-center-date">Date Time : 2021.09.04</span>
 					</div>
 				</div>
 				<div class="rm-panel-area mb0 last mobile">
@@ -97,9 +97,9 @@
 							<div class="rm-content">
 								<!-- 저수율현황1 -->
 								<div class="rm-reservoir-rate-group status-down mobile">
-									<span class="rm-reservoir-region">전국</span> <span
-										class="rm-reservoir-rate reservoir-down">734</span> <span
-										class="rm-reservoir-gap reservoir-down">83%</span>
+									<span class="rm-reservoir-region">전국</span> 
+									<span class="rm-reservoir-rate reservoir-down">734</span> 
+									<span class="rm-reservoir-gap reservoir-down">83%</span>
 								</div>
 							</div>
 						</div>
@@ -107,9 +107,9 @@
 							<div class="rm-content">
 								<!-- 저수율현황2 -->
 								<div class="rm-reservoir-rate-group status-down mobile">
-									<span class="rm-reservoir-region">경기</span> <span
-										class="rm-reservoir-rate reservoir-down">673</span> <span
-										class="rm-reservoir-gap reservoir-down">70%</span>
+									<span class="rm-reservoir-region">경기</span> 
+									<span class="rm-reservoir-rate reservoir-down">673</span> 
+									<span class="rm-reservoir-gap reservoir-down">70%</span>
 								</div>
 							</div>
 						</div>
@@ -225,8 +225,6 @@
 </th:block>
 
 <th:block layout:fragment="script">
-<script>
-	
-</script>
+	<script th:src="@{/js/home.js}"></script>
 </th:block>
 </html>
