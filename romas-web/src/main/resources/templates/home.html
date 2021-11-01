@@ -19,8 +19,8 @@
 								<!-- 현재시간 -->
 								<h2 class="rm-time-tit">현재시간</h2>
 								<div class="rm-time-group mobile">
-									<strong class="rm-time mobile">09:41:18</strong> 
-									<span class="rm-date">2021년 3월 12일<em class="rm-day">화요일</em></span>
+									<strong id="current_time" class="rm-time mobile"></strong> 
+									<span class="rm-date"><span id="current_date"></span><em id="current_day" class="rm-day"></em></span>
 								</div>
 							</div>
 						</div>
@@ -48,8 +48,9 @@
 				<div class="rm-panel-area middle white-bg mobile">
 					<!-- 기상청 -->
 					<div class="rm-weather-center-group">
-						<img src="images/img_weather_center.png" alt="기상청데이타"> 
-						<span class="rm-weather-center-date">Date Time : 2021.09.04</span>
+						<!-- <img src="images/img_weather_center.png" alt="기상청데이타"> 
+						<span class="rm-weather-center-date">Date Time : 2021.09.04</span> -->
+						<embed src="https://www.weather.go.kr/wgis-nuri/html/map.html" ></embed>
 					</div>
 				</div>
 				<div class="rm-panel-area mb0 last mobile">
@@ -77,6 +78,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<!-- center section -->
 		<div class="rm-panel center mobile">
 			<div class="rm-panel-wrap">
@@ -88,6 +90,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<!-- right section -->
 		<div class="rm-panel right mobile">
 			<div class="rm-panel-wrap">
