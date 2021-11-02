@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import net.woori.romas.domain.naver.NewsInfo;
 import net.woori.romas.domain.weather.WeatherInfo;
 import net.woori.romas.service.common.NaverApiService;
-import net.woori.romas.service.common.WeatherService;
+import net.woori.romas.service.common.WthrWrnInfoService;
 
 /**
  * API 정보 불러오기
@@ -25,7 +25,7 @@ import net.woori.romas.service.common.WeatherService;
 public class ApiController {
 	
 	@Autowired
-	private WeatherService weatherService;
+	private WthrWrnInfoService weatherService;
 	
 	@Autowired
 	private NaverApiService naverApiService;

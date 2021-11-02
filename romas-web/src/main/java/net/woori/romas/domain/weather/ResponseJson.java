@@ -11,7 +11,7 @@ import lombok.Data;
  *
  */
 @Data
-public class RestApiResponse {
+public class ResponseJson {
 
 	private Header header;
 	

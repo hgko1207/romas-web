@@ -41,13 +41,13 @@ function getWeatherInfo() {
 		url: contextPath + "/api/weather",
 		type: "GET",
 		success: function(data) {
-			console.log(data);
+			$('#wthrWrn_title').text(data.title);
+			$('#wthrWrn_date').text(data.date);
        	}
 	});
 }
 
 $(document).ready(function() {
 	CurrentDate.init();
-	
 	getWeatherInfo();
 });
