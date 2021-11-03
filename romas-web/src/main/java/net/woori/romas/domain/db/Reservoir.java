@@ -1,11 +1,9 @@
 package net.woori.romas.domain.db;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 
 import lombok.Data;
 import net.woori.romas.domain.Domain;
@@ -18,7 +16,11 @@ import net.woori.romas.domain.Domain;
 @Entity
 @Table(name = "tb_reservoir")
 @Data
-public class Reservoir implements Domain{
+public class Reservoir implements Domain {
+
+	/** 장비표준코드 */
+	@Id
+	private String facCode;
 	
 	/** 지역본부 */
 	@Column(nullable = false, length = 20)
@@ -32,10 +34,6 @@ public class Reservoir implements Domain{
 	@Column(nullable = false, length = 20)
 	private String facilityName;
 
-	/** 장비표준코드 */
-	@Id
-	private String facCode;
-	
 	/** 장비서브코드 */
 	@Column(nullable = false, length = 20)
 	private String subCode;
@@ -89,4 +87,5 @@ public class Reservoir implements Domain{
 	
 	/** 심각단계 적용 값*/
 	private int seriousLevel;
+
 }

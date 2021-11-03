@@ -5,6 +5,7 @@
 	layout:decorator="layout/default_layout">
 
 <th:block layout:fragment="css">
+	<link rel="stylesheet" th:href="@{/css/page/home.css}" >
 </th:block>
 
 <th:block layout:fragment="content">
@@ -48,8 +49,6 @@
 				<div class="rm-panel-area middle white-bg mobile">
 					<!-- 기상청 -->
 					<div class="rm-weather-center-group">
-						<!-- <img src="images/img_weather_center.png" alt="기상청데이타"> 
-						<span class="rm-weather-center-date">Date Time : 2021.09.04</span> -->
 						<embed src="https://www.weather.go.kr/wgis-nuri/html/map.html" ></embed>
 					</div>
 				</div>
@@ -85,7 +84,8 @@
 				<div class="rm-panel-area mb0 mobile">
 					<!-- 맵차트 -->
 					<div class="rm-mapchart mobile">
-						<img src="images/img_map_chart.png" alt="맵차트">
+						<!-- <img src="images/img_map_chart.png" alt="맵차트"> -->
+						<div class="map-container" id="googleMap"></div>
 					</div>
 				</div>
 			</div>
@@ -228,6 +228,8 @@
 </th:block>
 
 <th:block layout:fragment="script">
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOybNujmIFXZLfUf5J-q0_WqNH3riUKbg" async defer></script>
+   	<script th:src="@{/js/common/google_map.js}"></script>
 	<script th:src="@{/js/home.js}"></script>
 </th:block>
 </html>

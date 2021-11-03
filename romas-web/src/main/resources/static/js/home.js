@@ -50,4 +50,10 @@ function getWeatherInfo() {
 $(document).ready(function() {
 	CurrentDate.init();
 	getWeatherInfo();
+	
+	let map;
+	
+	setTimeout(function() {
+    	map = GoogleMap.init('googleMap');
+	}, 500);
 });
