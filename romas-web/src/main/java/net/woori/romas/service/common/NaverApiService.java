@@ -9,6 +9,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +17,11 @@ import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import net.woori.romas.domain.naver.NaverApiResponse;
 import net.woori.romas.domain.naver.NewsInfo;
 
 /**
@@ -27,8 +33,10 @@ import net.woori.romas.domain.naver.NewsInfo;
 @Service
 public class NaverApiService {
 	
-	private final String clientId = "YOUR_CLIENT_ID"; // 애플리케이션 클라이언트 아이디값"
-	private final String clientSecret = "YOUR_CLIENT_SECRET"; // 애플리케이션 클라이언트 시크릿값"
+	private final String clientId = "nIwGgRfsZCFtYReWauEz"; // 애플리케이션 클라이언트 아이디값"
+	private final String clientSecret = "ZzPzZImVfn"; // 애플리케이션 클라이언트 시크릿값"
+	
+	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	
 	/**
 	 * 뉴스 정보 조회
@@ -51,19 +59,38 @@ public class NaverApiService {
 		return createNewsInfo(responseBody);
 	}
 	
+	/**
+	 * createNewsInfo
+	 * @param json
+	 * @return
+	 */
 	private List<NewsInfo> createNewsInfo(String json) {
-		
-		System.out.println(json);
 		
 		List<NewsInfo> newsInfos = new ArrayList<>();
 		
+		try {
+			ObjectMapper objectMapper = new ObjectMapper();
+			NaverApiResponse data = objectMapper.readValue(json, NaverApiResponse.class);
+			
+			for (NewsInfo newsInfo : data.getItems()) {
+				newsInfo.setDate(dateFormat.format(newsInfo.getPubDate()));
+				newsInfos.add(newsInfo);
+			}
+		} catch (JsonMappingException e) {
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		
 		return newsInfos;
 	}
-
+	
 	private String get(String apiUrl, Map<String, String> requestHeaders) {
 		HttpURLConnection con = connect(apiUrl);
+		
 		try {
 			con.setRequestMethod("GET");
+			
 			for (Map.Entry<String, String> header : requestHeaders.entrySet()) {
 				con.setRequestProperty(header.getKey(), header.getValue());
 			}

@@ -47,9 +47,28 @@ function getWeatherInfo() {
 	});
 }
 
+function getNewsInfo() {
+	$.ajax({
+		url: contextPath + "/api/news",
+		type: "GET",
+		success: function(response) {
+			$.each(response, function(i, data) {
+				const news = `<article>
+					<h2 class="rm-news-title">${data.title}</h2>
+					<p class="rm-news-txt">${data.description}</p>
+					<span class="rm-news-date">${data.date}</span>
+				</article>`;
+				
+				$('#news_data').append(news);
+			});
+       	}
+	});
+}
+
 $(document).ready(function() {
 	CurrentDate.init();
 	getWeatherInfo();
+	getNewsInfo();
 	
 	let map;
 	

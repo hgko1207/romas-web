@@ -1,5 +1,7 @@
 package net.woori.romas.domain.naver;
 
+import java.util.Date;
+
 import lombok.Data;
 
 /**
@@ -19,7 +21,11 @@ public class NewsInfo {
 
 	/** 검색 결과 문서의 내용을 요약한 패시지 정보 */
 	private String description;
+	
+	private String link;
 
 	/** 검색 결과 문서가 네이버에 제공된 시간 */
-	private String pubDate;
+	private Date pubDate;
+	
+	private String date;
 }

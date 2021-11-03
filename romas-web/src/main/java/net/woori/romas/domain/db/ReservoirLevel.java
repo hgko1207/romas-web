@@ -15,6 +15,7 @@ import net.woori.romas.domain.Domain;
 import net.woori.romas.domain.db.ReservoirLevel.CompositePK;
 
 /**
+ * 저수지 수위 정보
  * 
  * @author jhlee
  *
@@ -45,6 +46,9 @@ public class ReservoirLevel implements Domain {
 	
 	/** 저수율(%) */
 	private float rate;
+	
+	@Column(length = 10)
+	private String createDate;
 	
 	@Data
 	@AllArgsConstructor

@@ -1,7 +1,9 @@
 package net.woori.romas.controller;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -48,11 +50,10 @@ public class ApiController {
 	@GetMapping("/news")
 	@ResponseBody
 	public List<NewsInfo> news() {
-		
 		List<NewsInfo> newsInfos = new ArrayList<>();
 		newsInfos.addAll(naverApiService.getNewsInfo("한국농어촌공사"));
 		newsInfos.addAll(naverApiService.getNewsInfo("가뭄"));
-
-		return newsInfos;
+		
+		return newsInfos.stream().sorted(Comparator.comparing(NewsInfo::getPubDate).reversed()).limit(5).collect(Collectors.toList());
 	}
 }

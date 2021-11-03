@@ -10,6 +10,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -18,6 +19,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.CharacterData;
 import org.w3c.dom.Document;
@@ -26,6 +29,9 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
+
+import net.woori.romas.domain.db.ReservoirLevel;
+import net.woori.romas.service.ReservoirLevelService;
 
 /**
  * 저수지 정보 조회 서비스
@@ -41,10 +47,15 @@ public class ReservoirService {
 	
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 	
+	@Autowired
+	private ReservoirLevelService reservoirLevelService;
+	
 	/**
 	 * 저수지 수위 조회
+	 * 오후 4시에 실행
 	 */
-	private void getReservoirWaterLevel() {
+	@Scheduled(cron = "0 0 16 * * *")
+	public void getReservoirWaterLevel() {
 		
 		try {
 			URL url = new URL(createUrl(BASE_URL));
@@ -71,7 +82,6 @@ public class ReservoirService {
 			conn.disconnect();
 			
 			createReservoirInfo(sb.toString());
-			
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
@@ -84,7 +94,8 @@ public class ReservoirService {
 	}
 	
 	private void createReservoirInfo(String result) {
-		System.err.println(result);
+		
+		System.out.println(result);
 		
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -93,32 +104,52 @@ public class ReservoirService {
 
             NodeList nodes = document.getElementsByTagName("item");
 
+            ReservoirLevel reservoirLevel = new ReservoirLevel();
+            
 			for (int i = 0; i < nodes.getLength(); i++) {
 				Element element = (Element) nodes.item(i);
 
 				NodeList node = element.getElementsByTagName("fac_code");
 				Element data = (Element) node.item(0);
-				System.out.println("fac_code: " + getCharacterDataFromElement(data));
+				String facCode = getCharacterDataFromElement(data);
+				System.out.println("fac_code: " + facCode);
 				
 				node = element.getElementsByTagName("fac_name");
 				data = (Element) node.item(0);
-				System.out.println("fac_name: " + getCharacterDataFromElement(data));
+				String facName = getCharacterDataFromElement(data);
+				System.out.println("fac_name: " + facName);
 				
 				node = element.getElementsByTagName("county");
 				data = (Element) node.item(0);
-				System.out.println("county: " + getCharacterDataFromElement(data));
+				String county = getCharacterDataFromElement(data);
+				System.out.println("county: " + county);
 				
 				node = element.getElementsByTagName("check_date");
 				data = (Element) node.item(0);
-				System.out.println("check_date: " + getCharacterDataFromElement(data));
+				String checkDate = getCharacterDataFromElement(data);
+				System.out.println("check_date: " + checkDate);
 				
 				node = element.getElementsByTagName("water_level");
 				data = (Element) node.item(0);
-				System.out.println("water_level: " + getCharacterDataFromElement(data));
+				String waterLevel = getCharacterDataFromElement(data);
+				System.out.println("water_level: " + waterLevel);
 				
 				node = element.getElementsByTagName("rate");
 				data = (Element) node.item(0);
-				System.out.println("rate: " + getCharacterDataFromElement(data));
+				String rate = getCharacterDataFromElement(data);
+				System.out.println("rate: " + rate);
+				
+				reservoirLevel.setCheckDate(dateFormat.parse(checkDate));
+				reservoirLevel.setFacCode(facCode);
+				reservoirLevel.setFacName(facName);
+				reservoirLevel.setCountry(county);
+				reservoirLevel.setWaterLevel(Float.parseFloat(waterLevel));
+				reservoirLevel.setRate(Float.parseFloat(rate));
+				reservoirLevel.setCreateDate(checkDate);
+				
+				System.err.println(reservoirLevel);
+				
+				reservoirLevelService.regist(reservoirLevel);
 			}
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -126,16 +157,9 @@ public class ReservoirService {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
+		} catch (ParseException e) {
+			e.printStackTrace();
 		}
-	}
-	
-	private String getCharacterDataFromElement(Element e) {
-		Node child = e.getFirstChild();
-		if (child instanceof CharacterData) {
-			CharacterData cd = (CharacterData) child;
-			return cd.getData();
-		}
-		return "?";
 	}
 	
 	/**
@@ -147,20 +171,29 @@ public class ReservoirService {
 		StringBuilder urlBuilder = new StringBuilder(url);
 		
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, -6);
+		calendar.add(Calendar.DATE, -1);
 		
-		String week = dateFormat.format(calendar.getTime());
+		String yesterday = dateFormat.format(calendar.getTime());
 		String today = dateFormat.format(new Date());
 		
 		try {
 			urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + serviceKey); /*Service Key*/
 	        urlBuilder.append("&" + URLEncoder.encode("fac_code", "UTF-8") + "=" + URLEncoder.encode("4173010012", "UTF-8")); /*저수지코드*/
-	        urlBuilder.append("&" + URLEncoder.encode("date_s", "UTF-8") + "=" + URLEncoder.encode(week, "UTF-8")); /*조회시작날짜(yyyymmdd)*/
+	        urlBuilder.append("&" + URLEncoder.encode("date_s", "UTF-8") + "=" + URLEncoder.encode(yesterday, "UTF-8")); /*조회시작날짜(yyyymmdd)*/
 	        urlBuilder.append("&" + URLEncoder.encode("date_e", "UTF-8") + "=" + URLEncoder.encode(today, "UTF-8")); /*조회끝날짜(yyyymmdd)*/
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
 		return urlBuilder.toString();
+	}
+	
+	private String getCharacterDataFromElement(Element e) {
+		Node child = e.getFirstChild();
+		if (child instanceof CharacterData) {
+			CharacterData cd = (CharacterData) child;
+			return cd.getData();
+		}
+		return "?";
 	}
 }

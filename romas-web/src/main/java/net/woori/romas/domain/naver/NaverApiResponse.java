@@ -13,25 +13,13 @@ import lombok.Data;
 @Data
 public class NaverApiResponse {
 
-	private Channel channel;
+	private String lastBuildDate;
 	
-	@Data
-	public static class Channel {
-		
-		private String title;
-		
-		private String link;
-		
-		private String description;
-		
-		private String lastBuildDate;
-		
-		private long total;
-		
-		private int start;
-		
-		private int display;
-		
-		private List<NewsInfo> items;
-	}
+	private long total;
+	
+	private int start;
+	
+	private int display;
+	
+	private List<NewsInfo> items;
 }
