@@ -3,6 +3,7 @@ package net.woori.romas.domain.db;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -11,6 +12,7 @@ import javax.persistence.IdClass;
 
 
 import lombok.Data;
+import net.woori.romas.domain.Domain;
 
 /**
  * 
@@ -21,7 +23,7 @@ import lombok.Data;
 @Table(name = "tb_reservoir_level")
 @IdClass(ReservoirLevel.class) //날짜와 장비표준코드를 primary key로 사용
 @Data
-public class ReservoirLevel {
+public class ReservoirLevel implements Domain{
 	
 	/** 측정날짜 */
 	@Id

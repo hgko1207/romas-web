@@ -1,5 +1,6 @@
 package net.woori.romas.domain.db;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,6 +8,7 @@ import javax.persistence.Table;
 
 
 import lombok.Data;
+import net.woori.romas.domain.Domain;
 
 /**
  * 
@@ -16,7 +18,7 @@ import lombok.Data;
 @Entity
 @Table(name = "tb_reservoir")
 @Data
-public class Reservoir {
+public class Reservoir implements Domain{
 	
 	/** 지역본부 */
 	@Column(nullable = false, length = 20)
@@ -48,6 +50,9 @@ public class Reservoir {
 	
 	/** 사수위 */
 	private int dsl;
+	
+	/** 만수위 */
+	private int nwl;
 	
 	/** 홍수위 */
 	private int fwl;
