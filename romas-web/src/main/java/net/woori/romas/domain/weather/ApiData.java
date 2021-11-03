@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class ApiData {
 
-	private RestApiResponse response;
+	private ResponseJson response;
 	
 }
