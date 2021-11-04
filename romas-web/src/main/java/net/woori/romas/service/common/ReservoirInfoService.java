@@ -32,6 +32,7 @@ import org.xml.sax.SAXException;
 
 import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.service.ReservoirLevelService;
+import net.woori.romas.service.ReservoirService;
 
 /**
  * 저수지 정보 조회 서비스
@@ -40,7 +41,7 @@ import net.woori.romas.service.ReservoirLevelService;
  *
  */
 @Service
-public class ReservoirService {
+public class ReservoirInfoService {
 
 	private final String BASE_URL = "http://210.90.40.182/openapi/svc/reservoirlevel/";
 	private final String serviceKey = "bTm7%2FgmDLl%2Brg1Kzp1NgwASontpVfDI9JIPD%2FN%2FsuUHosT7w4nOd9IUafIfHX2OOCoDHgQub%2BGSmtDisbWnjQQ%3D%3D";
@@ -48,17 +49,30 @@ public class ReservoirService {
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 	
 	@Autowired
+	private ReservoirService reservoirService;
+	
+	@Autowired
 	private ReservoirLevelService reservoirLevelService;
+	
+	/**
+	 * 
+	 */
+	@Scheduled(cron = "0 0 16 * * *")
+	public void insertReservoirWaterLevel() {
+		
+		reservoirService.getList().stream().limit(30).forEach(data -> {
+			getReservoirWaterLevel(data.getFacCode());
+		});
+	}
 	
 	/**
 	 * 저수지 수위 조회
 	 * 오후 4시에 실행
 	 */
-	@Scheduled(cron = "0 0 16 * * *")
-	public void getReservoirWaterLevel() {
+	private void getReservoirWaterLevel(String facCode) {
 		
 		try {
-			URL url = new URL(createUrl(BASE_URL));
+			URL url = new URL(createUrl(BASE_URL, facCode));
 	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 	        conn.setRequestMethod("GET");
 	        conn.setRequestProperty("Content-type", "application/json");
@@ -93,6 +107,10 @@ public class ReservoirService {
 		} 
 	}
 	
+	/**
+	 * 저수지 수위 정보 생성
+	 * @param result
+	 */
 	private void createReservoirInfo(String result) {
 		
 		System.out.println(result);
@@ -112,32 +130,33 @@ public class ReservoirService {
 				NodeList node = element.getElementsByTagName("fac_code");
 				Element data = (Element) node.item(0);
 				String facCode = getCharacterDataFromElement(data);
-				System.out.println("fac_code: " + facCode);
 				
 				node = element.getElementsByTagName("fac_name");
 				data = (Element) node.item(0);
 				String facName = getCharacterDataFromElement(data);
-				System.out.println("fac_name: " + facName);
 				
 				node = element.getElementsByTagName("county");
 				data = (Element) node.item(0);
 				String county = getCharacterDataFromElement(data);
-				System.out.println("county: " + county);
 				
 				node = element.getElementsByTagName("check_date");
 				data = (Element) node.item(0);
 				String checkDate = getCharacterDataFromElement(data);
-				System.out.println("check_date: " + checkDate);
 				
 				node = element.getElementsByTagName("water_level");
 				data = (Element) node.item(0);
 				String waterLevel = getCharacterDataFromElement(data);
-				System.out.println("water_level: " + waterLevel);
-				
+
 				node = element.getElementsByTagName("rate");
 				data = (Element) node.item(0);
 				String rate = getCharacterDataFromElement(data);
-				System.out.println("rate: " + rate);
+				
+//				System.out.println("fac_code: " + facCode);
+//				System.out.println("fac_name: " + facName);
+//				System.out.println("county: " + county);
+//				System.out.println("check_date: " + checkDate);
+//				System.out.println("water_level: " + waterLevel);
+//				System.out.println("rate: " + rate);
 				
 				reservoirLevel.setCheckDate(dateFormat.parse(checkDate));
 				reservoirLevel.setFacCode(facCode);
@@ -167,8 +186,7 @@ public class ReservoirService {
 	 * @param url
 	 * @return
 	 */
-	private String createUrl(String url) {
-		StringBuilder urlBuilder = new StringBuilder(url);
+	private String createUrl(String url, String facCode) {
 		
 		Calendar calendar = Calendar.getInstance();
 		calendar.add(Calendar.DATE, -1);
@@ -176,9 +194,11 @@ public class ReservoirService {
 		String yesterday = dateFormat.format(calendar.getTime());
 		String today = dateFormat.format(new Date());
 		
+		StringBuilder urlBuilder = new StringBuilder(url);
+		
 		try {
 			urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=" + serviceKey); /*Service Key*/
-	        urlBuilder.append("&" + URLEncoder.encode("fac_code", "UTF-8") + "=" + URLEncoder.encode("4173010012", "UTF-8")); /*저수지코드*/
+	        urlBuilder.append("&" + URLEncoder.encode("fac_code", "UTF-8") + "=" + URLEncoder.encode(facCode, "UTF-8")); /*저수지코드*/
 	        urlBuilder.append("&" + URLEncoder.encode("date_s", "UTF-8") + "=" + URLEncoder.encode(yesterday, "UTF-8")); /*조회시작날짜(yyyymmdd)*/
 	        urlBuilder.append("&" + URLEncoder.encode("date_e", "UTF-8") + "=" + URLEncoder.encode(today, "UTF-8")); /*조회끝날짜(yyyymmdd)*/
 		} catch (Exception e) {

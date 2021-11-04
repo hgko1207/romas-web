@@ -138,8 +138,10 @@ public class WthrWrnInfoService {
 				Body body = data.getResponse().getBody();
 				if (body != null) {
 					Items items = body.getItems();
-					for (WthrWrnData item : items.getItem()) {
-						
+					if (items.getItem().size() > 0) {
+						WthrWrnData wthrWrnData = items.getItem().get(0);
+						weatherInfo.setTitle(wthrWrnData.getTitle());
+						weatherInfo.setDate(wthrWrnData.getTmFc());
 					}
 				}
 			}
