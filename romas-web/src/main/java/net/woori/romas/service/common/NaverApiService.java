@@ -39,7 +39,7 @@ public class NaverApiService {
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	
 	/**
-	 * 뉴스 정보 조회
+	 * 네이버 뉴스 정보 조회
 	 */
 	public List<NewsInfo> getNewsInfo(String keyword) {
 		String text = null;
@@ -60,7 +60,7 @@ public class NaverApiService {
 	}
 	
 	/**
-	 * createNewsInfo
+	 * 뉴스 정보 생성
 	 * @param json
 	 * @return
 	 */
@@ -85,6 +85,12 @@ public class NaverApiService {
 		return newsInfos;
 	}
 	
+	/**
+	 * 데이터 조회
+	 * @param apiUrl
+	 * @param requestHeaders
+	 * @return
+	 */
 	private String get(String apiUrl, Map<String, String> requestHeaders) {
 		HttpURLConnection con = connect(apiUrl);
 		try {
@@ -107,6 +113,11 @@ public class NaverApiService {
 		}
 	}
 
+	/**
+	 * 연결 정보 생성
+	 * @param apiUrl
+	 * @return
+	 */
 	private HttpURLConnection connect(String apiUrl) {
 		try {
 			URL url = new URL(apiUrl);
@@ -118,6 +129,11 @@ public class NaverApiService {
 		}
 	}
 
+	/**
+	 * 응답 정보 생성
+	 * @param body
+	 * @return
+	 */
 	private String readBody(InputStream body) {
 		InputStreamReader streamReader = new InputStreamReader(body);
 
