@@ -156,12 +156,12 @@
 				<h2 class="rm-basic-title-02">관측결과[연산1]</h2>
 				<!-- 검색영역 -->
 				<div class="rm-search-wrap">
-					<ul class="rm-search-by-period-btn mobile">
-						<li><button>일별</button></li>
-						<li><button class="selected">순별</button></li>
-						<li><button>월별</button></li>
-						<li><button>연별</button></li>
-						<li><button>시간별</button></li>
+					<ul class="rm-search-by-period-btn mobile" id="condition_ul">
+						<li><button id="dayBtn" class="selected">일별</button></li>
+						<li><button id="sonBtn">순별</button></li>
+						<li><button id="monthBtn">월별</button></li>
+						<li><button id="yearBtn">연별</button></li>
+						<li><button id="timeBtn">시간별</button></li>
 					</ul>
 					<div class="mt20">
 						<label for="inptPeriodStart" class="mobile">조회기간</label>
@@ -171,10 +171,10 @@
 							<label for="inptPeriodEnd" class="blind">조회기간 마지막</label> 
 							<input id="inptPeriodEnd" type="text" value="">
 						</div>
-						<ul class="rm-search-period-btn mobile">
-							<li><button>6개월</button></li>
-							<li><button class="selected">1년</button></li>
-							<li><button>2년</button></li>
+						<ul class="rm-search-period-btn mobile" id="period_ul">
+							<li><button id="sixMonthBtn" class="selected">6개월</button></li>
+							<li><button id="oneYearBtn">1년</button></li>
+							<li><button id="twoYearBtn">2년</button></li>
 						</ul>
 						<div class="rm-button-group mobile">
 							<button class="rm-primary-btn" id="searchBtn">검색</button>

