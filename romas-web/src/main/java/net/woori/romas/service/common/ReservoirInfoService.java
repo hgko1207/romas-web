@@ -55,7 +55,7 @@ public class ReservoirInfoService {
 	private ReservoirLevelService reservoirLevelService;
 	
 	/**
-	 * 
+	 * 저수지 수위 정보 삽입
 	 */
 	@Scheduled(cron = "0 0 16 * * *")
 	public void insertReservoirWaterLevel() {
