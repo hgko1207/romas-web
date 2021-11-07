@@ -221,10 +221,15 @@
 				<div class="rm-panel-area mb0 last mobile">
 					<!-- 평년대비저수율 -->
 					<div class="rm-reservoir_graph_group">
-						<img src="images/img_reservoir_graph.png" alt="기상청데이타"> 
-							<span class="rm-reservoir_graph_txt">전국 평년대비 저수율: <em>123%</em>
+						<div class="chart has-fixed-height" id="rateChart"></div>
+						<span class="rm-reservoir_graph_txt">전국 평년대비 저수율: <em>123%</em>
 							(금일:81%, 평년:66%))
 						</span>
+					
+						<!-- <img src="images/img_reservoir_graph.png" alt="기상청데이타"> 
+							<span class="rm-reservoir_graph_txt">전국 평년대비 저수율: <em>123%</em>
+							(금일:81%, 평년:66%))
+						</span> -->
 					</div>
 				</div>
 			</div>
@@ -235,6 +240,7 @@
 <th:block layout:fragment="script">
 	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
    	<script th:src="@{/js/common/vworld_map.js}"></script>
+	<script th:src="@{/js/common/bar_chart.js}"></script>
 	<script th:src="@{/js/home.js}"></script>
 </th:block>
 </html>

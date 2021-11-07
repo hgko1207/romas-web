@@ -118,4 +118,6 @@ $(document).ready(function() {
     	map = VWorldMap.init('vMap');
     	VWorldMap.addMarker(map, 127.102, 36.29, 'test');
 	}, 500);
+	
+	EchartsBarChart.init("rateChart");
 });
