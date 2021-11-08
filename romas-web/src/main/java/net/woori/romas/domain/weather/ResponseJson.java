@@ -37,6 +37,8 @@ public class ResponseJson {
 		/** 전체 결과 수 */
 		private int totalCount;
 		
+		private String dataType;
+		
 		private Items items;
 	}
 	

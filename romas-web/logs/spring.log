@@ -1,7 +1,133 @@
-2021-11-07 12:03:58.969  INFO 43916 --- [http-nio-8080-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+2021-11-09 00:00:30.317  INFO 43916 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-09 00:00:30.319  INFO 43916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-09 00:00:30.319  INFO 43916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-11-09 00:02:28.447  INFO 43916 --- [Thread-244] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:28.448  INFO 43916 --- [Thread-244] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-09 00:02:28.449  INFO 43916 --- [Thread-244] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-09 00:02:28.611  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-09 00:02:28.611  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-09 00:02:28.745  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-09 00:02:28.763  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
+2021-11-09 00:02:28.864  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-09 00:02:28.864  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-09 00:02:28.864  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-09 00:02:28.877  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-09 00:02:28.877  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 265 ms
+2021-11-09 00:02:28.903  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-09 00:02:28.905  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-09 00:02:28.905  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-09 00:02:28.980  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-09 00:02:28.980  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-09 00:02:28.995  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-09 00:02:28.995  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:29.074  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-09 00:02:29.120  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-09 00:02:29.127  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-09 00:02:29.129  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.538 seconds (JVM running for 352960.694)
+2021-11-09 00:02:29.130  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-09 00:02:31.744  INFO 43916 --- [Thread-248] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:31.745  INFO 43916 --- [Thread-248] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-09 00:02:31.746  INFO 43916 --- [Thread-248] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-09 00:02:31.862  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-09 00:02:31.863  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-09 00:02:32.007  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-09 00:02:32.026  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2021-11-09 00:02:32.083  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-09 00:02:32.083  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-09 00:02:32.083  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-09 00:02:32.095  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-09 00:02:32.095  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 231 ms
+2021-11-09 00:02:32.121  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-09 00:02:32.124  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-09 00:02:32.124  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-09 00:02:32.203  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-09 00:02:32.204  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-09 00:02:32.219  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-09 00:02:32.219  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:32.299  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-09 00:02:32.348  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-09 00:02:32.356  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-09 00:02:32.358  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.518 seconds (JVM running for 352963.922)
+2021-11-09 00:02:32.359  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-09 00:02:39.158  INFO 43916 --- [Thread-252] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:39.159  INFO 43916 --- [Thread-252] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-09 00:02:39.159  INFO 43916 --- [Thread-252] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-09 00:02:39.315  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-09 00:02:39.316  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-09 00:02:39.450  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-09 00:02:39.470  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+2021-11-09 00:02:39.527  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-09 00:02:39.528  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-09 00:02:39.528  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-09 00:02:39.538  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-09 00:02:39.538  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 221 ms
+2021-11-09 00:02:39.566  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-09 00:02:39.569  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-09 00:02:39.569  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-09 00:02:39.640  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-09 00:02:39.640  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-09 00:02:39.655  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-09 00:02:39.655  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:39.732  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-09 00:02:39.782  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-09 00:02:39.792  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-09 00:02:39.794  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.497 seconds (JVM running for 352971.358)
+2021-11-09 00:02:39.795  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-09 00:02:42.420  INFO 43916 --- [Thread-256] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:42.420  INFO 43916 --- [Thread-256] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-09 00:02:42.421  INFO 43916 --- [Thread-256] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-09 00:02:42.540  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-09 00:02:42.540  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-09 00:02:42.679  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-09 00:02:42.704  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 2 JPA repository interfaces.
+2021-11-09 00:02:42.766  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-09 00:02:42.766  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-09 00:02:42.766  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-09 00:02:42.778  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-09 00:02:42.778  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 236 ms
+2021-11-09 00:02:42.808  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-09 00:02:42.812  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-09 00:02:42.812  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-09 00:02:42.890  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-09 00:02:42.890  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-09 00:02:42.911  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-09 00:02:42.912  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:43.008  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-09 00:02:43.070  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-09 00:02:43.080  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-09 00:02:43.084  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.566 seconds (JVM running for 352974.649)
+2021-11-09 00:02:43.085  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-09 00:02:55.101  INFO 43916 --- [Thread-260] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:55.101  INFO 43916 --- [Thread-260] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-09 00:02:55.102  INFO 43916 --- [Thread-260] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-09 00:02:55.217  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-09 00:02:55.218  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-09 00:02:55.356  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-09 00:02:55.375  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+2021-11-09 00:02:55.435  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-09 00:02:55.436  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-09 00:02:55.436  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-09 00:02:55.447  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-09 00:02:55.447  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 228 ms
+2021-11-09 00:02:55.472  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-09 00:02:55.474  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-09 00:02:55.474  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-09 00:02:55.549  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-09 00:02:55.549  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-09 00:02:55.564  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-09 00:02:55.564  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-09 00:02:55.644  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-09 00:02:55.690  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-09 00:02:55.698  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-09 00:02:55.700  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.503 seconds (JVM running for 352987.265)
+2021-11-09 00:02:55.701  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-09 00:02:56.840  INFO 43916 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-09 00:02:56.841  INFO 43916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-09 00:02:56.842  INFO 43916 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-09 00:03:08.234  INFO 43916 --- [http-nio-8080-exec-5] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
  Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
 
-java.lang.IllegalArgumentException: Invalid character found in method name [0x050x010x00...]. HTTP method names must be tokens
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x010xfc0x010x000x010xf80x030x03s0xc80x9c0xc8%0x170x18Z0xf7~0x18YM0xe0u0x83q0xd50x92L0xeb$0xf60xac,0x9a0xa0e&0xb38-0x000x01<0xcc0x140xcc0x130xcc0x150xc000xc0,0xc0(0xc0$0xc00x140xc00x0a0x000xa50x000xa30x000xa10x000x9f0x00k0x00j0x00i0x00h0x0090x0080x0070x0060xc0w0xc0s0x000xc40x000xc30x000xc20x000xc10x000x880x000x870x000x860x000x850xc00x190x000xa70x00m0x00:0x000xc50x000x890xc020xc0.0xc0*0xc0&0xc00x0f0xc00x050xc0y0xc0u0x000x9d0x00=0x0050x000xc00x000x840x000x950xc0/0xc0+0xc0'0xc0#0xc00x130xc00x090x000xa40x000xa20x000xa00x000x9e0x00g0x00@0x00?0x00>0x0030x0020x0010x0000xc0v0xc0r0x000xbe0x000xbd0x000xbc0x000xbb0x000x9a0x000x990x000x980x000x970x00E0x00D0x00C0x00B0xc00x180x000xa60x00l0x0040x000xbf0x000x9b0x00F0xc010xc0-0xc0)0xc0%0xc00x0e0xc00x040xc0x0xc0t0x000x9c0x00<0x00/0x000xba0x000x960x00A0x000x070x000x940xc00x110xc00x070x00f0xc00x160x000x180xc00x0c0xc00x020x000x050x000x040x000x920xc00x120xc00x080x000x160x000x130x000x100x000x0d0xc00x170x000x1b0xc00x0d0xc00x030x000x0a0x000x930x00c0x000x150x000x120x000x0f0x000x0c0x000x1a0x00b0x000x090x00a0x00e0x00d0x00`0x000x140x000x110x000x0e0x000x0b0x000x190x000x080x000x060x000x170x000x030xc00x150xc00x100xc00x060xc00x0b0xc00x010x00;0x000x020x000x010x000xff0x020x010x000x000x920x000x000x000x120x000x100x000x000x0d49.175.97.2140x000x0b0x000x040x030x000x010x020x000x0a0x00:0x0080x000x0e0x000x0d0x000x190x000x1c0x000x0b0x000x0c0x000x1b0x000x180x000x090x000x0a0x000x1a0x000x160x000x170x000x080x000x060x000x070x000x140x000x150x000x040x000x050x000x120x000x130x000x010x000x020x000x030x000x0f0x000x100x000x110x00#0x000x000x000x0d0x00 ]. HTTP method names must be tokens
 	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
 	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
 	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.54.jar:9.0.54]
@@ -13,588 +139,3 @@ java.lang.IllegalArgumentException: Invalid character found in method name [0x05
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.54.jar:9.0.54]
 	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
 
-2021-11-07 16:00:00.669 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010056]
-2021-11-07 16:00:00.669 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:00.728 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010056]
-2021-11-07 16:00:00.728 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.737 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.738 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2671010056]
-2021-11-07 16:00:00.746 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [부산광역시 기장군]
-2021-11-07 16:00:00.746 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:00.746 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [용천]
-2021-11-07 16:00:00.746 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [78.4]
-2021-11-07 16:00:00.746 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [99.07]
-2021-11-07 16:00:00.746 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.746 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2671010056]
-2021-11-07 16:00:00.808 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010067]
-2021-11-07 16:00:00.808 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:00.842 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010067]
-2021-11-07 16:00:00.842 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2671010067]
-2021-11-07 16:00:00.862 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [부산광역시 기장군]
-2021-11-07 16:00:00.862 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:00.862 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [병산]
-2021-11-07 16:00:00.862 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [100.0]
-2021-11-07 16:00:00.862 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [110.2]
-2021-11-07 16:00:00.862 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.862 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2671010067]
-2021-11-07 16:00:00.916 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010085]
-2021-11-07 16:00:00.916 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:00.951 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010085]
-2021-11-07 16:00:00.952 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.961 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.961 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2671010085]
-2021-11-07 16:00:00.970 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [부산광역시 기장군]
-2021-11-07 16:00:00.970 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:00.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [송정]
-2021-11-07 16:00:00.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [99.7]
-2021-11-07 16:00:00.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [99.98]
-2021-11-07 16:00:00.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:00.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2671010085]
-2021-11-07 16:00:01.025 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010097]
-2021-11-07 16:00:01.026 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.060 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010097]
-2021-11-07 16:00:01.060 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.070 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.070 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2671010097]
-2021-11-07 16:00:01.079 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [부산광역시 기장군]
-2021-11-07 16:00:01.080 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.080 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [안평]
-2021-11-07 16:00:01.080 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [87.8]
-2021-11-07 16:00:01.080 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [112.63]
-2021-11-07 16:00:01.080 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.080 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2671010097]
-2021-11-07 16:00:01.135 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010098]
-2021-11-07 16:00:01.135 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.170 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010098]
-2021-11-07 16:00:01.170 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.179 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.179 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2671010098]
-2021-11-07 16:00:01.189 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [부산광역시 기장군]
-2021-11-07 16:00:01.189 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.189 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [임기]
-2021-11-07 16:00:01.189 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [99.8]
-2021-11-07 16:00:01.189 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [99.99]
-2021-11-07 16:00:01.189 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.189 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2671010098]
-2021-11-07 16:00:01.252 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2714010005]
-2021-11-07 16:00:01.252 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.287 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2714010005]
-2021-11-07 16:00:01.287 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.297 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.297 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2714010005]
-2021-11-07 16:00:01.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 동구]
-2021-11-07 16:00:01.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [단산]
-2021-11-07 16:00:01.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [92.3]
-2021-11-07 16:00:01.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [52.3]
-2021-11-07 16:00:01.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2714010005]
-2021-11-07 16:00:01.362 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2714010023]
-2021-11-07 16:00:01.362 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.397 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2714010023]
-2021-11-07 16:00:01.397 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.407 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.407 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2714010023]
-2021-11-07 16:00:01.416 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 동구]
-2021-11-07 16:00:01.416 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.416 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [신]
-2021-11-07 16:00:01.416 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [64.0]
-2021-11-07 16:00:01.416 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [64.97]
-2021-11-07 16:00:01.416 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.416 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2714010023]
-2021-11-07 16:00:01.474 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2723010006]
-2021-11-07 16:00:01.474 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.508 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2723010006]
-2021-11-07 16:00:01.509 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.518 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.518 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2723010006]
-2021-11-07 16:00:01.527 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 북구]
-2021-11-07 16:00:01.527 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.527 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [도남]
-2021-11-07 16:00:01.527 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [86.1]
-2021-11-07 16:00:01.527 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [91.04]
-2021-11-07 16:00:01.527 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.527 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2723010006]
-2021-11-07 16:00:01.582 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2723010024]
-2021-11-07 16:00:01.582 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.616 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2723010024]
-2021-11-07 16:00:01.616 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.625 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.625 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2723010024]
-2021-11-07 16:00:01.634 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 북구]
-2021-11-07 16:00:01.634 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.634 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [연경]
-2021-11-07 16:00:01.634 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [86.5]
-2021-11-07 16:00:01.634 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [111.76]
-2021-11-07 16:00:01.634 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.634 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2723010024]
-2021-11-07 16:00:01.689 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2726010001]
-2021-11-07 16:00:01.689 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.724 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2726010001]
-2021-11-07 16:00:01.724 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.733 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.733 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2726010001]
-2021-11-07 16:00:01.742 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 수성구]
-2021-11-07 16:00:01.742 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.742 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [수성]
-2021-11-07 16:00:01.742 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [98.5]
-2021-11-07 16:00:01.743 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [49.15]
-2021-11-07 16:00:01.743 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.743 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2726010001]
-2021-11-07 16:00:01.800 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2726010008]
-2021-11-07 16:00:01.800 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.833 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2726010008]
-2021-11-07 16:00:01.834 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.843 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.843 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2726010008]
-2021-11-07 16:00:01.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 수성구]
-2021-11-07 16:00:01.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [욱수]
-2021-11-07 16:00:01.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [100.0]
-2021-11-07 16:00:01.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [106.0]
-2021-11-07 16:00:01.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.852 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2726010008]
-2021-11-07 16:00:01.920 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2726010019]
-2021-11-07 16:00:01.920 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:01.955 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2726010019]
-2021-11-07 16:00:01.955 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.965 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.965 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2726010019]
-2021-11-07 16:00:01.974 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 수성구]
-2021-11-07 16:00:01.974 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:01.974 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [연호]
-2021-11-07 16:00:01.974 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [76.5]
-2021-11-07 16:00:01.974 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [52.57]
-2021-11-07 16:00:01.974 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:01.974 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2726010019]
-2021-11-07 16:00:02.044 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2729010002]
-2021-11-07 16:00:02.044 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.079 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2729010002]
-2021-11-07 16:00:02.079 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.088 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.089 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2729010002]
-2021-11-07 16:00:02.098 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 달서구]
-2021-11-07 16:00:02.098 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.098 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [도원]
-2021-11-07 16:00:02.098 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [92.9]
-2021-11-07 16:00:02.098 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [97.44]
-2021-11-07 16:00:02.098 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.098 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2729010002]
-2021-11-07 16:00:02.159 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010011]
-2021-11-07 16:00:02.159 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.195 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010011]
-2021-11-07 16:00:02.195 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.204 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.204 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2771010011]
-2021-11-07 16:00:02.213 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 달성군]
-2021-11-07 16:00:02.214 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.214 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [노홍]
-2021-11-07 16:00:02.214 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [85.7]
-2021-11-07 16:00:02.214 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [83.03]
-2021-11-07 16:00:02.214 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.214 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2771010011]
-2021-11-07 16:00:02.273 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010062]
-2021-11-07 16:00:02.273 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010062]
-2021-11-07 16:00:02.307 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.316 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.316 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2771010062]
-2021-11-07 16:00:02.326 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 달성군]
-2021-11-07 16:00:02.326 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.326 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [옥연]
-2021-11-07 16:00:02.326 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [99.7]
-2021-11-07 16:00:02.326 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [69.48]
-2021-11-07 16:00:02.326 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.326 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2771010062]
-2021-11-07 16:00:02.379 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010077]
-2021-11-07 16:00:02.379 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010077]
-2021-11-07 16:00:02.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.422 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.422 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2771010077]
-2021-11-07 16:00:02.431 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 달성군]
-2021-11-07 16:00:02.431 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.431 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [용연]
-2021-11-07 16:00:02.431 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [61.5]
-2021-11-07 16:00:02.431 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [30.62]
-2021-11-07 16:00:02.431 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.431 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2771010077]
-2021-11-07 16:00:02.490 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010096]
-2021-11-07 16:00:02.490 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.524 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010096]
-2021-11-07 16:00:02.524 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.532 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.532 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2771010096]
-2021-11-07 16:00:02.542 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 달성군]
-2021-11-07 16:00:02.542 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.542 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [사배]
-2021-11-07 16:00:02.542 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [92.3]
-2021-11-07 16:00:02.542 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [110.72]
-2021-11-07 16:00:02.542 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.542 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2771010096]
-2021-11-07 16:00:02.597 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010098]
-2021-11-07 16:00:02.597 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.630 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2771010098]
-2021-11-07 16:00:02.631 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.639 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.639 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2771010098]
-2021-11-07 16:00:02.649 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [대구광역시 달성군]
-2021-11-07 16:00:02.649 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.649 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [달창]
-2021-11-07 16:00:02.649 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [88.8]
-2021-11-07 16:00:02.650 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [67.54]
-2021-11-07 16:00:02.650 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.650 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2771010098]
-2021-11-07 16:00:02.707 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010001]
-2021-11-07 16:00:02.707 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.741 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010001]
-2021-11-07 16:00:02.741 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.750 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.750 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010001]
-2021-11-07 16:00:02.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:02.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [국화]
-2021-11-07 16:00:02.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [46.2]
-2021-11-07 16:00:02.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [47.13]
-2021-11-07 16:00:02.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010001]
-2021-11-07 16:00:02.813 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010007]
-2021-11-07 16:00:02.813 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.848 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010007]
-2021-11-07 16:00:02.848 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.857 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.857 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010007]
-2021-11-07 16:00:02.866 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:02.866 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.866 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [길상2]
-2021-11-07 16:00:02.866 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [75.0]
-2021-11-07 16:00:02.866 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [17.19]
-2021-11-07 16:00:02.866 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.866 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010007]
-2021-11-07 16:00:02.920 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010010]
-2021-11-07 16:00:02.920 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:02.953 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010010]
-2021-11-07 16:00:02.953 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.962 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.962 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010010]
-2021-11-07 16:00:02.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:02.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:02.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [하일]
-2021-11-07 16:00:02.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [84.4]
-2021-11-07 16:00:02.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [19.28]
-2021-11-07 16:00:02.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:02.971 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010010]
-2021-11-07 16:00:03.040 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010011]
-2021-11-07 16:00:03.040 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:03.074 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010011]
-2021-11-07 16:00:03.074 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.083 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.083 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010011]
-2021-11-07 16:00:03.092 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:03.092 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:03.092 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [인산]
-2021-11-07 16:00:03.092 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [93.7]
-2021-11-07 16:00:03.092 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [29.24]
-2021-11-07 16:00:03.092 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.092 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010011]
-2021-11-07 16:00:03.148 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010012]
-2021-11-07 16:00:03.148 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:03.181 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010012]
-2021-11-07 16:00:03.181 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.191 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.191 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010012]
-2021-11-07 16:00:03.201 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:03.201 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:03.201 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [길정]
-2021-11-07 16:00:03.201 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [76.5]
-2021-11-07 16:00:03.201 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [26.6]
-2021-11-07 16:00:03.201 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.201 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010012]
-2021-11-07 16:00:03.254 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010013]
-2021-11-07 16:00:03.254 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:03.287 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010013]
-2021-11-07 16:00:03.287 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.295 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.295 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010013]
-2021-11-07 16:00:03.305 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:03.305 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:03.305 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [고려]
-2021-11-07 16:00:03.305 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [66.7]
-2021-11-07 16:00:03.305 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [11.29]
-2021-11-07 16:00:03.305 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.305 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010013]
-2021-11-07 16:00:03.361 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010014]
-2021-11-07 16:00:03.361 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:03.395 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010014]
-2021-11-07 16:00:03.395 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.405 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.405 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010014]
-2021-11-07 16:00:03.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:03.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:03.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [신선]
-2021-11-07 16:00:03.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [95.1]
-2021-11-07 16:00:03.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [47.32]
-2021-11-07 16:00:03.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.414 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010014]
-2021-11-07 16:00:03.468 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010015]
-2021-11-07 16:00:03.468 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:03.502 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010015]
-2021-11-07 16:00:03.502 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.511 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.511 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010015]
-2021-11-07 16:00:03.520 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:03.520 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:03.520 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [황청]
-2021-11-07 16:00:03.520 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [87.0]
-2021-11-07 16:00:03.520 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [21.35]
-2021-11-07 16:00:03.520 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.520 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010015]
-2021-11-07 16:00:03.574 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010019]
-2021-11-07 16:00:03.574 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:03.607 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010019]
-2021-11-07 16:00:03.608 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.617 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.617 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010019]
-2021-11-07 16:00:03.626 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:03.626 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:03.626 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [대산]
-2021-11-07 16:00:03.626 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [88.8]
-2021-11-07 16:00:03.626 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [9.35]
-2021-11-07 16:00:03.626 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.626 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010019]
-2021-11-07 16:00:03.692 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010020]
-2021-11-07 16:00:03.692 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:03.737 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010020]
-2021-11-07 16:00:03.737 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.748 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.748 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010020]
-2021-11-07 16:00:03.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:03.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:03.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [하도]
-2021-11-07 16:00:03.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [68.6]
-2021-11-07 16:00:03.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [35.5]
-2021-11-07 16:00:03.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.758 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010020]
-2021-11-07 16:00:03.830 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010021]
-2021-11-07 16:00:03.830 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:03.870 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010021]
-2021-11-07 16:00:03.870 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.881 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.881 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010021]
-2021-11-07 16:00:03.891 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:03.891 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:03.891 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [고구]
-2021-11-07 16:00:03.891 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [83.2]
-2021-11-07 16:00:03.891 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [10.5]
-2021-11-07 16:00:03.892 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:03.892 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010021]
-2021-11-07 16:00:03.965 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010022]
-2021-11-07 16:00:03.966 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sat Nov 06 00:00:00 KST 2021]
-2021-11-07 16:00:04.005 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2871010022]
-2021-11-07 16:00:04.005 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:04.015 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:04.015 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2871010022]
-2021-11-07 16:00:04.026 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [인천광역시 강화군]
-2021-11-07 16:00:04.026 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [20211107]
-2021-11-07 16:00:04.026 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [삼산]
-2021-11-07 16:00:04.026 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [FLOAT] - [69.5]
-2021-11-07 16:00:04.026 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [FLOAT] - [7.99]
-2021-11-07 16:00:04.026 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [6] as [TIMESTAMP] - [Sun Nov 07 00:00:00 KST 2021]
-2021-11-07 16:00:04.026 TRACE 43916 --- [scheduler-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [7] as [VARCHAR] - [2871010022]
-2021-11-07 21:45:00.132  INFO 43916 --- [Thread-45] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:00.133  INFO 43916 --- [Thread-45] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-07 21:45:00.135  INFO 43916 --- [Thread-45] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-07 21:45:00.349  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-07 21:45:00.350  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-07 21:45:00.501  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-07 21:45:00.521  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
-2021-11-07 21:45:00.637  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-07 21:45:00.637  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-07 21:45:00.638  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-07 21:45:00.650  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-07 21:45:00.650  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 295 ms
-2021-11-07 21:45:00.677  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-07 21:45:00.680  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-07 21:45:00.680  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-07 21:45:00.783  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-07 21:45:00.784  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-07 21:45:00.803  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-07 21:45:00.803  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:00.905  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-07 21:45:00.970  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-07 21:45:00.978  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-07 21:45:00.980  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.656 seconds (JVM running for 258313.09)
-2021-11-07 21:45:00.981  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-11-07 21:45:16.158  INFO 43916 --- [Thread-49] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:16.159  INFO 43916 --- [Thread-49] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-07 21:45:16.161  INFO 43916 --- [Thread-49] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-07 21:45:16.354  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-07 21:45:16.354  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-07 21:45:16.507  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-07 21:45:16.527  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
-2021-11-07 21:45:16.605  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-07 21:45:16.606  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-07 21:45:16.606  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-07 21:45:16.621  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-07 21:45:16.621  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 265 ms
-2021-11-07 21:45:16.648  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-07 21:45:16.652  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-07 21:45:16.652  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-07 21:45:16.725  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-07 21:45:16.726  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-07 21:45:16.742  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-07 21:45:16.742  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:16.820  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-07 21:45:16.872  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-07 21:45:16.878  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-07 21:45:16.881  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.553 seconds (JVM running for 258328.99)
-2021-11-07 21:45:16.882  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-11-07 21:45:18.486  INFO 43916 --- [Thread-54] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:18.486  INFO 43916 --- [Thread-54] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-07 21:45:18.487  INFO 43916 --- [Thread-54] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-07 21:45:18.603  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-07 21:45:18.603  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-07 21:45:18.761  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-07 21:45:18.781  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
-2021-11-07 21:45:18.858  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-07 21:45:18.859  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-07 21:45:18.859  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-07 21:45:18.871  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-07 21:45:18.871  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 266 ms
-2021-11-07 21:45:18.903  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-07 21:45:18.906  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-07 21:45:18.906  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-07 21:45:19.007  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-07 21:45:19.007  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-07 21:45:19.025  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-07 21:45:19.025  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:19.105  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-07 21:45:19.155  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-07 21:45:19.162  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-07 21:45:19.164  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.583 seconds (JVM running for 258331.273)
-2021-11-07 21:45:19.165  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-11-07 21:45:46.744  INFO 43916 --- [Thread-58] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:46.745  INFO 43916 --- [Thread-58] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-07 21:45:46.746  INFO 43916 --- [Thread-58] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-07 21:45:46.866  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-07 21:45:46.867  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-07 21:45:47.019  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-07 21:45:47.039  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
-2021-11-07 21:45:47.157  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-07 21:45:47.158  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-07 21:45:47.158  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-07 21:45:47.171  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-07 21:45:47.171  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 303 ms
-2021-11-07 21:45:47.197  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-07 21:45:47.200  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-07 21:45:47.200  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-07 21:45:47.292  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-07 21:45:47.293  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-07 21:45:47.309  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-07 21:45:47.309  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:47.387  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-07 21:45:47.436  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-07 21:45:47.444  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-07 21:45:47.446  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.605 seconds (JVM running for 258359.556)
-2021-11-07 21:45:47.447  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-11-07 21:45:50.079  INFO 43916 --- [Thread-62] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:50.080  INFO 43916 --- [Thread-62] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-07 21:45:50.081  INFO 43916 --- [Thread-62] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-07 21:45:50.197  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-07 21:45:50.198  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-07 21:45:50.359  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-07 21:45:50.380  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
-2021-11-07 21:45:50.440  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-07 21:45:50.441  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-07 21:45:50.441  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-07 21:45:50.452  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-07 21:45:50.452  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 253 ms
-2021-11-07 21:45:50.480  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-07 21:45:50.483  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-07 21:45:50.483  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-07 21:45:50.558  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-07 21:45:50.558  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-07 21:45:50.575  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-07 21:45:50.575  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:50.655  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-07 21:45:50.728  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-07 21:45:50.741  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-07 21:45:50.745  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.569 seconds (JVM running for 258362.854)
-2021-11-07 21:45:50.746  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-11-07 21:45:52.340  INFO 43916 --- [Thread-66] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:52.341  INFO 43916 --- [Thread-66] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-07 21:45:52.342  INFO 43916 --- [Thread-66] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-07 21:45:52.486  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-07 21:45:52.486  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-07 21:45:52.619  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-07 21:45:52.637  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
-2021-11-07 21:45:52.694  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-07 21:45:52.695  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-07 21:45:52.695  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-07 21:45:52.705  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-07 21:45:52.705  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 217 ms
-2021-11-07 21:45:52.730  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-07 21:45:52.733  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-07 21:45:52.733  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-07 21:45:52.821  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-07 21:45:52.821  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-07 21:45:52.838  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-07 21:45:52.838  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:52.916  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-07 21:45:52.963  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-07 21:45:52.970  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-07 21:45:52.973  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.509 seconds (JVM running for 258365.082)
-2021-11-07 21:45:52.974  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-11-07 21:45:56.642  INFO 43916 --- [Thread-70] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:56.643  INFO 43916 --- [Thread-70] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-07 21:45:56.644  INFO 43916 --- [Thread-70] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-07 21:45:56.743  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-07 21:45:56.744  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-07 21:45:56.869  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-07 21:45:56.887  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 2 JPA repository interfaces.
-2021-11-07 21:45:56.945  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-07 21:45:56.945  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-07 21:45:56.945  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-07 21:45:56.955  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-07 21:45:56.955  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 210 ms
-2021-11-07 21:45:56.978  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-07 21:45:56.981  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-07 21:45:56.981  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-07 21:45:57.050  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-07 21:45:57.050  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-07 21:45:57.066  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-07 21:45:57.066  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:45:57.144  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-07 21:45:57.191  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-07 21:45:57.199  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-07 21:45:57.202  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.479 seconds (JVM running for 258369.312)
-2021-11-07 21:45:57.203  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-11-07 21:46:00.917  INFO 43916 --- [Thread-74] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:46:00.918  INFO 43916 --- [Thread-74] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-07 21:46:00.920  INFO 43916 --- [Thread-74] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-07 21:46:01.020  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 43916 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-07 21:46:01.020  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-07 21:46:01.149  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-07 21:46:01.168  INFO 43916 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 2 JPA repository interfaces.
-2021-11-07 21:46:01.227  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-07 21:46:01.227  INFO 43916 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-07 21:46:01.227  INFO 43916 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-07 21:46:01.237  INFO 43916 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-07 21:46:01.237  INFO 43916 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 216 ms
-2021-11-07 21:46:01.262  INFO 43916 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-07 21:46:01.265  WARN 43916 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-07 21:46:01.265  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-07 21:46:01.341  INFO 43916 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-07 21:46:01.341  INFO 43916 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-07 21:46:01.357  INFO 43916 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-07 21:46:01.357  INFO 43916 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-07 21:46:01.434  WARN 43916 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-07 21:46:01.480  INFO 43916 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-07 21:46:01.487  INFO 43916 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-07 21:46:01.490  INFO 43916 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.49 seconds (JVM running for 258373.6)
-2021-11-07 21:46:01.491  INFO 43916 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2021-11-07 21:53:24.311  INFO 43916 --- [http-nio-8080-exec-5] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-07 21:53:24.312  INFO 43916 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-11-07 21:53:24.312  INFO 43916 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms

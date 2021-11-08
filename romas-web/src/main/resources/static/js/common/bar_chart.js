@@ -98,7 +98,7 @@ var EchartsBarChart = function() {
 								type: 'solid',
 								width: 1
 							},
-                            data: [{yAxis: 110}]
+                            data: [{yAxis: data.yaxis}]
                         },
 					},
                 	{
@@ -112,7 +112,7 @@ var EchartsBarChart = function() {
 					          { offset: 1, color: '#5984FF' }
 					        ])
 						},
-						data: [ 110, 75, 90, 70, 80, 105, 95, 100, 75, 100 ],
+						data: data.values,
 						barWidth: '50%',
 					},
 				]

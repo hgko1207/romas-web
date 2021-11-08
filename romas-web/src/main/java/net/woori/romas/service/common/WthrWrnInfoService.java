@@ -9,6 +9,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -39,6 +40,8 @@ public class WthrWrnInfoService {
 	private final String serviceKey = "bTm7%2FgmDLl%2Brg1Kzp1NgwASontpVfDI9JIPD%2FN%2FsuUHosT7w4nOd9IUafIfHX2OOCoDHgQub%2BGSmtDisbWnjQQ%3D%3D";
 	
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+	private final SimpleDateFormat dayFormat = new SimpleDateFormat("yyyy.MM.dd");
+	private final SimpleDateFormat datetimeFormat = new SimpleDateFormat("yyyyMMddHHmm");
 
 	/**
 	 * 기상특보목록조회
@@ -101,7 +104,7 @@ public class WthrWrnInfoService {
 	        urlBuilder.append("&" + URLEncoder.encode("pageNo", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
 	        urlBuilder.append("&" + URLEncoder.encode("numOfRows", "UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*한 페이지 결과 수*/
 	        urlBuilder.append("&" + URLEncoder.encode("dataType", "UTF-8") + "=" + URLEncoder.encode("JSON", "UTF-8")); /*요청자료형식(XML/JSON)Default: XML*/
-	        urlBuilder.append("&" + URLEncoder.encode("stnId", "UTF-8") + "=" + URLEncoder.encode("184", "UTF-8")); /*지점코드 *하단 지점코드 자료 참조*/
+	        urlBuilder.append("&" + URLEncoder.encode("stnId", "UTF-8") + "=" + URLEncoder.encode("108", "UTF-8")); /*지점코드 *하단 지점코드 자료 참조*/
 	        urlBuilder.append("&" + URLEncoder.encode("fromTmFc", "UTF-8") + "=" + URLEncoder.encode(week, "UTF-8")); /*시간(년월일)(데이터 생성주기 : 시간단위로 생성)*/
 	        urlBuilder.append("&" + URLEncoder.encode("toTmFc", "UTF-8") + "=" + URLEncoder.encode(today, "UTF-8")); /*시간(년월일) (데이터 생성주기 : 시간단위로 생성)*/
 		} catch (Exception e) {
@@ -140,14 +143,23 @@ public class WthrWrnInfoService {
 					Items items = body.getItems();
 					if (items.getItem().size() > 0) {
 						WthrWrnData wthrWrnData = items.getItem().get(0);
-						weatherInfo.setTitle(wthrWrnData.getTitle());
-						weatherInfo.setDate(wthrWrnData.getTmFc());
+						
+						String str[] = wthrWrnData.getTitle().split("/");
+						if (str.length >= 2) {
+							String title = str[1].replace("(*)", "").trim();
+							weatherInfo.setTitle(title);
+						}
+						
+						String date = dayFormat.format(datetimeFormat.parse(wthrWrnData.getTmFc()));
+						weatherInfo.setDate(date);
 					}
 				}
 			}
 		} catch (JsonMappingException e) {
 			e.printStackTrace();
 		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		

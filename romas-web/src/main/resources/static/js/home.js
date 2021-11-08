@@ -119,5 +119,12 @@ $(document).ready(function() {
     	VWorldMap.addMarker(map, 127.102, 36.29, 'test');
 	}, 500);
 	
-	EchartsBarChart.init("rateChart");
+	
+	$.ajax({
+		url: contextPath + "/home/chart",
+		type: "GET",
+		success: function(response) {
+			EchartsBarChart.init("rateChart", response.barChartSeries);
+		}
+	});
 });
