@@ -23,6 +23,10 @@
 						</colgroup>
 						<tbody>
 							<tr>
+								<th scope="row">표준코드</th>
+								<td></td>
+							</tr>
+							<tr>
 								<th scope="row">시설명</th>
 								<td>부리 저수지</td>
 							</tr>
@@ -33,6 +37,10 @@
 							<tr>
 								<th scope="row">수원 공구분</th>
 								<td>주수원</td>
+							</tr>
+							<tr>
+								<th scope="row">종별</th>
+								<td>   </td>
 							</tr>
 							<tr>
 								<th scope="row">제체길이</th>
@@ -80,12 +88,12 @@
 						</colgroup>
 						<tbody>
 							<tr>
-								<th scope="row">연락처</th>
-								<td>031-770-8004</td>
-							</tr>
-							<tr>
 								<th scope="row">관리자</th>
 								<td>양평, 광주, 서울지사</td>
+							</tr>
+							<tr>
+								<th scope="row">관리자주소</th>
+								<td>031-770-8004</td>
 							</tr>
 						</tbody>
 					</table>
@@ -107,6 +115,7 @@
 							</tr>
 						</tbody>
 					</table>
+					<!-- 
 					<h3 class="rm-basic-title-03">안전점검결과</h3>
 					<table class="rm-basic-table">
 						<caption class="blind">안전점검결과</caption>
@@ -125,6 +134,7 @@
 							</tr>
 						</tbody>
 					</table>
+					 -->
 					<h3 class="rm-basic-title-03">급수예고</h3>
 					<table class="rm-basic-table">
 						<caption class="blind">급수예고</caption>
@@ -156,12 +166,12 @@
 				<h2 class="rm-basic-title-02">관측결과[연산1]</h2>
 				<!-- 검색영역 -->
 				<div class="rm-search-wrap">
-					<ul class="rm-search-by-period-btn mobile" id="condition_ul">
-						<li><button id="dayBtn" class="selected">일별</button></li>
-						<li><button id="sonBtn">순별</button></li>
-						<li><button id="monthBtn">월별</button></li>
-						<li><button id="yearBtn">연별</button></li>
-						<li><button id="timeBtn">시간별</button></li>
+					<ul class="rm-search-by-period-btn mobile">
+						<li><button>일별</button></li>
+						<li><button class="selected">순별</button></li>
+						<li><button>월별</button></li>
+						<li><button>연별</button></li>
+						<li><button>시간별</button></li>
 					</ul>
 					<div class="mt20">
 						<label for="inptPeriodStart" class="mobile">조회기간</label>
@@ -171,10 +181,10 @@
 							<label for="inptPeriodEnd" class="blind">조회기간 마지막</label> 
 							<input id="inptPeriodEnd" type="text" value="">
 						</div>
-						<ul class="rm-search-period-btn mobile" id="period_ul">
-							<li><button id="sixMonthBtn" class="selected">6개월</button></li>
-							<li><button id="oneYearBtn">1년</button></li>
-							<li><button id="twoYearBtn">2년</button></li>
+						<ul class="rm-search-period-btn mobile">
+							<li><button>6개월</button></li>
+							<li><button class="selected">1년</button></li>
+							<li><button>2년</button></li>
 						</ul>
 						<div class="rm-button-group mobile">
 							<button class="rm-primary-btn" id="searchBtn">검색</button>
