@@ -22,7 +22,7 @@ public class Reservoir implements Domain {
 	/** 장비표준코드 */
 	@Id
 	private String facCode;
-	
+		
 	/** 지역본부 */
 	@Column(nullable = false, length = 20)
 	private String regionalHead;
