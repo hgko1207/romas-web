@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 import net.woori.romas.domain.Domain;
 import net.woori.romas.domain.db.ReservoirLevel.CompositePK;
 
+
 /**
  * 저수지 수위 정보
  * 
