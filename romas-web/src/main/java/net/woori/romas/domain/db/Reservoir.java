@@ -73,20 +73,5 @@ public class Reservoir implements Domain {
 	
 	/** 유역 면적 */
 	private String watershedArea;
-	
-	/** 현재 수위 */
-	private int currentWaterLevel;
-	
-	/** 관심단계 적용 값*/
-	private int attentionLevel;
-	
-	/** 주의단계 적용 값*/
-	private int cautionLevel;
-	
-	/** 경계단계 적용 값*/
-	private int boundaryLevel;
-	
-	/** 심각단계 적용 값*/
-	private int seriousLevel;
 
 }
