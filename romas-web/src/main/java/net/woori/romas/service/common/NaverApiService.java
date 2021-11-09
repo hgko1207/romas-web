@@ -135,9 +135,17 @@ public class NaverApiService {
 	 * @return
 	 */
 	private String readBody(InputStream body) {
-		InputStreamReader streamReader = new InputStreamReader(body);
+		
+		InputStreamReader streamReader = null;
+		try {
+			streamReader = new InputStreamReader(body,"UTF-8");
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 
 		try (BufferedReader lineReader = new BufferedReader(streamReader)) {
+			
 			StringBuilder responseBody = new StringBuilder();
 
 			String line;
