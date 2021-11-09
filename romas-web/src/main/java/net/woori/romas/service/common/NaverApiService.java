@@ -33,8 +33,8 @@ import net.woori.romas.domain.naver.NewsInfo;
 @Service
 public class NaverApiService {
 	
-	private final String clientId = "nIwGgRfsZCFtYReWauEz"; // 애플리케이션 클라이언트 아이디값"
-	private final String clientSecret = "ZzPzZImVfn"; // 애플리케이션 클라이언트 시크릿값"
+	private final String clientId = "0fUj_3vJLIc9rq6lRhz8"; // 애플리케이션 클라이언트 아이디값"
+	private final String clientSecret = "bcz4UyAcji"; // 애플리케이션 클라이언트 시크릿값"
 	
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	

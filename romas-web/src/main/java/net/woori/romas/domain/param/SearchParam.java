@@ -13,6 +13,8 @@ public class SearchParam {
 
 	private String name;
 	
+	private String searchType;
+	
 	/** 시작일시 */
 	private String startDate;
 	

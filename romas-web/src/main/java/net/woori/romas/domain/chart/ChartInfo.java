@@ -16,20 +16,20 @@ public class ChartInfo {
 	
 	private List<String> categories;
 
-	private List<BarChartSeries> barChartSeriesList;
-	
 	private BarChartSeries barChartSeries; 
+	
+	private List<LineChartSeries> lineChartSeries;
 	
 	public ChartInfo() {
 		categories = new ArrayList<>();
-		barChartSeriesList = new ArrayList<>();
+		lineChartSeries = new ArrayList<>();
 	}
 	
 	public void addCategory(String value) {
 		categories.add(value);
 	}
 	
-	public void addBarChartSeries(BarChartSeries series) {
-		barChartSeriesList.add(series);
+	public void addLineChartSeries(LineChartSeries series) {
+		lineChartSeries.add(series);
 	}
 }

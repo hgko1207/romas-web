@@ -120,6 +120,7 @@ h2.rm-news-title {display:inline-block;margin-bottom:4px;font-size:1rem;font-wei
 
 /* 저수율현황 */
 .rm-reservoir-rate-group {position:absolute;left:50%;top:50%;margin-left:-106px;margin-top:-74px;width:215px;height:175px;}
+.rm-reservoir-rate-group.status-up {background:url(../images/status_arrow_up.png) 156px top no-repeat;}
 .rm-reservoir-rate-group.status-down {background:url(../images/status_arrow_down.png) 156px top no-repeat;}
 .rm-reservoir-region {display:inline-block;position:absolute;font-size:3.75rem;font-weight:700;color:#FFFFFF;}
 .rm-reservoir-rate {display:inline-block;position:absolute;left:0;top:77px;font-size:4.5rem;font-weight:700;}

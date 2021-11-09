@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "common-mobile.css" screen and (max-width: 1024px);
 
 svg {
     display: inline-block !important;
@@ -31,4 +32,15 @@ nav a:hover {
 
 .has-fixed-height {
 	height: 180px;
+}
+
+.rm-result-wrap .line-chart {
+	width: 1150px;
+	height: 100%;
+	margin: 0;
+    padding: 0;
+}
+
+.rm-search-wrap input {
+    min-width: 240px;
 }

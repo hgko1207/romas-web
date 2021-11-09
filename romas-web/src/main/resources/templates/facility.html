@@ -166,24 +166,25 @@
 				<h2 class="rm-basic-title-02">관측결과[연산1]</h2>
 				<!-- 검색영역 -->
 				<div class="rm-search-wrap">
-					<ul class="rm-search-by-period-btn mobile">
-						<li><button>일별</button></li>
-						<li><button class="selected">순별</button></li>
-						<li><button>월별</button></li>
-						<li><button>연별</button></li>
-						<li><button>시간별</button></li>
+					<ul class="rm-search-by-period-btn mobile" id="condition_ul">
+						<li><button id="dayBtn" class="selected">일별</button></li>
+						<li><button id="sonBtn">순별</button></li>
+						<li><button id="monthBtn">월별</button></li>
+						<li><button id="yearBtn">연별</button></li>
+						<li><button id="timeBtn">시간별</button></li>
 					</ul>
 					<div class="mt20">
 						<label for="inptPeriodStart" class="mobile">조회기간</label>
 						<div class="rm-search-period-input mobile">
-							<input id="inptPeriodStart" type="text" value=""> 
+							<!-- <input id="inptPeriodStart" type="text" value="" class="daterange-single"> 
 							<span>~</span>
 							<label for="inptPeriodEnd" class="blind">조회기간 마지막</label> 
-							<input id="inptPeriodEnd" type="text" value="">
+							<input id="inptPeriodEnd" type="text" value="" class="daterange-single"> -->
+							<input id="inptPeriod" type="text" value="" class="daterange-single"> 
 						</div>
-						<ul class="rm-search-period-btn mobile">
+						<ul class="rm-search-period-btn mobile" id="period_ul">
 							<li><button>6개월</button></li>
-							<li><button class="selected">1년</button></li>
+							<li><button>1년</button></li>
 							<li><button>2년</button></li>
 						</ul>
 						<div class="rm-button-group mobile">
@@ -192,8 +193,9 @@
 					</div>
 				</div>
 				<!-- 관측결과 그래프 -->
-				<div class="rm-result-wrap mobile">
-					<img src="images/img_result_graph.png" alt="관측결과 그래프">
+				<div class="rm-result-wrap mobile d-flex justify-content-center">
+					<div class="chart line-chart" id="lineChart"></div>
+					<!-- <img src="images/img_result_graph.png" alt="관측결과 그래프"> -->
 				</div>
 			</div>
 		</div>
@@ -201,6 +203,7 @@
 </th:block>
 
 <th:block layout:fragment="script">
+	<script th:src="@{/js/common/line_chart.js}"></script>
 	<script th:src="@{/js/facility.js}"></script>
 </th:block>
 </html>

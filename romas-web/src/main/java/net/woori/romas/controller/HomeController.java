@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import net.woori.romas.domain.DashboardInfo;
 import net.woori.romas.domain.chart.ChartInfo;
 import net.woori.romas.service.common.ChartService;
+import net.woori.romas.service.common.DashboardService;
 
 /**
  * 가뭄단계현황 화면
@@ -20,6 +22,9 @@ public class HomeController {
 	
 	@Autowired
 	private ChartService chartService;
+	
+	@Autowired
+	private DashboardService dashboardService;
 
 	@GetMapping("/")
 	public String index() {
@@ -35,5 +40,11 @@ public class HomeController {
 	@ResponseBody
 	public ChartInfo chart() {
 		return chartService.createBarChartInfo();
+	}
+	
+	@GetMapping("/home/dashboard")
+	@ResponseBody
+	public DashboardInfo dashboard(String name) {
+		return dashboardService.createDashboardInfo(name);
 	}
 }
