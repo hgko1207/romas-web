@@ -30,6 +30,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
+import net.woori.romas.domain.db.Reservoir;
 import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.service.ReservoirLevelService;
 import net.woori.romas.service.ReservoirService;
@@ -60,8 +61,8 @@ public class ReservoirInfoService {
 	@Scheduled(cron = "0 0 16 * * *")
 	public void insertReservoirWaterLevel() {
 		
-		reservoirService.getList().stream().limit(30).forEach(data -> {
-			getReservoirWaterLevel(data.getFacCode());
+		reservoirService.getList().stream().forEach(data -> {
+			getReservoirWaterLevel(data);
 		});
 	}
 	
@@ -69,10 +70,10 @@ public class ReservoirInfoService {
 	 * 저수지 수위 조회
 	 * 오후 4시에 실행
 	 */
-	private void getReservoirWaterLevel(String facCode) {
+	private void getReservoirWaterLevel(Reservoir reservoir) {
 		
 		try {
-			URL url = new URL(createUrl(BASE_URL, facCode));
+			URL url = new URL(createUrl(BASE_URL, reservoir.getFacCode()));
 	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 	        conn.setRequestMethod("GET");
 	        conn.setRequestProperty("Content-type", "application/json");
@@ -95,7 +96,7 @@ public class ReservoirInfoService {
 			rd.close();
 			conn.disconnect();
 			
-			createReservoirInfo(sb.toString());
+			createReservoirInfo(sb.toString(), reservoir);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
@@ -111,9 +112,9 @@ public class ReservoirInfoService {
 	 * 저수지 수위 정보 생성
 	 * @param result
 	 */
-	private void createReservoirInfo(String result) {
+	private void createReservoirInfo(String result, Reservoir reservoir) {
 		
-		System.out.println(result);
+		System.err.println(result);
 		
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -165,6 +166,8 @@ public class ReservoirInfoService {
 				reservoirLevel.setWaterLevel(Float.parseFloat(waterLevel));
 				reservoirLevel.setRate(Float.parseFloat(rate));
 				reservoirLevel.setCreateDate(checkDate);
+				reservoirLevel.setRegionalHead(reservoir.getRegionalHead());
+				reservoirLevel.setBranch(reservoir.getBranch());
 				
 				System.err.println(reservoirLevel);
 				

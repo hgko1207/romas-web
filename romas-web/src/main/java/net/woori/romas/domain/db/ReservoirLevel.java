@@ -50,6 +50,14 @@ public class ReservoirLevel implements Domain {
 	@Column(length = 10)
 	private String createDate;
 	
+	/** 지역본부 */
+	@Column(nullable = false, length = 20)
+	private String regionalHead;
+
+	/** 지사 */
+	@Column(nullable = false, length = 20)
+	private String branch;
+	
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor

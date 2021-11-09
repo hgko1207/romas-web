@@ -62,4 +62,9 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	private boolean isNew(ReservoirLevel domain) {
 		return !reservoirLevelRepository.existsById(new CompositePK(domain.getCheckDate(), domain.getFacCode()));
 	}
+
+	@Override
+	public void regist(List<ReservoirLevel> reservoirLevels) {
+		reservoirLevelRepository.saveAll(reservoirLevels);
+	}
 }
