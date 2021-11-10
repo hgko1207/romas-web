@@ -187,3 +187,33 @@ $(document).ready(function() {
     	VWorldMap.addMarker(map, 127.102, 36.29, 'test');
 	}, 500);
 });
+
+/** 지역, 지사, 시설 탭*/
+
+var targetLink = document.querySelectorAll('.rm-region-btn-wrap a');
+var tabContent = document.querySelectorAll('.rm-region-table-group > table');
+
+for (var i = 0; i < targetLink.length; i++) {
+	targetLink[i].addEventListener('click', function(e){
+		e.preventDefault();
+		var orgTarget = e.target.getAttribute('href');
+		
+		var tabTarget = orgTarget.replace('#', '');
+		
+		for(var x=0; x < tabContent.length; x++) {
+			tabContent[x].style.display = 'none';
+		}
+		
+		document.getElementById(tabTarget).style.display = '';
+		
+		for (var y =0; y < targetLink.length; y++){
+			targetLink[y].classList.remove('selected');
+			e.target.classList.add('selected');
+		}
+	})
+}
+for(var x=0; x < tabContent.length; x++) {
+	tabContent[x].style.display = 'none';
+}
+document.getElementById('tabs-1').style.display = '';
+
