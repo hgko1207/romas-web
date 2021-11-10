@@ -7,3 +7,24 @@
 	margin: 0;
 	padding: 0;
 }
+
+.rm-time.mobile {
+    left: 0px;
+}
+
+.rm-time {
+	font-size: 2.8rem;
+}
+
+.rm-date {
+    font-size: 1rem !important;
+}
+
+.rm-time-group.mobile .rm-day {
+	left: 135px;
+}
+
+.rm-time.mobile + .rm-date {
+   	left: 0px;
+}
+

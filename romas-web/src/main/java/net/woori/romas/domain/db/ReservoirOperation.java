@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,6 +25,7 @@ import net.woori.romas.domain.db.ReservoirOperation.CompositeOperationPK;
 @Table(name = "tb_reservoir_operation")
 @IdClass(CompositeOperationPK.class) //날짜와 장비표준코드를 primary key로 사용
 @Data
+@NoArgsConstructor
 public class ReservoirOperation implements Domain {
 
 	/** 장비표준코드 */
@@ -60,6 +62,27 @@ public class ReservoirOperation implements Domain {
 	
 	/** 심각 수위 */
 	private float seriusWaterLevel;
+	
+	@Transient
+	private String resultDate;
+	
+	/** 저수위 수위(m) */
+	@Transient
+	private float waterLevel;
+	
+	@Transient
+	private float emptyLevel;
+	
+	public ReservoirOperation(String resultDate, float emptyLevel, float seriusWaterLevel, float boudaryWaterLevel, float cautionWaterLevel,
+			float attentionWaterLevel, float waterLevel) {
+		this.resultDate = resultDate;
+		this.seriusWaterLevel = seriusWaterLevel;
+		this.boudaryWaterLevel = boudaryWaterLevel;
+		this.cautionWaterLevel = cautionWaterLevel;
+		this.attentionWaterLevel = attentionWaterLevel;
+		this.waterLevel = waterLevel;
+		this.emptyLevel = emptyLevel;
+	}
 	
 	@Data
 	@AllArgsConstructor

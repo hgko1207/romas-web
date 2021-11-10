@@ -9,7 +9,7 @@ var VWorldMap = function() {
 			visible : true, //보여짐 여부
 			type : 'base', //지도 종류(일반) ---(야간(midnight), 위성(satellite) 등)
 			source : new ol.source.XYZ({ //vworld api 사용
-				url : 'http://api.vworld.kr/req/wmts/1.0.0/45A1571F-5735-359F-9136-BCD6CF4CC339/Base/{z}/{y}/{x}.png'
+				url : 'http://api.vworld.kr/req/wmts/1.0.0/45A1571F-5735-359F-9136-BCD6CF4CC339/Satellite/{z}/{y}/{x}.jpeg'
 			})
 		});
 		
@@ -32,8 +32,6 @@ var VWorldMap = function() {
 	
 	const addMarker = function(map, lon, lat, name) { //경도 위도 이름값(마커들을 구분하기위해)
 		
-		console.log(lon, lat);
-		
 		// 마커 feature 설정
 		var feature = new ol.Feature({
 	        geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat])), //경도 위도에 포인트 설정
@@ -55,8 +53,8 @@ var VWorldMap = function() {
 	    var markerStyle = new ol.style.Style({
 	        image: new ol.style.Icon({ //마커 이미지
 	        	opacity: 1, //투명도 1=100% 
-	        	scale: 1.2, //크기 1=100%
-	            src: 'http://map.vworld.kr/images/ol3/marker_blue.png'
+	        	scale: 1, //크기 1=100%
+	            src: 'images/status_region_care.png'
 	        }),
 	        zindex: 10
 	    });

@@ -60,6 +60,17 @@ $(document).ready(function() {
 	    $('#inptPeriod').data('daterangepicker').setEndDate(moment().format(dateFormat));
 	};
 	
+	var data = [
+        ['Month', '', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+        ['2004/05',  165,      938,         522,             998,           450,      614.6],
+        ['2005/06',  135,      1120,        599,             1268,          288,      682],
+        ['2006/07',  157,      1167,        587,             807,           397,      623],
+        ['2007/08',  139,      1110,        615,             968,           215,      609.4],
+        ['2008/09',  136,      691,         629,             1026,          366,      569.6]
+    ];
+	
+	
+	
 	$('#searchBtn').click(function() {
 		let param = new Object();
 		param.searchType = searchType;
@@ -74,7 +85,20 @@ $(document).ready(function() {
 			data: JSON.stringify(param),
 			contentType: "application/json",
 			success: function(response) {
-				EchartsLineChart.init("lineChart", response);
+				var arrayData = [];
+				var legends = ['date', '', '저수율', '심각', '경계', '주의', '관심'];
+				arrayData.push(legends);
+				
+				$.each(response, function(i, data) {
+					var results = [data.resultDate, data.emptyLevel, data.waterLevel, data.seriusWaterLevel, 
+						data.boudaryWaterLevel, data.cautionWaterLevel, data.attentionWaterLevel];
+					arrayData.push(results);
+				});
+				
+				GoogleComboChart.init('google-combo', arrayData);
+				
+				console.log(response);
+				console.log(arrayData);
 			}
 		}); 
 	});

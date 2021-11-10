@@ -184,6 +184,16 @@ $(document).ready(function() {
 	
 	setTimeout(function() {
     	map = VWorldMap.init('vMap');
-    	VWorldMap.addMarker(map, 127.102, 36.29, 'test');
+    	if (map) {
+    		$.ajax({
+    			url: contextPath + "/home/reservoir",
+    			type: "GET",
+    			success: function(response) {
+    				$.each(response, function(i, data) {
+    					VWorldMap.addMarker(map, data.longitude, data.latitude, data.facCode);
+    				});
+    			}
+    		});
+    	}
 	}, 500);
 });

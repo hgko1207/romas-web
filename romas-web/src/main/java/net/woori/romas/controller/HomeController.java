@@ -1,13 +1,18 @@
 package net.woori.romas.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.woori.romas.domain.DashboardInfo;
 import net.woori.romas.domain.chart.ChartInfo;
+import net.woori.romas.domain.db.Reservoir;
+import net.woori.romas.service.ReservoirService;
 import net.woori.romas.service.common.ChartService;
 import net.woori.romas.service.common.DashboardService;
 
@@ -18,6 +23,7 @@ import net.woori.romas.service.common.DashboardService;
  *
  */
 @Controller
+@RequestMapping("home")
 public class HomeController {
 	
 	@Autowired
@@ -25,26 +31,44 @@ public class HomeController {
 	
 	@Autowired
 	private DashboardService dashboardService;
-
-	@GetMapping("/")
-	public String index() {
-		return "redirect:home";
-	}
 	
-	@GetMapping("/home")
+	@Autowired
+	private ReservoirService reservoirService;
+
+	@GetMapping("")
 	public void home(Model model) {
 		model.addAttribute("view", "home");
 	}
 	
-	@GetMapping("/home/chart")
+	/**
+	 * 차트 정보 조회
+	 * @return
+	 */
+	@GetMapping("chart")
 	@ResponseBody
 	public ChartInfo chart() {
 		return chartService.createBarChartInfo();
 	}
 	
-	@GetMapping("/home/dashboard")
+	/**
+	 * 대쉬보드 정보 조회
+	 * @param name
+	 * @return
+	 */
+	@GetMapping("dashboard")
 	@ResponseBody
 	public DashboardInfo dashboard(String name) {
 		return dashboardService.createDashboardInfo(name);
+	}
+	
+	/**
+	 * 대쉬보드 정보 조회
+	 * @param name
+	 * @return
+	 */
+	@GetMapping("reservoir")
+	@ResponseBody
+	public List<Reservoir> getReservoir() {
+		return reservoirService.getList();
 	}
 }

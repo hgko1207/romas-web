@@ -43,6 +43,6 @@ public class FacilityController {
 		
 		System.err.println(param);
 		
-		return new ResponseEntity<>(chartService.createLineChartInfo(param), HttpStatus.OK);
+		return new ResponseEntity<>(chartService.createGoogleChartInfo(), HttpStatus.OK);
 	}
 }

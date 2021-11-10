@@ -115,26 +115,6 @@
 							</tr>
 						</tbody>
 					</table>
-					<!-- 
-					<h3 class="rm-basic-title-03">안전점검결과</h3>
-					<table class="rm-basic-table">
-						<caption class="blind">안전점검결과</caption>
-						<colgroup>
-							<col style="width: 118px;">
-							<col>
-						</colgroup>
-						<tbody>
-							<tr>
-								<th scope="row">점검일자</th>
-								<td>2020.09.17</td>
-							</tr>
-							<tr>
-								<th scope="row">점검결과</th>
-								<td>C(보통)</td>
-							</tr>
-						</tbody>
-					</table>
-					 -->
 					<h3 class="rm-basic-title-03">급수예고</h3>
 					<table class="rm-basic-table">
 						<caption class="blind">급수예고</caption>
@@ -194,7 +174,7 @@
 				</div>
 				<!-- 관측결과 그래프 -->
 				<div class="rm-result-wrap mobile d-flex justify-content-center">
-					<div class="chart line-chart" id="lineChart"></div>
+					<div class="chart line-chart" id="google-combo"></div>
 					<!-- <img src="images/img_result_graph.png" alt="관측결과 그래프"> -->
 				</div>
 			</div>
@@ -203,7 +183,7 @@
 </th:block>
 
 <th:block layout:fragment="script">
-	<script th:src="@{/js/common/line_chart.js}"></script>
+	<script th:src="@{/js/common/google_chart.js}"></script>
 	<script th:src="@{/js/facility.js}"></script>
 </th:block>
 </html>

@@ -15,6 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import javax.annotation.PostConstruct;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -44,7 +45,8 @@ import net.woori.romas.service.ReservoirService;
 @Service
 public class ReservoirInfoService {
 
-	private final String BASE_URL = "http://210.90.40.182/openapi/svc/reservoirlevel/";
+//	private final String BASE_URL = "http://210.90.40.182/openapi/svc/reservoirlevel/";
+	private final String BASE_URL = "http://rawris.uirri.kr/svc_temp/reservoirlevel/";
 	private final String serviceKey = "bTm7%2FgmDLl%2Brg1Kzp1NgwASontpVfDI9JIPD%2FN%2FsuUHosT7w4nOd9IUafIfHX2OOCoDHgQub%2BGSmtDisbWnjQQ%3D%3D";
 	
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
@@ -58,10 +60,11 @@ public class ReservoirInfoService {
 	/**
 	 * 저수지 수위 정보 삽입
 	 */
-	@Scheduled(cron = "0 0 16 * * *")
+	@Scheduled(cron = "0 0 18 * * *")
+//	@PostConstruct
 	public void insertReservoirWaterLevel() {
 		
-		reservoirService.getList().stream().forEach(data -> {
+		reservoirService.getList().stream().limit(5).forEach(data -> {
 			getReservoirWaterLevel(data);
 		});
 	}
@@ -169,7 +172,7 @@ public class ReservoirInfoService {
 				reservoirLevel.setRegionalHead(reservoir.getRegionalHead());
 				reservoirLevel.setBranch(reservoir.getBranch());
 				
-				System.err.println(reservoirLevel);
+//				System.err.println(reservoirLevel);
 				
 				reservoirLevelService.regist(reservoirLevel);
 			}
