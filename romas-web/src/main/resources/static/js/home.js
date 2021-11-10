@@ -1,3 +1,4 @@
+/** 현재시간 표출 */
 const CurrentDate = function() {
 	const getTime = function() {
 		const today = new Date();
@@ -36,6 +37,7 @@ const CurrentDate = function() {
     }
 }();
 
+/** 기상특보 정보 조회 */
 function getWeatherInfo() {
 	$.ajax({
 		url: contextPath + "/api/weather",
@@ -47,6 +49,7 @@ function getWeatherInfo() {
 	});
 }
 
+/** 뉴스정보 조회 */
 function getNewsInfo() {
 	$.ajax({
 		url: contextPath + "/api/news",
@@ -107,19 +110,41 @@ function showPopup(map) {
 	});
 }
 
-$(document).ready(function() {
-	CurrentDate.init();
-	getWeatherInfo();
-	getNewsInfo();
-	
-	let map;
-	
-	setTimeout(function() {
-    	map = VWorldMap.init('vMap');
-    	VWorldMap.addMarker(map, 127.102, 36.29, 'test');
-	}, 500);
-	
-	
+/** 우측 대쉬보드 정보 조회 */
+function getDashboardInfo(name) {
+	$.ajax({
+		url: contextPath + "/home/dashboard",
+		type: "GET",
+		data: {'name': name},
+		success: function(response) {
+			if (name == '전국') {
+				$('#all_reservoir_status').removeClass('status-up status-down');
+				$('#all_reservoir_rate').removeClass('reservoir-up reservoir-down');
+				$('#all_reservoir_gap').removeClass('reservoir-up reservoir-down');
+				
+				$('#all_reservoir_status').addClass(response.up ? 'status-up' : 'status-down');
+				$('#all_reservoir_rate').addClass(response.up ? 'reservoir-up' : 'reservoir-down');
+				$('#all_reservoir_gap').addClass(response.up ? 'reservoir-up' : 'reservoir-down');
+				$('#all_reservoir_rate').html(response.value);
+				$('#all_reservoir_gap').html(response.gap + "%");
+			} else {
+				$('#reservoir_status').removeClass('status-up status-down');
+				$('#reservoir_rate').removeClass('reservoir-up reservoir-down');
+				$('#reservoir_gap').removeClass('reservoir-up reservoir-down');
+				
+				$('#area_name').html(name);
+				$('#reservoir_status').addClass(response.up ? 'status-up' : 'status-down');
+				$('#reservoir_rate').addClass(response.up ? 'reservoir-up' : 'reservoir-down');
+				$('#reservoir_gap').addClass(response.up ? 'reservoir-up' : 'reservoir-down');
+				$('#reservoir_rate').html(response.value);
+				$('#reservoir_gap').html(response.gap + "%");
+			}
+		}
+	});
+}
+
+/** 차트정보 조회 */
+function getChartInfo() {
 	$.ajax({
 		url: contextPath + "/home/chart",
 		type: "GET",
@@ -127,4 +152,38 @@ $(document).ready(function() {
 			EchartsBarChart.init("rateChart", response.barChartSeries);
 		}
 	});
+}
+
+/** 대쉬보드 정보 표출 */
+function showDashboardInfo() {
+	var index = 1;
+	
+	getDashboardInfo('전국');
+	getDashboardInfo('경기');
+	
+	var areas = ['경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주'];
+	setInterval(() => {
+		if (index == 9) {
+			index = 0;
+		}
+		
+		getDashboardInfo(areas[index]);
+		
+		index++;
+	}, 1000 * 10);
+}
+
+$(document).ready(function() {
+	CurrentDate.init();
+	getWeatherInfo();
+	getNewsInfo();
+	getChartInfo();
+	showDashboardInfo();
+	
+	let map;
+	
+	setTimeout(function() {
+    	map = VWorldMap.init('vMap');
+    	VWorldMap.addMarker(map, 127.102, 36.29, 'test');
+	}, 500);
 });

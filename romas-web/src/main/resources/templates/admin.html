@@ -48,6 +48,7 @@
 						</div>
 						
 						<div class="rm-button-group mobile">
+							<button class="rm-secondary-btn mr12">신설</button>
 							<button class="rm-primary-btn mr12" id="searchBtn">검색</button>
 							<button class="rm-secondary-btn">입력</button>
 						</div>
@@ -55,7 +56,26 @@
 				</div>
 				<!-- 관리자 검색결과 -->
 				<div class="rm-result-table-group rm-scroll mobile">
-					<table class="rm-result-table">
+					<table class="rm-result-table" id="operationTable">
+						<thead class="text-center">
+							<tr>
+								<th scope="col">날짜</th>
+								<th scope="col">본부</th>
+								<th scope="col">지사</th>
+								<th scope="col">장비표준코드</th>
+								<th scope="col">지점</th>
+								<th scope="col">금일수위</th>
+								<th scope="col">관심수위</th>
+								<th scope="col">주의수위</th>
+								<th scope="col">경계수위</th>
+								<th scope="col">심각수위</th>
+								<th scope="col">수정</th>
+							</tr>
+						</thead>
+						<tbody class="text-center"></tbody>
+					</table>
+				
+					<!-- <table class="rm-result-table">
 						<caption class="blind">관리자 검색결과</caption>
 						<colgroup>
 							<col>
@@ -313,10 +333,10 @@
 								<td><button class="rm-inner-btn">수정</button></td>
 							</tr>
 						</tbody>
-					</table>
+					</table> -->
 				</div>
 				<!-- 페이지네이션 -->
-				<div class="rm-pagination mobile">
+				<!-- <div class="rm-pagination mobile">
 					<a href="javascript:void(0);" class="first"><span class="blind">처음</span></a>
 					<a href="javascript:void(0);" class="prev"><span class="blind">이전</span></a>
 					<a href="javascript:void(0);" class="on">1</a> 
@@ -331,13 +351,14 @@
 					<a href="javascript:void(0);">10</a> 
 					<a href="javascript:void(0);" class="next"><span class="blind">다음</span></a> 
 					<a href="javascript:void(0);" class="last"><span class="blind">마지막</span></a>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
 </th:block>
 
 <th:block layout:fragment="script">
+	<script th:src="@{/js/common/table.js}"></script>
 	<script th:src="@{/js/admin.js}"></script>
 </th:block>
 </html>

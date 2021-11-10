@@ -13,6 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.woori.romas.domain.Domain;
 import net.woori.romas.domain.db.ReservoirOperation.CompositeOperationPK;
+
 /**
  * 저수지 1년 정보
  * 
@@ -59,7 +60,6 @@ public class ReservoirOperation implements Domain {
 	
 	/** 심각 수위 */
 	private float seriusWaterLevel;
-	
 	
 	@Data
 	@AllArgsConstructor
