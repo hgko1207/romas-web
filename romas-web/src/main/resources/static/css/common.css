@@ -44,3 +44,11 @@ nav a:hover {
 .rm-search-wrap input {
     min-width: 240px;
 }
+
+.display-none {
+	display: none !important;
+}
+
+.table-group-top {
+	top: 76px;
+}

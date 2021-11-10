@@ -1,0 +1,30 @@
+2021-11-11 00:13:34.314  INFO 7296 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 7296 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-11 00:13:34.314  INFO 7296 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-11 00:13:34.482  INFO 7296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-11 00:13:34.482  INFO 7296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-11 00:13:34.871  INFO 7296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-11 00:13:34.926  INFO 7296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
+2021-11-11 00:13:35.249  INFO 7296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-11 00:13:35.255  INFO 7296 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-11 00:13:35.255  INFO 7296 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-11 00:13:35.324  INFO 7296 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-11 00:13:35.324  INFO 7296 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 841 ms
+2021-11-11 00:13:35.428  INFO 7296 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-11 00:13:35.456  INFO 7296 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-11 00:13:35.562  INFO 7296 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-11 00:13:35.621  WARN 7296 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-11 00:13:35.621  INFO 7296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-11 00:13:35.770  INFO 7296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-11 00:13:35.778  INFO 7296 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-11 00:13:36.215  INFO 7296 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-11 00:13:36.221  INFO 7296 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-11 00:13:36.565  WARN 7296 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-11 00:13:36.771  INFO 7296 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-11 00:13:36.793  INFO 7296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-11 00:13:36.802  INFO 7296 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 2.732 seconds (JVM running for 3.282)
+2021-11-11 00:13:37.371  INFO 7296 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-11 00:13:37.371  INFO 7296 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-11 00:13:37.372  INFO 7296 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-11 00:13:37.576  WARN 7296 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2021-11-11 00:13:37.766  WARN 7296 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layout/default_layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2021-11-11 00:13:38.045  WARN 7296 --- [http-nio-8080-exec-1] n.n.u.t.fragments.FragmentProcessor      : You don't need to put the layout:fragment/data-layout-fragment attribute into the <head> section - the decoration process will automatically copy the <head> section of your content templates into your layout page.

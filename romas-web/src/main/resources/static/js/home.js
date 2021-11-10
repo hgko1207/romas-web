@@ -196,11 +196,36 @@ $(document).ready(function() {
     		});
     	}
 	}, 500);
+	
+	$('#areaBtn').click(function() {
+		$('#search_condition').addClass('display-none');
+		$('.rm-region-table-group').removeClass('table-group-top');
+	});
+	
+	$('#branchBtn').click(function() {
+		$('#search_condition').addClass('display-none');
+		$('.rm-region-table-group').removeClass('table-group-top');
+	});
+	
+	$('#facilityBtn').click(function() {
+		$('#search_condition').removeClass('display-none');
+		$('.rm-region-table-group').addClass('table-group-top');
+	});
+	
+	/*$('#reservoirTable > tbody').empty();
+	var html = '';
+	html += '<tr>';
+	html += '<th scope="row">경기</th>';
+	html += '<td><span class="rm-region-status care">673</span></td>';
+	html += '<td></td>';
+	html += '<td></td>';
+	html += '<td></td>';
+	html += '</tr>';
+	$("#reservoirTable").append(html);*/
 });
 
 /** 지역, 지사, 시설 탭*/
-
-var targetLink = document.querySelectorAll('.rm-region-btn-wrap a');
+/*var targetLink = document.querySelectorAll('.rm-region-btn-wrap a');
 var tabContent = document.querySelectorAll('.rm-region-table-group > table');
 
 for (var i = 0; i < targetLink.length; i++) {
@@ -225,5 +250,5 @@ for (var i = 0; i < targetLink.length; i++) {
 for(var x=0; x < tabContent.length; x++) {
 	tabContent[x].style.display = 'none';
 }
-document.getElementById('tabs-1').style.display = '';
+document.getElementById('tabs-1').style.display = '';*/
 

@@ -28,3 +28,14 @@
    	left: 0px;
 }
 
+.rm-reservoir-region {
+	font-size: 3.4rem !important;
+}
+
+.rm-reservoir-rate {
+	font-size: 3.5rem !important;
+}
+
+.table-group-top {
+	top: 90px !important;
+}
