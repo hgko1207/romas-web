@@ -24,15 +24,15 @@
 						<tbody>
 							<tr>
 								<th scope="row">표준코드</th>
-								<td></td>
+								<td th:text="${reservoir.facCode}"></td>
 							</tr>
 							<tr>
 								<th scope="row">시설명</th>
-								<td>부리 저수지</td>
+								<td th:text="${reservoir.facilityName}"> 저수지</td>
 							</tr>
 							<tr>
 								<th scope="row">소재지</th>
-								<td>경기도 양평군 개군면 부리</td>
+								<td th:text="${reservoirMgmt.address}"></td>
 							</tr>
 							<tr>
 								<th scope="row">수원 공구분</th>
@@ -44,11 +44,11 @@
 							</tr>
 							<tr>
 								<th scope="row">제체길이</th>
-								<td>104m</td>
+								<td th:text="${reservoirMgmt.length}+'m'"></td>
 							</tr>
 							<tr>
 								<th scope="row">제체높이</th>
-								<td>7.7m</td>
+								<td th:text="${reservoirMgmt.height}+'m'"></td>
 							</tr>
 							<tr>
 								<th scope="row">총저수</th>
@@ -56,7 +56,7 @@
 							</tr>
 							<tr>
 								<th scope="row">유요저수</th>
-								<td>31.6천m<sup>2</sup></td>
+								<td th:text="${reservoir.enableStorageCapacity}+'m'">31.6천m<sup>2</sup></td>
 							</tr>
 							<tr>
 								<th scope="row">금일저수량</th>
@@ -64,17 +64,17 @@
 							</tr>
 							<tr>
 								<th scope="row">유역면적</th>
-								<td>97ha(만m<sup>3</sup>)
+								<td th:text="${reservoir.watershedArea}+'ha(만m)'">97ha(만m<sup>3</sup>)
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">수혜면적</th>
-								<td>17.8ha(만m<sup>3</sup>)
+								<td th:text="${reservoir.beneArea}+'ha(만m)'">17.8ha(만m<sup>3</sup>)
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">만수면적</th>
-								<td>1ha(만m<sup>3</sup>)
+								<td th:text="${reservoirMgmt.pullArea}+'ha(만m)'">
 								</td>
 							</tr>
 						</tbody>
@@ -93,7 +93,7 @@
 							</tr>
 							<tr>
 								<th scope="row">관리자주소</th>
-								<td>031-770-8004</td>
+								<td th:text="${reservoirMgmt.mgmtAdress}"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -107,11 +107,11 @@
 						<tbody>
 							<tr>
 								<th scope="row">착공일</th>
-								<td>1942.10.20</td>
+								<td th:text="${reservoirMgmt.startDate}"></td>
 							</tr>
 							<tr>
 								<th scope="row">준공일</th>
-								<td>1942.12.20</td>
+								<td th:text="${reservoirMgmt.completionDate}"></td>
 							</tr>
 						</tbody>
 					</table>
