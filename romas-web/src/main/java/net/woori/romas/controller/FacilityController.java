@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import net.woori.romas.domain.db.Reservoir;
+import net.woori.romas.domain.db.ReservoirMgmt;
 import net.woori.romas.domain.param.SearchParam;
+import net.woori.romas.service.ReservoirMgmtService;
+import net.woori.romas.service.ReservoirService;
 import net.woori.romas.service.common.ChartService;
 
 /**
@@ -26,12 +30,30 @@ public class FacilityController {
 	@Autowired
 	private ChartService chartService;
 	
+	@Autowired
+	private ReservoirService reservoirService;
+	
+	@Autowired
+	private ReservoirMgmtService reservoirMgmtService;
+	
 	/**
 	 * 시설별현황 화면
 	 * @param model
 	 */
 	@GetMapping("")
 	public void facility(Model model) {
+		
+		String facCode = "2671010056";
+		
+		Reservoir reservoir = reservoirService.get(facCode);
+		if (reservoir != null) {
+			model.addAttribute("reservoir", reservoir);
+		}
+		
+		ReservoirMgmt reservoirMgmt =  reservoirMgmtService.get(facCode);
+		if (reservoirMgmt != null) {
+			model.addAttribute("reservoirMgmt", reservoirMgmt);
+		}
 	}
 	
 	/**
