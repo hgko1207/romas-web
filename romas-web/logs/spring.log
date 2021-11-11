@@ -28,3 +28,87 @@
 2021-11-11 00:13:37.576  WARN 7296 --- [http-nio-8080-exec-1] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
 2021-11-11 00:13:37.766  WARN 7296 --- [http-nio-8080-exec-1] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layout/default_layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
 2021-11-11 00:13:38.045  WARN 7296 --- [http-nio-8080-exec-1] n.n.u.t.fragments.FragmentProcessor      : You don't need to put the layout:fragment/data-layout-fragment attribute into the <head> section - the decoration process will automatically copy the <head> section of your content templates into your layout page.
+2021-11-11 09:45:49.503  INFO 7296 --- [http-nio-8080-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the request target [/index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP21 ]. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:494) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2021-11-11 18:00:00.737 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010056]
+2021-11-11 18:00:00.737 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Wed Nov 10 00:00:00 KST 2021]
+2021-11-11 18:00:00.770 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010056]
+2021-11-11 18:00:00.770 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Thu Nov 11 00:00:00 KST 2021]
+2021-11-11 18:00:00.822 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010067]
+2021-11-11 18:00:00.822 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Wed Nov 10 00:00:00 KST 2021]
+2021-11-11 18:00:00.850 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010067]
+2021-11-11 18:00:00.850 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Thu Nov 11 00:00:00 KST 2021]
+2021-11-11 18:00:00.902 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010085]
+2021-11-11 18:00:00.902 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Wed Nov 10 00:00:00 KST 2021]
+2021-11-11 18:00:00.931 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010085]
+2021-11-11 18:00:00.931 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Thu Nov 11 00:00:00 KST 2021]
+2021-11-11 18:00:00.984 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010097]
+2021-11-11 18:00:00.984 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Wed Nov 10 00:00:00 KST 2021]
+2021-11-11 18:00:01.014 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010097]
+2021-11-11 18:00:01.014 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Thu Nov 11 00:00:00 KST 2021]
+2021-11-11 18:00:01.063 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010098]
+2021-11-11 18:00:01.063 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Wed Nov 10 00:00:00 KST 2021]
+2021-11-11 18:00:01.092 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010098]
+2021-11-11 18:00:01.092 TRACE 7296 --- [scheduler-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [TIMESTAMP] - [Thu Nov 11 00:00:00 KST 2021]
+2021-11-11 21:31:54.685  INFO 7296 --- [http-nio-8080-exec-4] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name [0x160x030x010x010xfc0x010x000x010xf80x030x030x890xadH0x890x110x0bzV0xc20xd00xe10xae0xb1d$0xddv8 ]. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:419) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:269) ~[tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_251]
+
+2021-11-11 23:34:07.695  INFO 7296 --- [RMI TCP Connection(4)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-11 23:34:07.828  INFO 7296 --- [RMI TCP Connection(4)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-11 23:34:07.831  INFO 7296 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-11 23:34:07.833  INFO 7296 --- [RMI TCP Connection(4)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
+2021-11-11 23:44:26.096  INFO 44304 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 44304 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
+2021-11-11 23:44:26.097  INFO 44304 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
+2021-11-11 23:44:26.250  INFO 44304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-11 23:44:26.251  INFO 44304 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-11 23:44:26.697  INFO 44304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-11 23:44:26.758  INFO 44304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 4 JPA repository interfaces.
+2021-11-11 23:44:27.111  INFO 44304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-11-11 23:44:27.117  INFO 44304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-11 23:44:27.118  INFO 44304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021-11-11 23:44:27.186  INFO 44304 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
+2021-11-11 23:44:27.186  INFO 44304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 934 ms
+2021-11-11 23:44:27.297  INFO 44304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-11 23:44:27.326  INFO 44304 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-11 23:44:27.436  INFO 44304 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-11 23:44:27.498  WARN 44304 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
+2021-11-11 23:44:27.498  INFO 44304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
+2021-11-11 23:44:27.647  INFO 44304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
+2021-11-11 23:44:27.655  INFO 44304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-11-11 23:44:28.159  INFO 44304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-11 23:44:28.166  INFO 44304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-11 23:44:28.503  WARN 44304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-11 23:44:28.735  INFO 44304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-11-11 23:44:28.758  INFO 44304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
+2021-11-11 23:44:28.768  INFO 44304 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 2.93 seconds (JVM running for 3.512)
+2021-11-11 23:44:28.792  INFO 44304 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-11 23:44:28.792  INFO 44304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-11 23:44:28.793  INFO 44304 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-11 23:44:39.864  WARN 44304 --- [http-nio-8080-exec-3] n.n.u.t.decorators.DecoratorProcessor    : The layout:decorator/data-layout-decorator processor has been deprecated and will be removed in the next major version of the layout dialect.  Please use layout:decorate/data-layout-decorate instead to future-proof your code.  See https://github.com/ultraq/thymeleaf-layout-dialect/issues/95 for more information.
+2021-11-11 23:44:39.970  WARN 44304 --- [http-nio-8080-exec-3] n.n.u.t.expressions.ExpressionProcessor  : Fragment expression "layout/default_layout" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2021-11-11 23:44:40.280  WARN 44304 --- [http-nio-8080-exec-3] n.n.u.t.fragments.FragmentProcessor      : You don't need to put the layout:fragment/data-layout-fragment attribute into the <head> section - the decoration process will automatically copy the <head> section of your content templates into your layout page.
