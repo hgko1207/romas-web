@@ -32,9 +32,14 @@ public class ReservoirOperation implements Domain {
 	@Id
 	private String facCode;
 	
-	/** 저장날짜 */
+	/** 저장날짜 월*/
 	@Id
-	private Date indexDate;
+	private int month;
+	
+	/** 저장날짜 순*/
+	@Id
+	private String eml;
+	
 	
 	/** 지역본부 */
 	@Column(nullable = false, length = 20)
@@ -61,7 +66,7 @@ public class ReservoirOperation implements Domain {
 	private float boudaryWaterLevel;
 	
 	/** 심각 수위 */
-	private float seriusWaterLevel;
+	private float seriousWaterLevel;
 	
 	@Transient
 	private String resultDate;
@@ -76,7 +81,7 @@ public class ReservoirOperation implements Domain {
 	public ReservoirOperation(String resultDate, float emptyLevel, float seriusWaterLevel, float boudaryWaterLevel, float cautionWaterLevel,
 			float attentionWaterLevel, float waterLevel) {
 		this.resultDate = resultDate;
-		this.seriusWaterLevel = seriusWaterLevel;
+		this.seriousWaterLevel = seriusWaterLevel;
 		this.boudaryWaterLevel = boudaryWaterLevel;
 		this.cautionWaterLevel = cautionWaterLevel;
 		this.attentionWaterLevel = attentionWaterLevel;
@@ -88,11 +93,15 @@ public class ReservoirOperation implements Domain {
 	@AllArgsConstructor
 	@NoArgsConstructor
 	public static class CompositeOperationPK implements Domain {
-		
-		/** 측정날짜 */
-		private Date indexDate;
-		
+				
 		/** 장비표준코드 */
 		private String facCode;
+		
+		/** 저장날짜 월*/
+		private int month;
+		
+		/** 저장날짜 순*/
+		private String eml;
+		
 	}
 }

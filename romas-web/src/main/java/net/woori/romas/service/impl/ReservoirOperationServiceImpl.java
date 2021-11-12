@@ -54,6 +54,6 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 	}
 
 	private boolean isNew(ReservoirOperation domain) {
-		return !reservoirLevelRepository.existsById(new CompositeOperationPK(domain.getIndexDate(), domain.getFacCode()));
+		return !reservoirLevelRepository.existsById(new CompositeOperationPK(domain.getFacCode(), domain.getMonth(), domain.getEml() ));
 	}
 }
