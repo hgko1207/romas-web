@@ -30,7 +30,7 @@ var VWorldMap = function() {
 		return map;
 	};
 	
-	const addMarker = function(map, lon, lat, name) { //경도 위도 이름값(마커들을 구분하기위해)
+	const addMarker = function(map, lon, lat, name, level) { //경도 위도 이름값(마커들을 구분하기위해)
 		
 		// 마커 feature 설정
 		var feature = new ol.Feature({
@@ -49,12 +49,22 @@ var VWorldMap = function() {
 //	        });
 	    });
 		
+		let markerSrc;
+		if (level == 0) 
+			markerSrc = 'images/status_region_care.png';
+		else if (level == 1) 
+			markerSrc = 'images/status_region_caution.png';
+		else if (level == 2) 
+			markerSrc = 'images/status_region_alert.png';
+		else if (level == 3) 
+			markerSrc = 'images/status_region_serious.png';
+		
 		// 마커 스타일 설정
 	    var markerStyle = new ol.style.Style({
 	        image: new ol.style.Icon({ //마커 이미지
 	        	opacity: 1, //투명도 1=100% 
-	        	scale: 1, //크기 1=100%
-	            src: 'images/status_region_care.png'
+	        	scale: 0.9, //크기 1=100%
+	            src: markerSrc
 	        }),
 	        zindex: 10
 	    });
@@ -78,8 +88,8 @@ var VWorldMap = function() {
         init: function(id) {
         	return createMap(id);
         },
-        addMarker: function(map, lon, lat, name) {
-        	return addMarker(map, lon, lat, name);
+        addMarker: function(map, lon, lat, name, level) {
+        	return addMarker(map, lon, lat, name, level);
         },
     }
 }();

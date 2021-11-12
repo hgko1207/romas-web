@@ -1,5 +1,7 @@
 package net.woori.romas.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.woori.romas.domain.db.Reservoir;
+import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirMgmt;
 import net.woori.romas.domain.param.SearchParam;
 import net.woori.romas.service.ReservoirMgmtService;
 import net.woori.romas.service.ReservoirService;
 import net.woori.romas.service.common.ChartService;
+import net.woori.romas.service.common.ReservoirInfoService;
 
 /**
  * 시설별현황 화면 컨트롤러
@@ -36,6 +40,9 @@ public class FacilityController {
 	@Autowired
 	private ReservoirMgmtService reservoirMgmtService;
 	
+	@Autowired
+	private ReservoirInfoService reservoirInfoService;
+	
 	/**
 	 * 시설별현황 화면
 	 * @param model
@@ -53,6 +60,11 @@ public class FacilityController {
 		ReservoirMgmt reservoirMgmt =  reservoirMgmtService.get(facCode);
 		if (reservoirMgmt != null) {
 			model.addAttribute("reservoirMgmt", reservoirMgmt);
+		}
+		
+		List<ReservoirLevel> reservoirLevels = reservoirInfoService.getReservoirWaterLevel(reservoir);
+		if (reservoirLevels.size() > 0) {
+			model.addAttribute("rate", reservoirLevels.get(0).getRate());
 		}
 	}
 	

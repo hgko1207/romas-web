@@ -12,10 +12,11 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -64,8 +65,10 @@ public class ReservoirInfoService {
 //	@PostConstruct
 	public void insertReservoirWaterLevel() {
 		
-		reservoirService.getList().stream().limit(5).forEach(data -> {
-			getReservoirWaterLevel(data);
+		reservoirService.getList().stream().forEach(data -> {
+			getReservoirWaterLevel(data).forEach(level -> {
+				reservoirLevelService.regist(level);
+			});
 		});
 	}
 	
@@ -73,7 +76,7 @@ public class ReservoirInfoService {
 	 * 저수지 수위 조회
 	 * 오후 4시에 실행
 	 */
-	private void getReservoirWaterLevel(Reservoir reservoir) {
+	public List<ReservoirLevel> getReservoirWaterLevel(Reservoir reservoir) {
 		
 		try {
 			URL url = new URL(createUrl(BASE_URL, reservoir.getFacCode()));
@@ -99,7 +102,7 @@ public class ReservoirInfoService {
 			rd.close();
 			conn.disconnect();
 			
-			createReservoirInfo(sb.toString(), reservoir);
+			return createReservoirInfo(sb.toString(), reservoir);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
@@ -109,13 +112,17 @@ public class ReservoirInfoService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
+		
+		return new ArrayList<>();
 	}
 	
 	/**
 	 * 저수지 수위 정보 생성
 	 * @param result
 	 */
-	private void createReservoirInfo(String result, Reservoir reservoir) {
+	private List<ReservoirLevel> createReservoirInfo(String result, Reservoir reservoir) {
+		
+		List<ReservoirLevel> reservoirLevels = new ArrayList<>();
 		
 		System.err.println(result);
 		
@@ -125,8 +132,6 @@ public class ReservoirInfoService {
 			Document document = builder.parse(new InputSource(new StringReader(result)));
 
             NodeList nodes = document.getElementsByTagName("item");
-
-            ReservoirLevel reservoirLevel = new ReservoirLevel();
             
 			for (int i = 0; i < nodes.getLength(); i++) {
 				Element element = (Element) nodes.item(i);
@@ -162,6 +167,7 @@ public class ReservoirInfoService {
 //				System.out.println("water_level: " + waterLevel);
 //				System.out.println("rate: " + rate);
 				
+				ReservoirLevel reservoirLevel = new ReservoirLevel();
 				reservoirLevel.setCheckDate(dateFormat.parse(checkDate));
 				reservoirLevel.setFacCode(facCode);
 				reservoirLevel.setFacName(facName);
@@ -172,9 +178,7 @@ public class ReservoirInfoService {
 				reservoirLevel.setRegionalHead(reservoir.getRegionalHead());
 				reservoirLevel.setBranch(reservoir.getBranch());
 				
-//				System.err.println(reservoirLevel);
-				
-				reservoirLevelService.regist(reservoirLevel);
+				reservoirLevels.add(reservoirLevel);
 			}
 		} catch (ParserConfigurationException e) {
 			e.printStackTrace();
@@ -185,6 +189,8 @@ public class ReservoirInfoService {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		
+		return reservoirLevels;
 	}
 	
 	/**

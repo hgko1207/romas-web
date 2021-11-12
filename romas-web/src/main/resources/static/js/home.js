@@ -190,7 +190,7 @@ $(document).ready(function() {
     			type: "GET",
     			success: function(response) {
     				$.each(response, function(i, data) {
-    					VWorldMap.addMarker(map, data.longitude, data.latitude, data.facCode);
+    					VWorldMap.addMarker(map, data.longitude, data.latitude, data.facCode, data.level);
     				});
     			}
     		});

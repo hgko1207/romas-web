@@ -9,7 +9,7 @@ import lombok.Data;
 import net.woori.romas.domain.Domain;
 
 /**
- * 저수지 정보
+ * 저수지 제원 정보
  * 
  * @author jhlee
  *
