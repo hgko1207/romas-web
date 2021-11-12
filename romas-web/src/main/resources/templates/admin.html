@@ -16,28 +16,32 @@
 				<!-- 관리자 검색영역 -->
 				<div class="rm-search-wrap">
 					<div>
-						<label for="seltHq" class="mobile">지역본부</label>
+						<label for="seltMonth" class="mobile">월</label>
+		                <select id="seltMonth" class="mobile">
+		                	<option th:each="month : ${months}" th:value="${month}" th:text="${month}"></option>
+		                </select>
+		                
+		                <label for="seltEml" class="mobile">순</label>
+		                <select id="seltEml" class="mobile">
+		                	<option th:each="eml : ${emls}" th:value="${eml}" th:text="${eml}"></option>
+		                </select>
+					
+						<label for="seltHq" class="mobile">본부</label>
 		                <select id="seltHq" class="mobile">
-		                  <option value="" selected>본부</option>
-		                  <option value="" >선택1</option>
-		                  <option value="" >선택2</option>
+		                	<option th:each="regionalHead : ${regionalHeads}" th:value="${regionalHead}" th:text="${regionalHead}"></option>
 		                </select>
 						
 						<label for="seltBranch" class="mobile">지사</label> 
 						<select id="seltBranch" class="mobile">
-							<option value="" selected>지사</option>
-							<option value="">선택1</option>
-							<option value="">선택2</option>
+							<option th:each="branch : ${branchs}" th:value="${branch}" th:text="${branch}">지사</option>
 						</select> 
 						
-						<label for="seltBranch2" class="mobile">지점</label> 
-						<select id="seltBranch2" class="mobile">
-							<option value="" selected>지점</option>
-							<option value="">선택1</option>
-							<option value="">선택2</option>
+						<label for="seltfacility" class="mobile">지점</label> 
+						<select id="seltfacility" class="mobile">
+							<option th:each="facilityName : ${facilityNames}" th:value="${facilityName}" th:text="${facilityName}">지사</option>
 						</select> 
 						
-						<label for="inptBranch2Name" class="mobile">지점명</label>
+						<!-- <label for="inptBranch2Name" class="mobile">지점명</label>
 						<div class="rm_input_select_group mobile">
 							<input id="inptBranch2Name" type="text"> 
 							<label for="seltBranch2Name" class="blind">지점명선택</label> 
@@ -46,7 +50,7 @@
 								<option value="">선택1</option>
 								<option value="">선택2</option>
 							</select>
-						</div>
+						</div> -->
 						
 						<div class="rm-button-group mobile">
 							<button class="rm-secondary-btn mr12" onclick="document.getElementById('setUp').style.display='block'">신설</button>
@@ -64,12 +68,12 @@
 		                </colgroup>
 						<thead class="text-center">
 							<tr>
-								<th scope="col">날짜</th>
+								<th scope="col">월</th>
+								<th scope="col">순</th>
 								<th scope="col">본부</th>
 								<th scope="col">지사</th>
-								<th scope="col">장비표준코드</th>
 								<th scope="col">지점</th>
-								<th scope="col">금일수위</th>
+								<th scope="col">현재수위</th>
 								<th scope="col">관심수위</th>
 								<th scope="col">주의수위</th>
 								<th scope="col">경계수위</th>

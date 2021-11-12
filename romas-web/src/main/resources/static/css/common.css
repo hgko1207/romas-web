@@ -54,3 +54,33 @@ nav a:hover {
 .table-group-top {
 	top: 76px;
 }
+
+/*******************************************************************************************************
+ Table 디자인
+*******************************************************************************************************/
+.datatable-header {
+	padding-top: 0rem;
+	border-bottom: 0;
+}
+
+.datatable-footer {
+    border-top: 1px solid #b7b7b7 !important;
+    margin-top: -1px !important;
+    margin-right: 1px !important;
+}
+
+.dataTables_paginate {
+	margin: 0;
+}
+
+/*******************************************************************************************************
+ swal2 디자인
+*******************************************************************************************************/
+.swal2-title {
+	font-weight: 600;
+}
+
+.modal-footer:not([class*=bg-]) {
+    padding-top: 1.25rem;
+    border-top-width: 1px;
+}

@@ -17,7 +17,7 @@ $.extend( $.fn.dataTable.defaults, {
 	searching: false,
 	lengthChange: false,
 	ordering: false,
-	pageLength: 10
+	pageLength: 15
 });
 
 var Datatables = {
@@ -69,6 +69,7 @@ var Datatables = {
 			data: JSON.stringify(param),
 			contentType: "application/json",
 			success: function(data) {
+				console.log(data);
 				table.rows.add(data).draw();
 		   	}
 		});

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.db.ReservoirOperation.CompositeOperationPK;
+import net.woori.romas.domain.param.AdminSearchParam;
 import net.woori.romas.repository.ReservoirOperationRepository;
 import net.woori.romas.service.ReservoirOperationService;
 
@@ -55,5 +56,33 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 
 	private boolean isNew(ReservoirOperation domain) {
 		return !reservoirLevelRepository.existsById(new CompositeOperationPK(domain.getFacCode(), domain.getMonth(), domain.getEml() ));
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<ReservoirOperation> getList(AdminSearchParam param) {
+		
+		System.err.println(param);
+		
+		return reservoirLevelRepository.getList(param.getMonth(), param.getEml(), param.getRegionalHead(),
+				param.getBranch());
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<String> getRegionalHeadList() {
+		return reservoirLevelRepository.getRegionalHeadList();
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<String> getBranchList(String regionalHead) {
+		return reservoirLevelRepository.getBranchList(regionalHead);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<String> getFacilityList(String branch) {
+		return reservoirLevelRepository.getFacilityNameList(branch);
 	}
 }

@@ -1,24 +1,20 @@
-2021-11-12 00:07:58.332  INFO 44304 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-11-12 00:07:58.338  INFO 44304 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
-2021-11-12 00:07:58.340  INFO 44304 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
-2021-11-12 00:07:58.382  INFO 44304 --- [restartedMain] net.woori.romas.RomasWebApplication      : Starting RomasWebApplication using Java 1.8.0_251 on DESKTOP-08OF09U with PID 44304 (C:\Users\hgko\git\romas-web\romas-web\target\classes started by hgko in C:\Users\hgko\git\romas-web\romas-web)
-2021-11-12 00:07:58.383  INFO 44304 --- [restartedMain] net.woori.romas.RomasWebApplication      : No active profile set, falling back to default profiles: default
-2021-11-12 00:07:58.543  INFO 44304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-12 00:07:58.574  INFO 44304 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 4 JPA repository interfaces.
-2021-11-12 00:07:58.683  INFO 44304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2021-11-12 00:07:58.684  INFO 44304 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-12 00:07:58.684  INFO 44304 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-2021-11-12 00:07:58.697  INFO 44304 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/romas]  : Initializing Spring embedded WebApplicationContext
-2021-11-12 00:07:58.697  INFO 44304 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 313 ms
-2021-11-12 00:07:58.726  INFO 44304 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-12 00:07:58.729  WARN 44304 --- [restartedMain] com.zaxxer.hikari.HikariConfig           : SpringBootJPAHikariCP - idleTimeout has been set but has no effect because the pool is operating as a fixed size pool.
-2021-11-12 00:07:58.729  INFO 44304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Starting...
-2021-11-12 00:07:58.801  INFO 44304 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Start completed.
-2021-11-12 00:07:58.802  INFO 44304 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2021-11-12 00:07:58.902  INFO 44304 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-12 00:07:58.902  INFO 44304 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-12 00:07:59.028  WARN 44304 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-12 00:07:59.081  INFO 44304 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2021-11-12 00:07:59.089  INFO 44304 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/romas'
-2021-11-12 00:07:59.092  INFO 44304 --- [restartedMain] net.woori.romas.RomasWebApplication      : Started RomasWebApplication in 0.735 seconds (JVM running for 1413.834)
-2021-11-12 00:07:59.093  INFO 44304 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2021-11-13 00:02:11.552 TRACE 44304 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [강원]
+2021-11-13 00:02:11.669 TRACE 44304 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [강릉]
+2021-11-13 00:02:26.797 TRACE 44304 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [11]
+2021-11-13 00:02:26.797 TRACE 44304 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2중순]
+2021-11-13 00:02:26.797 TRACE 44304 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [강원]
+2021-11-13 00:02:26.798 TRACE 44304 --- [http-nio-8080-exec-1] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [강릉]
+2021-11-13 00:03:37.434 TRACE 44304 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [강원]
+2021-11-13 00:03:37.569 TRACE 44304 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [강릉]
+2021-11-13 00:03:38.463 TRACE 44304 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [11]
+2021-11-13 00:03:38.463 TRACE 44304 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2중순]
+2021-11-13 00:03:38.464 TRACE 44304 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [강원]
+2021-11-13 00:03:38.464 TRACE 44304 --- [http-nio-8080-exec-7] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [강릉]
+2021-11-13 00:04:54.145 TRACE 44304 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [강원]
+2021-11-13 00:04:54.245 TRACE 44304 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [강릉]
+2021-11-13 00:04:55.842 TRACE 44304 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [INTEGER] - [11]
+2021-11-13 00:04:55.842 TRACE 44304 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [2중순]
+2021-11-13 00:04:55.842 TRACE 44304 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [강원]
+2021-11-13 00:04:55.842 TRACE 44304 --- [http-nio-8080-exec-10] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [강릉]
+2021-11-13 00:05:42.643 TRACE 44304 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [강원]
+2021-11-13 00:05:42.747 TRACE 44304 --- [http-nio-8080-exec-4] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [강릉]

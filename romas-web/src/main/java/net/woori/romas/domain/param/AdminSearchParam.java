@@ -10,6 +10,12 @@ import lombok.Data;
  */
 @Data
 public class AdminSearchParam {
+	
+	/** 월 */
+	private int month;
+	
+	/** 순 */
+	private String eml;
 
 	/** 지역본부 */
 	private String regionalHead;

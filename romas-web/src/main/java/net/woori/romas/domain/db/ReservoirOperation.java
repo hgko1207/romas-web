@@ -1,7 +1,5 @@
 package net.woori.romas.domain.db;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -39,7 +37,6 @@ public class ReservoirOperation implements Domain {
 	/** 저장날짜 순*/
 	@Id
 	private String eml;
-	
 	
 	/** 지역본부 */
 	@Column(nullable = false, length = 20)
