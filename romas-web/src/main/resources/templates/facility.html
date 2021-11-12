@@ -28,7 +28,7 @@
 							</tr>
 							<tr>
 								<th scope="row">시설명</th>
-								<td th:text="${reservoir.facilityName}"> 저수지</td>
+								<td th:text="${reservoir.facilityName}+' 저수지'"></td>
 							</tr>
 							<tr>
 								<th scope="row">소재지</th>
@@ -40,7 +40,11 @@
 							</tr>
 							<tr>
 								<th scope="row">종별</th>
+<<<<<<< HEAD
 								<td th:text="${reservoirMgmt.classification}"></td>
+=======
+								<td th:text="${reservoirMgmt.classification}">   </td>
+>>>>>>> branch 'main' of https://github.com/hgko1207/romas-web.git
 							</tr>
 							<tr>
 								<th scope="row">제체길이</th>
@@ -52,15 +56,23 @@
 							</tr>
 							<tr>
 								<th scope="row">총저수</th>
+<<<<<<< HEAD
 								<td>
 									<span th:text="${reservoir.totalStroageCapacity}"></span>m<sup>2</sup>
 								</td>
+=======
+								<td th:text="${reservoir.totalStroageCapacity}+'m²'"></td>
+>>>>>>> branch 'main' of https://github.com/hgko1207/romas-web.git
 							</tr>
 							<tr>
 								<th scope="row">유요저수</th>
+<<<<<<< HEAD
 								<td>
 									<span th:text="${reservoir.enableStorageCapacity}"></span>m<sup>2</sup>
 								</td>
+=======
+								<td th:text="${reservoir.enableStorageCapacity}+'m²'"></td>
+>>>>>>> branch 'main' of https://github.com/hgko1207/romas-web.git
 							</tr>
 							<tr>
 								<th scope="row">금일저수량</th>
@@ -68,20 +80,32 @@
 							</tr>
 							<tr>
 								<th scope="row">유역면적</th>
+<<<<<<< HEAD
 								<td>
 									<span th:text="${reservoir.watershedArea}"></span>(만m<sup>3</sup>)
+=======
+								<td th:text="${reservoir.watershedArea}+'ha(만m³)'">
+>>>>>>> branch 'main' of https://github.com/hgko1207/romas-web.git
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">수혜면적</th>
+<<<<<<< HEAD
 								<td>
 									<span th:text="${reservoir.beneArea}"></span>(만m<sup>3</sup>)
+=======
+								<td th:text="${reservoir.beneArea}+'ha(만m³)'">
+>>>>>>> branch 'main' of https://github.com/hgko1207/romas-web.git
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">만수면적</th>
+<<<<<<< HEAD
 								<td>
 									<span th:text="${reservoirMgmt.pullArea}"></span>(만m<sup>3</sup>)
+=======
+								<td th:text="${reservoirMgmt.pullArea}+'ha(만m³)'">
+>>>>>>> branch 'main' of https://github.com/hgko1207/romas-web.git
 								</td>
 							</tr>
 						</tbody>
@@ -96,7 +120,11 @@
 						<tbody>
 							<tr>
 								<th scope="row">관리자</th>
+<<<<<<< HEAD
 								<td th:text="${reservoir.facilityName} + '지사'"></td>
+=======
+								<td th:text="${reservoir.branch}"></td>
+>>>>>>> branch 'main' of https://github.com/hgko1207/romas-web.git
 							</tr>
 							<tr>
 								<th scope="row">관리자주소</th>
