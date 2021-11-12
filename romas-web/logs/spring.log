@@ -14589,3 +14589,7 @@ org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property o
 2021-11-11 23:18:55.437 ERROR 13300 --- [http-nio-8080-exec-7] s.e.ErrorMvcAutoConfiguration$StaticView : Cannot render error page for request [/romas/facility] and exception [An error happened during template parsing (template: "class path resource [templates/facility.html]")] as the response has already been committed. As a result, the response may have the wrong status code.
 2021-11-11 23:19:02.703 TRACE 13300 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010056]
 2021-11-11 23:19:02.776 TRACE 13300 --- [http-nio-8080-exec-3] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [2671010056]
+2021-11-11 23:27:42.291  INFO 13300 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-11-11 23:27:42.805  INFO 13300 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-11 23:27:42.807  INFO 13300 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown initiated...
+2021-11-11 23:27:42.810  INFO 13300 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : SpringBootJPAHikariCP - Shutdown completed.
