@@ -29,7 +29,10 @@ body.dark-mode .rm-panel-area {background-color:#293046;box-shadow: 2px 2px 5px 
 .reservoir-up {color:#1752FF;}
 .reservoir-down {color:#FF0400;}
 /* size */
+.ml0 {margin-left:0 !important;}
 .ml4 {margin-left:4px !important;}
+.ml10 {margin-left:10px !important;}
+.mr0 {margin-right:0 !important;}
 .mr4 {margin-right:4px !important;}
 .mr12 {margin-right:12px !important;}
 .mt4 {margin-top:4px !important;}
@@ -79,7 +82,8 @@ nav a.selected {color:#FFFFFF;background-color:#3555DB;border-radius:4px;opacity
 
 /* 현재시간 */
 .rm-time-tit {position:absolute;left:14px;top:14px;font-size:1rem;font-weight:700;color:#FFFFFF;}
-.rm-time-tit span {display:inline-block;width:20px;height:20px;border-radius:24px;background-color:#101831;text-align:center;padding-top:4px;}
+.rm-time-tit span {position:relative;display:inline-block;width:20px;height:20px;border-radius:24px;background-color:#101831;text-align:center;vertical-align:middle;}
+.rm-time-tit span svg {position:absolute;left:4px;top:4px;}
 .rm-time-group {position:absolute;left:50%;top:50%;margin-left:-100px;margin-top:-30px;}
 .rm-time {display:block;position:relative;left:0;font-size:3rem;font-weight:700;color:#FFFFFF;}
 .rm-date {display:block;position:relative;margin-top:8px;font-size:1.25rem;font-weight:500;color:#FFFFFF;}
@@ -87,9 +91,9 @@ nav a.selected {color:#FFFFFF;background-color:#3555DB;border-radius:4px;opacity
 
 /* 기상특보 */
 .rm-weather-tit {position:absolute;left:14px;top:14px;font-size:1rem;font-weight:700;color:#FFFFFF;}
-.rm-weather-tit span {display:inline-block;width:20px;height:20px;border-radius:24px;background-color:#101831;text-align:center;padding-top:4px;}
+.rm-weather-tit span {display:inline-block;width:20px;height:20px;border-radius:24px;background-color:#101831;text-align:center;padding-top:2px;}
 .rm-weather-date {display:inline-block;position:absolute;right:14px;top:14px;font-size:0.75rem;font-weight:500;color:#FFFFFF;}
-.rm-weather-txt {display:block;position:absolute;left:14px;right:14px;top:45%;font-size:1.1rem;font-weight:700;color:#FFFFFF;}
+.rm-weather-txt {display:block;position:absolute;left:16px;top:50%;font-size:1.5rem;font-weight:700;color:#FFFFFF;}
 
 /* 홍수단계 */
 .rm-flood-tit {position:absolute;left:14px;top:14px;font-size:1rem;font-weight:700;color:#FFFFFF;}
@@ -120,7 +124,6 @@ h2.rm-news-title {display:inline-block;margin-bottom:4px;font-size:1rem;font-wei
 
 /* 저수율현황 */
 .rm-reservoir-rate-group {position:absolute;left:50%;top:50%;margin-left:-106px;margin-top:-74px;width:215px;height:175px;}
-.rm-reservoir-rate-group.status-up {background:url(../images/status_arrow_up.png) 156px top no-repeat;}
 .rm-reservoir-rate-group.status-down {background:url(../images/status_arrow_down.png) 156px top no-repeat;}
 .rm-reservoir-region {display:inline-block;position:absolute;font-size:3.75rem;font-weight:700;color:#FFFFFF;}
 .rm-reservoir-rate {display:inline-block;position:absolute;left:0;top:77px;font-size:4.5rem;font-weight:700;}
@@ -153,7 +156,7 @@ h2.rm-news-title {display:inline-block;margin-bottom:4px;font-size:1rem;font-wei
 
 /* 서브 페이지 */
 /* sub layout */
-.rm-sub-container {display:flex;flex-flow:row nowrap;justify-content:flex-start;align-content:stretch;position:absolute;top:64px;width:100%;min-width:1600px;height:calc(100% - 64px);min-height:873px;padding:8px 12px;}
+.rm-sub-container {display:flex;flex-flow:row nowrap;justify-content:flex-start;align-content:stretch;position:absolute;top:64px;width:100%;min-width:1672px;height:calc(100% - 64px);min-height:873px;padding:8px 12px;}
 .rm-sub-panel {overflow:hidden;padding:8px;}
 .rm-sub-panel.left.facility {flex:1 1 537px;}
 .rm-sub-panel.right.facility {flex:1 1 1327px;}
@@ -173,12 +176,17 @@ h2.rm-news-title {display:inline-block;margin-bottom:4px;font-size:1rem;font-wei
 .rm-basic-table tr:first-child th, .rm-basic-table tr:first-child td {border-top:1px solid #000000;}
 
 /* search area component set */
+label {display:inline-block;height:32px;font-size:1rem;font-weight:700;color:#5A5A5A;line-height:28px;}
+input {display:inline-block;margin:0 10px;padding:0 8px;min-width:50px;height:32px;border:1px solid #CCCCCC;border-radius:4px;font-size:0.875rem;color:#000000;}
+button.btn {width:120px;height:32px;border-radius:4px;font-size:0.875rem;font-weight:700;text-align:center;line-height:31px;}
+button.rm-primary-btn {border:none;background-color:#3555DB;color:#FFFFFF;}
+button.rm-secondary-btn {border:1px solid #3555DB;background-color:#FFFFFF;color:#3555DB;}
 .rm-search-wrap {overflow:hidden;position:relative;margin-bottom:30px;padding:24px;border-radius:8px;background-color:#E6F0FF;}
 .rm-search-wrap label {display:inline-block;height:32px;font-size:1rem;font-weight:700;color:#5A5A5A;line-height:28px;}
 .rm-search-wrap input {display:inline-block;margin:0 10px;padding:0 8px;min-width:50px;height:32px;border:1px solid #CCCCCC;border-radius:4px;font-size:0.875rem;color:#000000;}
 .rm-search-wrap select {display:inline-block;margin:0 10px;padding:0 8px;min-width:120px;height:32px;border:1px solid #CCCCCC;border-radius:4px;font-size:0.875rem;color:#000000;
 -webkit-appearance: none;background:#FFFFFF url(../images/icon_select_arrow.png) right center no-repeat;}
-.rm-search-by-period-btn {display:flex;flex-flow:row nowrap;overflow:hidden;width:476px;}
+.rm-search-by-period-btn {display:inline-flex;flex-flow:row nowrap;overflow:hidden;width:476px;}
 .rm-search-by-period-btn li {flex:1;margin-right:10px;}
 .rm-search-by-period-btn li:last-child {margin-right:0;}
 .rm-search-by-period-btn li button {width:100%;height:26px;border:none;border-radius:4px;background-color:#FFFFFF;font-size:0.75rem;font-weight:500;color:#767676;text-align:center;line-height:26px;}
@@ -224,3 +232,15 @@ button.rm-inner-btn {width:65px;height:26px;border:1px solid #A5A5A5;border-radi
 
 /* 관리자 검색결과 */
 .rm-result-table-group {height:615px;}
+
+/* 신규제원정보 모달 */
+.modal {z-index:99999;display:none;padding-top:100px;position:fixed;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,0.4);}
+.modal-container {overflow:hidden;margin:auto;background-color:#FFFFFF;position:relative;outline:0;width:600px;height:624px;border-radius:8px;}
+.modal-title {position:relative;padding:0 0 0 24px;height:60px;background:#101831;font-size:1.125rem;font-weight:700;color:#FFFFFF;line-height:60px;}
+.modal-content {overflow:auto;padding:24px;height: calc(100% - 120px);}
+.modal-footer {position:relative;height:60px;border-top:1px solid #dbdbdb;background:#FFFFFF;font-size:1.125rem;font-weight:700;color:#FFFFFF;line-height:57px;text-align:center;}
+.close-btn {position:absolute;right:0;top:0px;width:60px;height:60px;cursor:pointer;text-align:center;font-size:30px;color:#EAEAEA;}
+.new-reservoir-info ul {width:100%;}
+.new-reservoir-info li {display:flex;margin-bottom:8px;}
+.new-reservoir-info li label {width:80px;}
+.new-reservoir-info li input {flex:1;margin-right:0;}

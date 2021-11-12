@@ -73,5 +73,13 @@ public class Reservoir implements Domain {
 	
 	/** 유역 면적 */
 	private String watershedArea;
+	
+	/** 관심 단계 
+	 * 0 : 관심 파랑
+	 * 1 : 주의 노랑
+	 * 2 : 경계 주황
+	 * 3 : 심각 빨강
+	 * */
+	private int level;
 
 }

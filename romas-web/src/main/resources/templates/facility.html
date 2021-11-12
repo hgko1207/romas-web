@@ -28,7 +28,7 @@
 							</tr>
 							<tr>
 								<th scope="row">시설명</th>
-								<td th:text="${reservoir.facilityName}"> 저수지</td>
+								<td th:text="${reservoir.facilityName}+' 저수지'"></td>
 							</tr>
 							<tr>
 								<th scope="row">소재지</th>
@@ -36,11 +36,11 @@
 							</tr>
 							<tr>
 								<th scope="row">수원 공구분</th>
-								<td>주수원</td>
+								<td th:text="${reservoir.waterClass}">주수원</td>
 							</tr>
 							<tr>
 								<th scope="row">종별</th>
-								<td>   </td>
+								<td th:text="${reservoirMgmt.classification}">   </td>
 							</tr>
 							<tr>
 								<th scope="row">제체길이</th>
@@ -52,11 +52,11 @@
 							</tr>
 							<tr>
 								<th scope="row">총저수</th>
-								<td>31.6천m<sup>2</sup></td>
+								<td th:text="${reservoir.totalStroageCapacity}+'m²'"></td>
 							</tr>
 							<tr>
 								<th scope="row">유요저수</th>
-								<td th:text="${reservoir.enableStorageCapacity}+'m'">31.6천m<sup>2</sup></td>
+								<td th:text="${reservoir.enableStorageCapacity}+'m²'"></td>
 							</tr>
 							<tr>
 								<th scope="row">금일저수량</th>
@@ -64,17 +64,17 @@
 							</tr>
 							<tr>
 								<th scope="row">유역면적</th>
-								<td th:text="${reservoir.watershedArea}+'ha(만m)'">97ha(만m<sup>3</sup>)
+								<td th:text="${reservoir.watershedArea}+'ha(만m³)'">
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">수혜면적</th>
-								<td th:text="${reservoir.beneArea}+'ha(만m)'">17.8ha(만m<sup>3</sup>)
+								<td th:text="${reservoir.beneArea}+'ha(만m³)'">
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">만수면적</th>
-								<td th:text="${reservoirMgmt.pullArea}+'ha(만m)'">
+								<td th:text="${reservoirMgmt.pullArea}+'ha(만m³)'">
 								</td>
 							</tr>
 						</tbody>
@@ -89,7 +89,7 @@
 						<tbody>
 							<tr>
 								<th scope="row">관리자</th>
-								<td>양평, 광주, 서울지사</td>
+								<td th:text="${reservoir.branch}"></td>
 							</tr>
 							<tr>
 								<th scope="row">관리자주소</th>
