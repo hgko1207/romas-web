@@ -117,25 +117,36 @@ function getDashboardInfo(name) {
 		type: "GET",
 		data: {'name': name},
 		success: function(response) {
+			let status = '';
+			let reservoir = 'reservoir-equal';
+			
+			if (response.upDown == 'UP') {
+				status = 'status-up';
+				reservoir = 'reservoir-up';
+			} else if (response.upDown == 'DOWN') {
+				status = 'status-down';
+				reservoir = 'reservoir-down';
+			}
+			
 			if (name == '전국') {
 				$('#all_reservoir_status').removeClass('status-up status-down');
-				$('#all_reservoir_rate').removeClass('reservoir-up reservoir-down');
-				$('#all_reservoir_gap').removeClass('reservoir-up reservoir-down');
+				$('#all_reservoir_rate').removeClass('reservoir-up reservoir-down reservoir-equal');
+				$('#all_reservoir_gap').removeClass('reservoir-up reservoir-down reservoir-equal');
 				
-				$('#all_reservoir_status').addClass(response.up ? 'status-up' : 'status-down');
-				$('#all_reservoir_rate').addClass(response.up ? 'reservoir-up' : 'reservoir-down');
-				$('#all_reservoir_gap').addClass(response.up ? 'reservoir-up' : 'reservoir-down');
+				$('#all_reservoir_status').addClass(status);
+				$('#all_reservoir_rate').addClass(reservoir);
+				$('#all_reservoir_gap').addClass(reservoir);
 				$('#all_reservoir_rate').html(response.value);
 				$('#all_reservoir_gap').html(response.gap + "%");
 			} else {
 				$('#reservoir_status').removeClass('status-up status-down');
-				$('#reservoir_rate').removeClass('reservoir-up reservoir-down');
-				$('#reservoir_gap').removeClass('reservoir-up reservoir-down');
+				$('#reservoir_rate').removeClass('reservoir-up reservoir-down reservoir-equal');
+				$('#reservoir_gap').removeClass('reservoir-up reservoir-down reservoir-equal');
 				
 				$('#area_name').html(name);
-				$('#reservoir_status').addClass(response.up ? 'status-up' : 'status-down');
-				$('#reservoir_rate').addClass(response.up ? 'reservoir-up' : 'reservoir-down');
-				$('#reservoir_gap').addClass(response.up ? 'reservoir-up' : 'reservoir-down');
+				$('#reservoir_status').addClass(status);
+				$('#reservoir_rate').addClass(reservoir);
+				$('#reservoir_gap').addClass(reservoir);
 				$('#reservoir_rate').html(response.value);
 				$('#reservoir_gap').html(response.gap + "%");
 			}

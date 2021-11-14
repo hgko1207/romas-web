@@ -67,4 +67,16 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	public void regist(List<ReservoirLevel> reservoirLevels) {
 		reservoirLevelRepository.saveAll(reservoirLevels);
 	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public float getAllList(String date) {
+		return reservoirLevelRepository.getAllList(date);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public float getList(String date, String area) {
+		return reservoirLevelRepository.getList(date, area);
+	}
 }

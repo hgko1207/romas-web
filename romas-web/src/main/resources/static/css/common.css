@@ -1,8 +1,6 @@
 @charset "UTF-8";
 @import "common-mobile.css" screen and (max-width: 1024px);
 
-.rm-reservoir-rate-group.status-up {background:url(../images/status_arrow_up.png) 156px top no-repeat;}
-
 svg {
     display: inline-block !important;
 }
@@ -20,20 +18,10 @@ nav a:hover {
 	color: white;
 }
 
-.rm-weather-center-group embed {
-    height: 100%;
-    max-height: 100%;
-    width: 100%;
-}
-
 .rm-search-period-btn li button.selected {
     background-color: #101831;
     font-weight: 700;
     color: #FFFFFF;
-}
-
-.has-fixed-height {
-	height: 180px;
 }
 
 .rm-result-wrap .line-chart {
@@ -51,13 +39,13 @@ nav a:hover {
 	display: none !important;
 }
 
+/*******************************************************************************************************
+ Table 디자인
+*******************************************************************************************************/
 .table-group-top {
 	top: 76px;
 }
 
-/*******************************************************************************************************
- Table 디자인
-*******************************************************************************************************/
 .datatable-header {
 	padding-top: 0rem;
 	border-bottom: 0;

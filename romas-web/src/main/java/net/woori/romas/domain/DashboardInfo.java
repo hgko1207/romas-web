@@ -15,12 +15,15 @@ public class DashboardInfo {
 	
 	private float value;
 	
-	private float gap;
+	private int gap;
 	
-	private boolean up;
+	private UpDown upDown;
 	
 	public DashboardInfo(String name) {
 		this.name = name;
 	}
 
+	public enum UpDown {
+		UP, DOWN, EQUAL
+	}
 }
