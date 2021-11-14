@@ -98,8 +98,6 @@ public class ChartService {
 		reservoirOperations.add(new ReservoirOperation("11.10", 54, 2, 3, 4, 14, 87));
 		reservoirOperations.add(new ReservoirOperation("12.10", 59, 1, 2, 2, 18, 90));
 		
-		System.err.println(reservoirOperations);
-		
 		return reservoirOperations;
 	}
 }

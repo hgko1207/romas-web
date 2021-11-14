@@ -15,10 +15,10 @@ var VWorldMap = function() {
 		
 		mapView = new ol.View({ //뷰 생성
 			projection : 'EPSG:3857', //좌표계 설정 (EPSG:3857은 구글에서 사용하는 좌표계) 
-			center : new ol.geom.Point([ 127.5, 36.5 ]) //처음 중앙에 보여질 경도, 위도 
+			center : new ol.geom.Point([ 127.5, 36 ]) //처음 중앙에 보여질 경도, 위도 
 					.transform('EPSG:4326', 'EPSG:3857') //GPS 좌표계 -> 구글 좌표계
 					.getCoordinates(), //포인트의 좌표를 리턴함
-			zoom : 8 //초기지도 zoom의 정도값
+			zoom : 7.3 //초기지도 zoom의 정도값
 		});
 		
 		map = new ol.Map({ //맵 생성	

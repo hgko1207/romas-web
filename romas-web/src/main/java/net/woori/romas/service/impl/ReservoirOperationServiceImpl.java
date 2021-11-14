@@ -61,9 +61,6 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 	@Transactional(readOnly = true)
 	@Override
 	public List<ReservoirOperation> getList(AdminSearchParam param) {
-		
-		System.err.println(param);
-		
 		return reservoirLevelRepository.getList(param.getMonth(), param.getEml(), param.getRegionalHead(),
 				param.getBranch());
 	}
