@@ -3,6 +3,7 @@ package net.woori.romas.controller;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,8 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import net.woori.romas.domain.db.ReservoirLevel;
+import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.param.AdminSearchParam;
 import net.woori.romas.service.ReservoirOperationService;
+import net.woori.romas.service.common.ReservoirInfoService;
 
 /**
  * 관리자 화면
@@ -30,6 +34,9 @@ public class AdminController {
 	
 	@Autowired
 	private ReservoirOperationService reservoirOperationService;
+	
+	@Autowired
+	private ReservoirInfoService reservoirInfoService;
 
 	/**
 	 * 관리자 화면
@@ -72,7 +79,15 @@ public class AdminController {
 	@ResponseBody
 	public ResponseEntity<?> search(@RequestBody AdminSearchParam param) {
 		
-		return new ResponseEntity<>(reservoirOperationService.getList(param), HttpStatus.OK);
+		List<ReservoirOperation> operations = reservoirOperationService.getList(param).stream().map(data -> {
+			List<ReservoirLevel> reservoirLevels = reservoirInfoService.getReservoirWaterLevel(data.getFacCode());
+			if (reservoirLevels.size() > 0) {
+				data.setCurrentWaterLevel(reservoirLevels.get(0).getWaterLevel());
+			}
+			return data;
+		}).collect(Collectors.toList());
+		
+		return new ResponseEntity<>(operations, HttpStatus.OK);
 	}
 	
 	/**

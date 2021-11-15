@@ -10,8 +10,6 @@ import lombok.Data;
  */
 @Data
 public class SearchParam {
-
-	private String name;
 	
 	private String searchType;
 	
@@ -20,4 +18,10 @@ public class SearchParam {
 	
 	/** 종료일시 */
 	private String endDate;
+	
+	/** 종류(지역: 1, 지사: 2, 시설: 3) */
+	private int type;
+	
+	/** 시설이름 */
+	private String facilityName;
 }

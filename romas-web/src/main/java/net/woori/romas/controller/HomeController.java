@@ -6,12 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.woori.romas.domain.DashboardInfo;
+import net.woori.romas.domain.TableInfo;
 import net.woori.romas.domain.chart.ChartInfo;
 import net.woori.romas.domain.db.Reservoir;
+import net.woori.romas.domain.param.SearchParam;
 import net.woori.romas.service.ReservoirService;
 import net.woori.romas.service.common.ChartService;
 import net.woori.romas.service.common.DashboardService;
@@ -62,7 +66,7 @@ public class HomeController {
 	}
 	
 	/**
-	 * 대쉬보드 정보 조회
+	 * 저수지 정보 조회
 	 * @param name
 	 * @return
 	 */
@@ -70,5 +74,17 @@ public class HomeController {
 	@ResponseBody
 	public List<Reservoir> getReservoir() {
 		return reservoirService.getList();
+	}
+	
+	/**
+	 * 테이블 정보 조회
+	 * @param name
+	 * @return
+	 */
+	@PostMapping("table")
+	@ResponseBody
+	public List<TableInfo> getTableInfo(@RequestBody SearchParam param) {
+		System.err.println(param);
+		return dashboardService.getTableInfo(param);
 	}
 }

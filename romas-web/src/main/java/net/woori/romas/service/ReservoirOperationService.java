@@ -9,6 +9,8 @@ import net.woori.romas.domain.param.AdminSearchParam;
 public interface ReservoirOperationService extends CRUDService<ReservoirOperation, CompositeOperationPK> {
 
 	List<ReservoirOperation> getList(AdminSearchParam param);
+	
+	List<ReservoirOperation> getList(String facilityName);
 
 	List<String> getRegionalHeadList();
 

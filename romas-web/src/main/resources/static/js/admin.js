@@ -89,6 +89,11 @@ $(document).ready(function() {
 			data: {"branch": $(this).val()},
 			success: function(response) {
 				if (response.length > 0) {
+					$('#seltfacility').append($('<option>', {
+					    value: "전체",
+					    text: "- 전 체 -"
+					}));
+					
 					$.each(response, function (i, item) {
 						$('#seltfacility').append($('<option>', {
 						    value: item,

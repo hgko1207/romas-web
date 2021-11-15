@@ -26,4 +26,8 @@ public interface ReservoirOperationRepository extends DefaultRepository<Reservoi
 			+ "AND regional_head = ?3 AND branch = ?4", nativeQuery = true)
 	List<ReservoirOperation> getList(int month, String eml, String regionalHead, String branch);
 
+	List<ReservoirOperation> findByFacilityNameContaining(String facilityName);
+
+	List<ReservoirOperation> findByFacilityNameContainingAndMonthAndEml(String facilityName, int month, String eml);
+
 }

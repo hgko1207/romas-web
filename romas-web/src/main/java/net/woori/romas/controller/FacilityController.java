@@ -64,7 +64,7 @@ public class FacilityController {
 			model.addAttribute("reservoirMgmt", reservoirMgmt);
 		}
 		
-		List<ReservoirLevel> reservoirLevels = reservoirInfoService.getReservoirWaterLevel(reservoir);
+		List<ReservoirLevel> reservoirLevels = reservoirInfoService.getReservoirWaterLevel(reservoir.getFacCode());
 		if (reservoirLevels.size() > 0) {
 			model.addAttribute("rate", reservoirLevels.get(0).getRate());
 		}

@@ -208,14 +208,18 @@ $(document).ready(function() {
     	}
 	}, 500);
 	
+	dummyData(1);
+	
 	$('#areaBtn').click(function() {
 		$('#search_condition').addClass('display-none');
 		$('.rm-region-table-group').removeClass('table-group-top');
+		dummyData(1);
 	});
 	
 	$('#branchBtn').click(function() {
 		$('#search_condition').addClass('display-none');
 		$('.rm-region-table-group').removeClass('table-group-top');
+		dummyData(2);
 	});
 	
 	$('#facilityBtn').click(function() {
@@ -223,43 +227,55 @@ $(document).ready(function() {
 		$('.rm-region-table-group').addClass('table-group-top');
 	});
 	
-	/*$('#reservoirTable > tbody').empty();
-	var html = '';
-	html += '<tr>';
-	html += '<th scope="row">경기</th>';
-	html += '<td><span class="rm-region-status care">673</span></td>';
-	html += '<td></td>';
-	html += '<td></td>';
-	html += '<td></td>';
-	html += '</tr>';
-	$("#reservoirTable").append(html);*/
+	$('#searchBtn').click(function() {
+		var name = $('#nameText').val();
+		dummyData(3, name);
+	});
 });
 
-/** 지역, 지사, 시설 탭*/
-/*var targetLink = document.querySelectorAll('.rm-region-btn-wrap a');
-var tabContent = document.querySelectorAll('.rm-region-table-group > table');
-
-for (var i = 0; i < targetLink.length; i++) {
-	targetLink[i].addEventListener('click', function(e){
-		e.preventDefault();
-		var orgTarget = e.target.getAttribute('href');
-		
-		var tabTarget = orgTarget.replace('#', '');
-		
-		for(var x=0; x < tabContent.length; x++) {
-			tabContent[x].style.display = 'none';
+function dummyData(type, facilityName) {
+	$('#reservoirTable > tbody').empty();
+	
+	let param = new Object();
+	param.type = type;
+	param.facilityName = facilityName;
+	
+	$.ajax({
+		url: contextPath + "/home/table",
+		type: "POST",
+		data: JSON.stringify(param),
+		contentType: "application/json",
+		success: function(response) {
+			var html = '';
+			
+			$.each(response, function(i, data) {
+				html += '<tr>';
+				html += `<th scope="row">${data.name}</th>`;
+				if (data.type == 'Attention') {
+					html += `<td><span class="rm-region-status care">${data.waterLevel}</span></td>`;
+					html += '<td></td>';
+					html += '<td></td>';
+					html += '<td></td>';
+				} else if (data.type == 'Caution') {
+					html += '<td></td>';
+					html += `<td><span class="rm-region-status caution">${data.waterLevel}</span></td>`;
+					html += '<td></td>';
+					html += '<td></td>';
+				} else if (data.type == 'Boudary') {
+					html += '<td></td>';
+					html += '<td></td>';
+					html += `<td><span class="rm-region-status boudary">${data.waterLevel}</span></td>`;
+					html += '<td></td>';
+				} else if (data.type == 'Serious') {
+					html += '<td></td>';
+					html += '<td></td>';
+					html += '<td></td>';
+					html += `<td><span class="rm-region-status serious">${data.waterLevel}</span></td>`;
+				}
+				html += '</tr>';
+			});
+			
+			$("#reservoirTable").append(html);
 		}
-		
-		document.getElementById(tabTarget).style.display = '';
-		
-		for (var y =0; y < targetLink.length; y++){
-			targetLink[y].classList.remove('selected');
-			e.target.classList.add('selected');
-		}
-	})
+	});
 }
-for(var x=0; x < tabContent.length; x++) {
-	tabContent[x].style.display = 'none';
-}
-document.getElementById('tabs-1').style.display = '';*/
-

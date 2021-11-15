@@ -21,8 +21,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.CharacterData;
 import org.w3c.dom.Document;
@@ -32,10 +30,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
-import net.woori.romas.domain.db.Reservoir;
 import net.woori.romas.domain.db.ReservoirLevel;
-import net.woori.romas.service.ReservoirLevelService;
-import net.woori.romas.service.ReservoirService;
 
 /**
  * 저수지 정보 조회 서비스
@@ -52,39 +47,18 @@ public class ReservoirInfoService {
 	
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 	
-	@Autowired
-	private ReservoirService reservoirService;
-	
-	@Autowired
-	private ReservoirLevelService reservoirLevelService;
-	
-	/**
-	 * 저수지 수위 정보 삽입
-	 */
-	@Scheduled(cron = "0 0 18 * * *")
-//	@PostConstruct
-	public void insertReservoirWaterLevel() {
-		
-		reservoirService.getList().stream().forEach(data -> {
-			getReservoirWaterLevel(data).forEach(level -> {
-				reservoirLevelService.regist(level);
-			});
-		});
-	}
-	
 	/**
 	 * 저수지 수위 조회
-	 * 오후 4시에 실행
 	 */
-	public List<ReservoirLevel> getReservoirWaterLevel(Reservoir reservoir) {
+	public List<ReservoirLevel> getReservoirWaterLevel(String facCode) {
 		
 		try {
-			URL url = new URL(createUrl(BASE_URL, reservoir.getFacCode()));
+			URL url = new URL(createUrl(BASE_URL, facCode));
 	        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 	        conn.setRequestMethod("GET");
 	        conn.setRequestProperty("Content-type", "application/json");
 	        
-	        System.out.println("Response code: " + conn.getResponseCode());
+	        //System.out.println("Response code: " + conn.getResponseCode());
 	        
 			BufferedReader rd;
 			if (conn.getResponseCode() >= 200 && conn.getResponseCode() <= 300) {
@@ -102,7 +76,7 @@ public class ReservoirInfoService {
 			rd.close();
 			conn.disconnect();
 			
-			return createReservoirInfo(sb.toString(), reservoir);
+			return createReservoirInfo(sb.toString());
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (MalformedURLException e) {
@@ -120,11 +94,9 @@ public class ReservoirInfoService {
 	 * 저수지 수위 정보 생성
 	 * @param result
 	 */
-	private List<ReservoirLevel> createReservoirInfo(String result, Reservoir reservoir) {
+	private List<ReservoirLevel> createReservoirInfo(String result) {
 		
 		List<ReservoirLevel> reservoirLevels = new ArrayList<>();
-		
-		System.err.println(result);
 		
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -160,13 +132,6 @@ public class ReservoirInfoService {
 				data = (Element) node.item(0);
 				String rate = getCharacterDataFromElement(data);
 				
-//				System.out.println("fac_code: " + facCode);
-//				System.out.println("fac_name: " + facName);
-//				System.out.println("county: " + county);
-//				System.out.println("check_date: " + checkDate);
-//				System.out.println("water_level: " + waterLevel);
-//				System.out.println("rate: " + rate);
-				
 				ReservoirLevel reservoirLevel = new ReservoirLevel();
 				reservoirLevel.setCheckDate(dateFormat.parse(checkDate));
 				reservoirLevel.setFacCode(facCode);
@@ -175,8 +140,6 @@ public class ReservoirInfoService {
 				reservoirLevel.setWaterLevel(Float.parseFloat(waterLevel));
 				reservoirLevel.setRate(Float.parseFloat(rate));
 				reservoirLevel.setCreateDate(checkDate);
-				reservoirLevel.setRegionalHead(reservoir.getRegionalHead());
-				reservoirLevel.setBranch(reservoir.getBranch());
 				
 				reservoirLevels.add(reservoirLevel);
 			}

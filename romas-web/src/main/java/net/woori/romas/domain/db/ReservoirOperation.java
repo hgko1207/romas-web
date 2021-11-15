@@ -99,6 +99,9 @@ public class ReservoirOperation implements Domain {
 		
 		/** 저장날짜 순*/
 		private String eml;
-		
+	}
+	
+	public enum OperationType {
+		Attention, Caution, Boudary, Serious;
 	}
 }

@@ -4,6 +4,10 @@ svg {
 	vertical-align: top;
 }
 
+.boudary {color:#FF6700;}
+.rm-flood-status.boudary {background:url(../../images/status_flood_03.png)center bottom no-repeat;background-size:contain;}
+.rm-region-status.boudary::before {display:inline-block;content:"";position:absolute;left:0;width:17px;height:17px;background:url(../../images/status_region_alert.png)left center no-repeat;}
+
 /*******************************************************************************************************
  기상특보 디자인
 *******************************************************************************************************/

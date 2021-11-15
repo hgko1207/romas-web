@@ -63,7 +63,7 @@ var VWorldMap = function() {
 	    var markerStyle = new ol.style.Style({
 	        image: new ol.style.Icon({ //마커 이미지
 	        	opacity: 1, //투명도 1=100% 
-	        	scale: 0.9, //크기 1=100%
+	        	scale: 0.7, //크기 1=100%
 	            src: markerSrc
 	        }),
 	        zindex: 10

@@ -38,6 +38,7 @@
 						
 						<label for="seltfacility" class="mobile">지점</label> 
 						<select id="seltfacility" class="mobile">
+							<option value="전체">- 전 체 -</option>  
 							<option th:each="facilityName : ${facilityNames}" th:value="${facilityName}" th:text="${facilityName}">지사</option>
 						</select> 
 						
