@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.woori.romas.domain.DashboardInfo;
-import net.woori.romas.domain.DashboardInfo.UpDown;
 import net.woori.romas.domain.TableInfo;
+import net.woori.romas.domain.DashboardInfo.UpDown;
 import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirOperation.OperationType;
 import net.woori.romas.domain.param.SearchParam;
