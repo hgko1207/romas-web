@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout/default_layout">
+
+<th:block layout:fragment="css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
+	<link rel="stylesheet" th:href="@{/css/page/home.css}" >
+</th:block>
+
+<th:block layout:fragment="content">
+	<div class="rm-container mobile">
+		<!-- left section -->
+		<div class="rm-panel left mobile">
+			<div class="rm-panel-wrap mobile">
+				<div class="rm-panel-area first nobg mobile">
+					<div class="rm-panel-box">
+						<div class="rm-panel-inner mr4">
+							<div class="rm-content">
+								<!-- 현재시간 -->
+								<h2 class="rm-time-tit mobile">
+									<span>
+				                        <svg xmlns="http://www.w3.org/2000/svg" width="11.5" height="11.5" viewBox="0 0 11.5 11.5">
+				                          <g transform="translate(-40.245 -76.072)">
+				                            <circle cx="5" cy="5" r="5" transform="translate(40.995 76.822)" fill="none" stroke="#fff" stroke-width="1.5"/>
+				                            <path d="M-2003.5,5721.365v-2.427" transform="translate(2049.59 -5639.449)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+				                            <path d="M0,2.427V0" transform="translate(48.516 81.916) rotate(90)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+				                          </g>
+				                        </svg>
+				                    </span>
+									현재시간
+								</h2>
+								<div class="rm-time-group mobile">
+									<strong id="current_time" class="rm-time mobile"></strong> 
+									<span class="rm-date"><span id="current_date"></span><em id="current_day" class="rm-day"></em></span>
+								</div>
+							</div>
+						</div>
+
+						<div class="rm-panel-inner ml4">
+							<div class="rm-content nobg">
+								<div class="rm-content-wrap mb4">
+									<!-- 기상특보 -->
+									<h2 class="rm-weather-tit mobile">
+										<span>
+				                          <svg xmlns="http://www.w3.org/2000/svg" width="11.234" height="13.023" viewBox="0 0 11.234 13.023">
+				                            <g transform="translate(-40.745 -75.265)">
+				                              <path d="M40.87,83.8V79.015a3.639,3.639,0,0,1,3.639-3.64h0a3.639,3.639,0,0,1,3.64,3.64V83.8" transform="translate(1.625 0.64)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.5"/>
+				                              <path d="M44.155,85.036A2.286,2.286,0,0,0,46.44,82.75H41.87A2.285,2.285,0,0,0,44.155,85.036Z" transform="translate(2.125 3.252)" fill="#fff"/>
+				                              <path d="M41.5,86h9.734" transform="translate(0 -1.565)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+				                            </g>
+				                          </svg>
+				                        </span>
+										기상특보
+									</h2>
+									<span id="wthrWrn_date" class="rm-weather-date"></span> 
+									<strong id="wthrWrn_title" class="rm-weather-txt"></strong>
+								</div>
+								<div class="rm-content-wrap mt4">
+									<!-- 홍수단계 -->
+									<h2 class="rm-flood-tit">홍수단계</h2>
+									<span class="rm-flood-status-txt care mobile">관심</span>
+									<div class="rm-flood-status-group mobile">
+										<span class="rm-flood-status care mobile"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="rm-panel-area middle white-bg mobile">
+					<!-- 기상청 -->
+					<div class="rm-weather-center-group">
+						<embed src="https://www.weather.go.kr/wgis-nuri/html/map.html"></embed>
+					</div>
+				</div>
+				<div class="rm-panel-area mb0 last mobile">
+					<!-- 뉴시스 -->
+					<div class="rm-news-group rm-scroll mobile" id="news_data">
+						<!-- <article>
+							<h2 class="rm-news-title">보령댐 가뭄 경계단계 진입충남도, 선제 대응체계 가동</h2>
+							<p class="rm-news-txt">[홍성=뉴시스] 충남도, 보령댐 가뭄상황 보고회 모습. *재판매 및
+								DB 금지[홍성=뉴시스] 유효상 기자 = 보령댐이 가뭄 경계단계에 진입했다. 이에 따라 충남도는 도내 서부권
+								충남도, 보령댐 가뭄상황 보고회 모습. *재판매 및 DB 금지[홍성=뉴시스] 유효상 기자 = 보령댐이 가뭄
+								경계단계에 진입했다. 이에 따라 충남도는 도내 서부권</p>
+							<em class="rm-news-region">충청남도 보령시</em> 
+							<span class="rm-news-date">뉴시스 2021-08-18</span>
+						</article>
+						<article>
+							<h2 class="rm-news-title">보령댐 가뭄 경계단계 진입충남도, 선제 대응체계 가동</h2>
+							<p class="rm-news-txt">[홍성=뉴시스] 충남도, 보령댐 가뭄상황 보고회 모습. *재판매 및
+								DB 금지[홍성=뉴시스] 유효상 기자 = 보령댐이 가뭄 경계단계에 진입했다. 이에 따라 충남도는 도내 서부권
+								충남도, 보령댐 가뭄상황 보고회 모습. *재판매 및 DB 금지[홍성=뉴시스] 유효상 기자 = 보령댐이 가뭄
+								경계단계에 진입했다. 이에 따라 충남도는 도내 서부권</p>
+							<em class="rm-news-region">충청남도 보령시</em> 
+							<span class="rm-news-date">뉴시스 2021-08-18</span>
+						</article> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- center section -->
+		<div class="rm-panel center mobile">
+			<div class="rm-panel-wrap">
+				<div class="rm-panel-area mb0 mobile">
+					<!-- 맵차트 -->
+					<div class="rm-mapchart mobile">
+						<!-- <img src="images/img_map_chart.png" alt="맵차트"> -->
+						<div class="map-container" id="vMap"></div>
+						<!-- 지도 위에 팝업이 나타날 부분 -->
+					    <div id="popup">
+					    	<div id="popup-content"></div>
+					    </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- right section -->
+		<div class="rm-panel right mobile">
+			<div class="rm-panel-wrap">
+				<div class="rm-panel-area first nobg mobile">
+					<div class="rm-panel-box">
+						<div class="rm-panel-inner mr4">
+							<div class="rm-content">
+								<!-- 저수율현황1 -->
+								<div id="all_reservoir_status" class="rm-reservoir-rate-group mobile">
+									<span class="rm-reservoir-region">전국</span> 
+									<span id="all_reservoir_rate" class="rm-reservoir-rate"></span> 
+									<span id="all_reservoir_gap" class="rm-reservoir-gap"></span>
+								</div>
+							</div>
+						</div>
+						<div class="rm-panel-inner ml4">
+							<div class="rm-content">
+								<!-- 저수율현황2 -->
+								<div id="reservoir_status" class="rm-reservoir-rate-group mobile">
+									<span id="area_name" class="rm-reservoir-region"></span> 
+									<span id="reservoir_rate" class="rm-reservoir-rate"></span> 
+									<span id="reservoir_gap" class="rm-reservoir-gap"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="rm-panel-area middle mobile">
+					<!-- 지역/지사/시설 -->
+					<div class="rm-region-btn-wrap mobile">
+						<button id="areaBtn" class="selected">지역</button>
+						<button id="branchBtn">지사</button>
+						<button id="facilityBtn">시설검색</button>
+					</div>
+					<div id="search_condition" class="rm-region-period mobile display-none">
+						<input type="text" id="nameText"/>
+						<button class="rm-primary-btn" id="searchBtn">검색</button>
+					</div>
+					<!-- <span class="rm-region-period mobile">기간: 21.05.23 ~ 21.09.25</span> -->
+					<div class="rm-region-table-group rm-scroll mobile">
+						<table class="rm-region-table" id="reservoirTable">
+							<caption class="blind">지역/지사/시 저수율현</caption>
+							<colgroup>
+								<col width="120">
+								<col>
+								<col>
+								<col>
+								<col>
+							</colgroup>
+							<thead>
+								<tr>
+									<th scope="col">구분</th>
+									<th scope="col">관심</th>
+									<th scope="col">주의</th>
+									<th scope="col">경계</th>
+									<th scope="col">심각</th>
+								</tr>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+				<div class="rm-panel-area mb0 last mobile">
+					<!-- 평년대비저수율 -->
+					<div class="rm-reservoir_graph_group">
+						<div class="chart has-fixed-height" id="rateChart"></div>
+						<span class="rm-reservoir_graph_txt">전국 평년대비 저수율: <em>123%</em>
+							(금일:81%, 평년:66%))
+						</span>
+						<!-- <img src="images/img_reservoir_graph.png" alt="기상청데이타"> 
+							<span class="rm-reservoir_graph_txt">전국 평년대비 저수율: <em>123%</em>
+							(금일:81%, 평년:66%))
+						</span> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</th:block>
+
+<th:block layout:fragment="script">
+	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+   	<script th:src="@{/js/common/vworld_map.js}"></script>
+	<script th:src="@{/js/common/bar_chart.js}"></script>
+	<script th:src="@{/js/home.js}"></script>
+</th:block>
+</html>

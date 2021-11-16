@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+html.mobile {height:auto;font-size:14px;}
+html.mobile body, html.mobile #wrapper {height:auto;}
+
+/* Header */
+nav {display:none;}
+.rm-mobile-menu-btn.mobile {display:inline-block;}
+h1 .rm-logo.mobile svg:first-child {display:inline-block;height:64px;}
+h1 .rm-logo.mobile svg:last-child {display:none;}
+
+/* 메인페이지 */
+/* main layout */
+.rm-container.mobile {display:flex;flex-flow:column nowrap;justify-content:flex-start;padding:2px;height:auto;min-width:0;min-height:0;}
+/* column-3 */
+.rm-panel.left.mobile {order:0;flex:1 0 auto;width:auto;}
+.rm-panel.center.mobile {order:1;flex:1 0 auto;width:auto;height:540px;}
+.rm-panel.right.mobile {order:2;flex:1 0 auto;width:auto;}
+/* column-3 > row-3 */
+.rm-panel-wrap.mobile {height:auto;}
+.rm-panel-area.mobile {min-height:0;}
+.rm-panel-area.first.mobile {flex:1 0 auto;height:200px;}
+.rm-panel-area.middle.mobile {flex:1 0 auto;height:364px;}
+.rm-panel-area.last.mobile {flex:1 0 auto;height:284px;}
+/* conner-case */
+.rm-panel.right .rm-panel-area.first.mobile {height:200px;}
+.rm-panel.right .rm-panel-area.last.mobile {flex:1 0 auto;height:220px;}
+
+/* 현재시간 */
+.rm-time.mobile {left:10px;}
+.rm-time.mobile + .rm-date {left:10px;}
+.rm-time-group.mobile {margin-left:-88px;margin-top:-30px;}
+.rm-time-group.mobile .rm-day {left:120px;top:-2px;width:40px;height:20px;line-height:22px;}
+
+/*기상특보 */
+.rm-weather-tit.mobile span {padding-top:3px;}
+.rm-weather-tit.mobile span svg {display:inline;}
+
+/* 홍수단계 */
+.rm-flood-status-group.mobile {margin-right:-95px;margin-top:-21px;width:151px;height:85px;}
+.rm-flood-status.mobile {left:22px;bottom:5px;width:108px;height:67px;}
+.rm-flood-status-txt.mobile {left:11px;top:34px;width:35px;height:20px;line-height:22px;}
+
+/* 뉴시스 */
+.rm-news-group.mobile {max-width:100%;}
+
+/* 맵차트 */
+.rm-mapchart.mobile img {height:480px;}
+
+/* 저수율현황 */
+.rm-reservoir-rate-group.mobile {background-position:142px 0 !important;}
+.rm-reservoir-rate-group.mobile .rm-reservoir-region {left:27px;top:10px;}
+.rm-reservoir-rate-group.mobile .rm-reservoir-rate {left:27px;}
+.rm-reservoir-rate-group.mobile .rm-reservoir-gap {left:139px;top:100px;width:50px;height:30px;line-height:32px;}
+
+/* 지역/지사/시설 */
+.rm-region-btn-wrap.mobile {margin-bottom:0;width:100%;}
+.rm-region-period.mobile {display:block;position:absolute;left:20px;top:64px;}
+.rm-region-table.mobile th,.rm-region-table.mobile td {height:27px;vertical-align:middle;}
+
+/* 서브 페이지 */
+/* sub layout */
+.rm-sub-container.mobile {position:relative;flex-flow:column nowrap;padding:2px;min-width:0;height:auto;}
+.rm-sub-panel.left.facility.mobile {flex:1 0 auto;}
+.rm-sub-panel.right.facility.mobile {flex:1 0 auto;}
+.rm-sub-panel.admin.mobile {flex:1 0 auto;}
+
+/* search area component set */
+.rm-search-wrap label.mobile {display:block;float:none;}
+.rm-search-wrap select.mobile {display:block;float:none;margin:0 0 8px 0;width:100%;}
+.rm-search-wrap input.mobile {display:block;float:none;margin:0 0 8px 0;width:100%;}
+.rm-search-by-period-btn.mobile {display:flex;margin-bottom:8px;width:auto;}
+.rm-search-period-input.mobile {display:flex;float:none;}
+.rm-search-period-input.mobile input:first-child {margin-left:0;}
+.rm-search-period-input.mobile input:last-child {margin-right:0;}
+.rm-search-period-btn.mobile {display:flex;float:none;margin-top:8px;width:auto;}
+.rm-button-group.mobile {float:none;margin-top:16px;}
+.rm-button-group.mobile button {width:auto;}
+.rm_input_select_group.mobile {display:flex;}
+.rm_input_select_group.mobile input {margin-left:0;}
+
+/* pagination component set*/
+.rm-pagination.mobile {display:none;}
+
+/* 관측결과 그래프 */
+.rm-result-wrap.mobile img {width:100%;max-width:100%;}
+
+/* 관리자 검색결과 */
+.rm-result-table-group.mobile {height:auto;}
+
+/* 신규제원정보 모달 */
+.modal.mobile {padding-top:0;}
+.modal-container.mobile {margin:16px;width:calc(100% - 32px);height:calc(100% - 32px);}

@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.rm-result-wrap.mobile .line-chart {
+	width: 100%;
+    max-width: 100%;
+	height: 300px;
+	margin: 0;
+	padding: 0;
+}
+
+.rm-time.mobile {
+    left: 0px;
+}
+
+.rm-time {
+	font-size: 2.8rem;
+}
+
+.rm-date {
+    font-size: 1rem !important;
+}
+
+.rm-time-group.mobile .rm-day {
+	left: 135px;
+}
+
+.rm-time.mobile + .rm-date {
+   	left: 0px;
+}
+
+.rm-reservoir-region {
+	font-size: 3.4rem !important;
+}
+
+.rm-reservoir-rate {
+	font-size: 3.5rem !important;
+}
+
+.table-group-top {
+	top: 90px !important;
+}
