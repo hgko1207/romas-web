@@ -39,6 +39,18 @@ nav a:hover {
 	display: none !important;
 }
 
+.modal-content {
+	border-radius: 0 !important;
+}
+
+.modal-footer:not([class*=bg-]) {
+	border-top-width: 0 !important;
+}
+
+.modal-footer .btn {
+    line-height: 0 !important;
+}
+
 /*******************************************************************************************************
  Table 디자인
 *******************************************************************************************************/
