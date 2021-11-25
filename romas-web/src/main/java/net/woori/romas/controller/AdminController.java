@@ -63,11 +63,10 @@ public class AdminController {
 			model.addAttribute("branchs", branchs);
 			
 			if (branchs.size() > 0) {
-				List<String> facilityNames = reservoirOperationService.getFacilityList(branchs.get(0));
-				model.addAttribute("facilityNames", facilityNames);
+				List<ReservoirOperation> facilityNames = reservoirOperationService.getFacilityList(branchs.get(0));
+				model.addAttribute("facilitys", facilityNames);
 			}
 		}
-
 	}
 	
 	/**

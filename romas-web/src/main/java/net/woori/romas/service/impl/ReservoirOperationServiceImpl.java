@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.db.ReservoirOperation.CompositeOperationPK;
 import net.woori.romas.domain.param.AdminSearchParam;
+import net.woori.romas.domain.param.FacilitySearchParam;
 import net.woori.romas.repository.ReservoirOperationRepository;
 import net.woori.romas.service.ReservoirOperationService;
 
@@ -98,7 +99,7 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 	 */
 	@Transactional(readOnly = true)
 	@Override
-	public List<String> getFacilityList(String branch) {
+	public List<ReservoirOperation> getFacilityList(String branch) {
 		return reservoirLevelRepository.getFacilityNameList(branch);
 	}
 	
@@ -120,5 +121,10 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 		}
 		
 		return reservoirLevelRepository.findByFacilityNameContainingAndMonthAndEml(facilityName, month, eml);
+	}
+
+	@Override
+	public List<ReservoirOperation> getList(FacilitySearchParam param) {
+		return reservoirLevelRepository.getList(param.getFacCode(), param.getStartDate(), param.getEndDate());
 	}
 }

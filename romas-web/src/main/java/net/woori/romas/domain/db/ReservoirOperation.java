@@ -73,16 +73,19 @@ public class ReservoirOperation implements Domain {
 	private float waterLevel;
 	
 	@Transient
+	private float rate;
+	
+	@Transient
 	private float emptyLevel;
 	
 	public ReservoirOperation(String resultDate, float emptyLevel, float seriousWaterLevel, float boudaryWaterLevel, float cautionWaterLevel,
-			float attentionWaterLevel, float waterLevel) {
+			float attentionWaterLevel, float rate) {
 		this.resultDate = resultDate;
 		this.seriousWaterLevel = seriousWaterLevel;
 		this.boudaryWaterLevel = boudaryWaterLevel;
 		this.cautionWaterLevel = cautionWaterLevel;
 		this.attentionWaterLevel = attentionWaterLevel;
-		this.waterLevel = waterLevel;
+		this.rate = rate;
 		this.emptyLevel = emptyLevel;
 	}
 	

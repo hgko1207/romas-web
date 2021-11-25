@@ -17,7 +17,6 @@ var DataTable = {
 		    	width: "100px",
 		    	render: function(data, type, row, meta) {
 		    		return '<button class="rm-inner-btn" onclick="importData()">수정</button>';
-		    		/*return '<input type="file" class="rm-inner-btn" id="btnAttachment" onclick="openFile()" value="File"/>';*/
 		    	}
 		    }
 		]
@@ -32,7 +31,7 @@ function importData() {
 	input.type = 'file';
 	input.onchange = _ => {
 		// you can use this method to get file and perform respective operations
-        let files =   Array.from(input.files);
+        let files = Array.from(input.files);
         console.log(files);
     };
     input.click();
@@ -96,8 +95,8 @@ $(document).ready(function() {
 					
 					$.each(response, function (i, item) {
 						$('#seltfacility').append($('<option>', {
-						    value: item,
-						    text: item
+						    value: item.facilityName,
+						    text: item.facilityName
 						}));
 					});
 				} else {

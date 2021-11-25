@@ -5,6 +5,7 @@ import java.util.List;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.db.ReservoirOperation.CompositeOperationPK;
 import net.woori.romas.domain.param.AdminSearchParam;
+import net.woori.romas.domain.param.FacilitySearchParam;
 
 public interface ReservoirOperationService extends CRUDService<ReservoirOperation, CompositeOperationPK> {
 
@@ -16,6 +17,8 @@ public interface ReservoirOperationService extends CRUDService<ReservoirOperatio
 
 	List<String> getBranchList(String regionalHead);
 
-	List<String> getFacilityList(String branch);
+	List<ReservoirOperation> getFacilityList(String branch);
+
+	List<ReservoirOperation> getList(FacilitySearchParam param);
 
 }

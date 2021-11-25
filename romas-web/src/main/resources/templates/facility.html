@@ -24,64 +24,86 @@
 						<tbody>
 							<tr>
 								<th scope="row">표준코드</th>
-								<td th:text="${reservoir.facCode}"></td>
+								<td id="facCodeText" th:text="${reservoir?.facCode}"></td>
 							</tr>
 							<tr>
 								<th scope="row">시설명</th>
-								<td th:text="${reservoir.facilityName}"> 저수지</td>
+								<td id="facilityNameText" th:text="${reservoir?.facilityName}"></td>
 							</tr>
 							<tr>
 								<th scope="row">소재지</th>
-								<td th:text="${reservoirMgmt.address}"></td>
+								<td id="addressText" th:text="${reservoirMgmt?.address}"></td>
 							</tr>
 							<tr>
 								<th scope="row">수원 공구분</th>
-								<td th:text="${reservoir.waterClass}">주수원</td>
+								<td id="waterClassText" th:text="${reservoir?.waterClass}"></td>
 							</tr>
 							<tr>
 								<th scope="row">종별</th>
-								<td th:text="${reservoirMgmt.classification}"></td>
+								<td id="classificationText" th:text="${reservoirMgmt?.classification}"></td>
 							</tr>
 							<tr>
 								<th scope="row">제체길이</th>
-								<td th:text="${reservoirMgmt.length} + 'm'"></td>
+								<td id="lengthText">
+									<div th:if="${reservoirMgmt != null}">
+										<span th:text="${reservoirMgmt.length}"></span> m
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<th scope="row">제체높이</th>
-								<td th:text="${reservoirMgmt.height} + 'm'"></td>
+								<td id="heightText">
+									<div th:if="${reservoirMgmt != null}">
+										<span th:text="${reservoirMgmt.height}"></span> m
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<th scope="row">총저수</th>
-								<td>
-									<span th:text="${reservoir.totalStroageCapacity}"></span>m<sup>2</sup>
+								<td id="totalStroageCapacityText">
+									<div th:if="${reservoir != null}">
+										<span th:text="${reservoir.totalStroageCapacity}"></span> ㎡ 
+									</div>
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">유요저수</th>
-								<td>
-									<span th:text="${reservoir.enableStorageCapacity}"></span>m<sup>2</sup>
+								<td id="enableStorageCapacityText">
+									<div th:if="${reservoir != null}">
+										<span th:text="${reservoir.enableStorageCapacity}"></span> ㎡ 
+									</div>
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">금일저수량</th>
-								<td th:text="${rate} + '%'"></td>
+								<td id="rateText">
+									<div th:if="${rate != null}">
+										<span th:text="${rate} + '%'"></span>
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<th scope="row">유역면적</th>
-								<td>
-									<span th:text="${reservoir.watershedArea}"></span>(만m<sup>3</sup>)
+								<td id="watershedAreaText">
+									<div th:if="${reservoir != null}">
+										<span th:text="${reservoir.watershedArea}"></span> (만㎥)
+									</div>
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">수혜면적</th>
-								<td>
-									<span th:text="${reservoir.beneArea}"></span>(만m<sup>3</sup>)
+								<td id="beneAreaText">
+									<div th:if="${reservoir != null}">
+										<span th:text="${reservoir.beneArea}"></span> (만㎥)
+									</div>
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">만수면적</th>
-								<td>
-									<span th:text="${reservoirMgmt.pullArea}"></span>(만m<sup>3</sup>)
+								<td id="pullAreaText">
+									<div th:if="${reservoir != null}">
+										<span th:text="${reservoirMgmt.pullArea}"></span> (만㎥)
+									</div>
 								</td>
 							</tr>
 						</tbody>
@@ -96,11 +118,15 @@
 						<tbody>
 							<tr>
 								<th scope="row">관리자</th>
-								<td th:text="${reservoir.facilityName} + '지사'"></td>
+								<td id="adminText">
+									<div th:if="${reservoir != null}">
+										<span th:text="${reservoir.facilityName} + '지사'"></span>
+									</div>
+								</td>
 							</tr>
 							<tr>
 								<th scope="row">관리자주소</th>
-								<td th:text="${reservoirMgmt.mgmtAdress}"></td>
+								<td id="mgmtAdressText" th:text="${reservoirMgmt?.mgmtAdress}"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -114,11 +140,11 @@
 						<tbody>
 							<tr>
 								<th scope="row">착공일</th>
-								<td th:text="${#dates.format(reservoirMgmt.startDate, 'yyyy-MM-dd')}"></td>
+								<td id="startDateText" th:text="${reservoirMgmt != null ? #dates.format(reservoirMgmt.startDate, 'yyyy-MM-dd') : ''}"></td>
 							</tr>
 							<tr>
 								<th scope="row">준공일</th>
-								<td th:text="${#dates.format(reservoirMgmt.completionDate, 'yyyy-MM-dd')}"></td>
+								<td id="completionDateText" th:text="${reservoirMgmt != null ? #dates.format(reservoirMgmt.completionDate, 'yyyy-MM-dd') : ''}"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -133,13 +159,21 @@
 				<h2 class="rm-basic-title-02">관측결과[연산1]</h2>
 				<!-- 검색영역 -->
 				<div class="rm-search-wrap">
-					<ul class="rm-search-by-period-btn mobile" id="condition_ul">
-						<li><button id="dayBtn" class="selected">일별</button></li>
-						<li><button id="sonBtn">순별</button></li>
-						<li><button id="monthBtn">월별</button></li>
-						<li><button id="yearBtn">연별</button></li>
-						<li><button id="timeBtn">시간별</button></li>
-					</ul>
+					<label for="seltHq" class="mobile">본부</label>
+		                <select id="seltHq" class="mobile">
+		                	<option th:each="regionalHead : ${regionalHeads}" th:value="${regionalHead}" th:text="${regionalHead}"></option>
+		                </select>
+						
+						<label for="seltBranch" class="mobile">지사</label> 
+						<select id="seltBranch" class="mobile">
+							<option th:each="branch : ${branchs}" th:value="${branch}" th:text="${branch}">지사</option>
+						</select> 
+						
+						<label for="seltfacility" class="mobile">지점</label> 
+						<select id="seltfacility" class="mobile">
+							<option th:each="facility : ${facilitys}" th:value="${facility.facCode}" th:text="${facility.facilityName}">지사</option>
+						</select> 
+					
 					<div class="mt20">
 						<label for="inptPeriodStart" class="mobile">조회기간</label>
 						<div class="rm-search-period-input mobile">

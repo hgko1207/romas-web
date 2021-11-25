@@ -1,5 +1,6 @@
 package net.woori.romas.service.impl;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirLevel.CompositePK;
+import net.woori.romas.domain.param.FacilitySearchParam;
 import net.woori.romas.repository.ReservoirLevelRepository;
 import net.woori.romas.service.ReservoirLevelService;
 
@@ -23,6 +25,8 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 
 	@Autowired
 	private ReservoirLevelRepository reservoirLevelRepository;
+	
+	private SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
 	
 	@Override
 	public ReservoirLevel get(CompositePK id) {
@@ -78,5 +82,14 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	@Override
 	public float getList(String date, String area) {
 		return reservoirLevelRepository.getList(date, area);
+	}
+
+	@Override
+	public List<ReservoirLevel> getList(FacilitySearchParam param) {
+		
+		String startDate = dateFormat.format(param.getStartDate()) + " 00:00:00";
+		String endDate = dateFormat.format(param.getEndDate()) + " 23:59:59";
+		
+		return reservoirLevelRepository.getList(param.getFacCode(), startDate, endDate);
 	}
 }

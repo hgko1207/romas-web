@@ -95,7 +95,7 @@ function showPopup(map) {
         
         //마커가 있을 경우
         if (hover){
-        	const content = hover.get('name');
+        	const content = `<div class='map-content'>${hover.get('name')}</div>`;
         	
         	//popup-content 부분에 content를 넣어줌
         	popupContent.innerHTML = content;
@@ -201,8 +201,25 @@ $(document).ready(function() {
     			type: "GET",
     			success: function(response) {
     				$.each(response, function(i, data) {
-    					VWorldMap.addMarker(map, data.longitude, data.latitude, data.facCode, data.level);
+    					var name = `<div>지역: ${data.branch}</div><div>시설: ${data.facilityName}</div>`;
+    					VWorldMap.addMarker(map, data.longitude, data.latitude, data.facCode, name, data.level);
     				});
+    			}
+    		});
+    		
+    		showPopup(map);
+    		
+    		let clicker = null;
+    		map.on('click', function(evt) {
+    			map.forEachFeatureAtPixel(evt.pixel, function(f) {
+    				clicker = f;
+    				return true;
+    			});
+    			
+    			if (clicker != null) {
+    				var id = clicker.get('id');
+    				location.href = contextPath + "/facility/" + id;
+    				clicker = null;
     			}
     		});
     	}

@@ -30,12 +30,13 @@ var VWorldMap = function() {
 		return map;
 	};
 	
-	const addMarker = function(map, lon, lat, name, level) { //경도 위도 이름값(마커들을 구분하기위해)
+	const addMarker = function(map, lon, lat, id, name, level) { //경도 위도 이름값(마커들을 구분하기위해)
 		
 		// 마커 feature 설정
 		var feature = new ol.Feature({
 	        geometry: new ol.geom.Point(ol.proj.fromLonLat([lon, lat])), //경도 위도에 포인트 설정
 	        name: name,
+	        id: id
 //	        text: new ol.style.Text({
 //	            text: "Test text",
 //	            scale: 1.2,
@@ -88,8 +89,8 @@ var VWorldMap = function() {
         init: function(id) {
         	return createMap(id);
         },
-        addMarker: function(map, lon, lat, name, level) {
-        	return addMarker(map, lon, lat, name, level);
+        addMarker: function(map, lon, lat, id, name, level) {
+        	return addMarker(map, lon, lat, id, name, level);
         },
     }
 }();
