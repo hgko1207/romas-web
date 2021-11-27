@@ -165,6 +165,19 @@ function getChartInfo() {
 	});
 }
 
+/** 평년대비 저수율 정보 조회 */
+function getRateInfo() {
+	$.ajax({
+		url: contextPath + "/home/rate",
+		type: "GET",
+		success: function(response) {
+			console.log(response);
+			$('#gapText').text(response.gap + "% ");
+			$('#rateText').text(`(금일:${response.todayValue}%, 평년:${response.commonYearValue}%)`);
+		}
+	});
+}
+
 /** 대쉬보드 정보 표출 */
 function showDashboardInfo() {
 	var index = 1;
@@ -189,6 +202,7 @@ $(document).ready(function() {
 	getWeatherInfo();
 	getNewsInfo();
 	getChartInfo();
+	getRateInfo();
 	showDashboardInfo();
 	
 	let map;

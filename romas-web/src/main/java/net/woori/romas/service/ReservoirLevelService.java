@@ -16,4 +16,10 @@ public interface ReservoirLevelService extends CRUDService<ReservoirLevel, Compo
 
 	List<ReservoirLevel> getList(FacilitySearchParam param);
 
+	Float getRateAllList(String date);
+	
+	List<Float> getList(String date);
+
+	Float getAvgList(String startDate, String endDate);
+
 }

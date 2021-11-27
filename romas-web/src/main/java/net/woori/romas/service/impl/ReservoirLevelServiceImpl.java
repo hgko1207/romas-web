@@ -26,7 +26,7 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	@Autowired
 	private ReservoirLevelRepository reservoirLevelRepository;
 	
-	private SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
+	private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	
 	@Override
 	public ReservoirLevel get(CompositePK id) {
@@ -84,6 +84,7 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 		return reservoirLevelRepository.getList(date, area);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public List<ReservoirLevel> getList(FacilitySearchParam param) {
 		
@@ -91,5 +92,28 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 		String endDate = dateFormat.format(param.getEndDate()) + " 23:59:59";
 		
 		return reservoirLevelRepository.getList(param.getFacCode(), startDate, endDate);
+	}
+
+	/**
+	 * 전국 저수율 평균 조회
+	 */
+	@Transactional(readOnly = true)
+	@Override
+	public Float getRateAllList(String date) {
+		return reservoirLevelRepository.getRateAllList(date);
+	}
+
+	/**
+	 * 지역별로 저수율 평균 조회
+	 */
+	@Transactional(readOnly = true)
+	@Override
+	public List<Float> getList(String date) {
+		return reservoirLevelRepository.getList(date);
+	}
+
+	@Override
+	public Float getAvgList(String startDate, String endDate) {
+		return reservoirLevelRepository.getAvgList(startDate, endDate);
 	}
 }

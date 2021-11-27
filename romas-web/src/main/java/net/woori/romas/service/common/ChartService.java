@@ -2,7 +2,6 @@ package net.woori.romas.service.common;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,12 +11,12 @@ import net.woori.romas.domain.Enums.GroupType;
 import net.woori.romas.domain.chart.BarChartSeries;
 import net.woori.romas.domain.chart.ChartInfo;
 import net.woori.romas.domain.chart.LineChartSeries;
-import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.param.FacilitySearchParam;
 import net.woori.romas.domain.param.SearchParam;
 import net.woori.romas.service.ReservoirLevelService;
 import net.woori.romas.service.ReservoirOperationService;
+import net.woori.romas.util.DateUtil;
 
 /**
  * 차트 관리 서비스
@@ -28,7 +27,7 @@ import net.woori.romas.service.ReservoirOperationService;
 @Service
 public class ChartService {
 	
-	private SimpleDateFormat dateFormat = new SimpleDateFormat("MM.DD");
+	private SimpleDateFormat dateFormat = new SimpleDateFormat("MM.dd");
 	
 	@Autowired
 	private ReservoirOperationService reservoirOperationService;
@@ -42,21 +41,19 @@ public class ChartService {
 	 */
 	public ChartInfo createBarChartInfo() {
 		
-		ChartInfo chartInfo = new ChartInfo();
+		String day = DateUtil.getDate(-1);
+		
+		Float value = reservoirLevelService.getRateAllList(day);
 		
 		BarChartSeries barChartSeries = new BarChartSeries();
-		barChartSeries.addDataItem(110);
-		barChartSeries.addDataItem(75);
-		barChartSeries.addDataItem(90);
-		barChartSeries.addDataItem(70);
-		barChartSeries.addDataItem(80);
-		barChartSeries.addDataItem(105);
-		barChartSeries.addDataItem(95);
-		barChartSeries.addDataItem(100);
-		barChartSeries.addDataItem(75);
-		barChartSeries.addDataItem(100);
-		barChartSeries.setYAxis(110);
+		barChartSeries.addDataItem(value);
+		barChartSeries.setYAxis(value);
 		
+		reservoirLevelService.getList(day).forEach(data -> {
+			barChartSeries.addDataItem(data);
+		});
+		
+		ChartInfo chartInfo = new ChartInfo();
 		chartInfo.setBarChartSeries(barChartSeries);
 		
 		return chartInfo;
@@ -101,7 +98,7 @@ public class ChartService {
 	 */
 	public List<ReservoirOperation> createGoogleChartInfo(FacilitySearchParam param) {
 		
-		long diffDays = calDiffDays(param.getStartDate(), param.getEndDate());
+		long diffDays = DateUtil.calDiffDays(param.getStartDate(), param.getEndDate());
 		param.setGroupType(diffDays > 31 ? GroupType.MONTH : GroupType.DAY);
 		
 //		reservoirOperationService.getList(param);
@@ -128,12 +125,4 @@ public class ChartService {
 		
 		return reservoirOperations;
 	}
-	
-	private long calDiffDays(Date startDate, Date endDate) {
-		
-		long calDate = endDate.getTime() - startDate.getTime(); 
-
-		return calDate / (24 * 60 * 60 * 1000);
-	}
 }
-

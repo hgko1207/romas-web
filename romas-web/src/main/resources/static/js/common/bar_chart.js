@@ -50,7 +50,8 @@ var EchartsBarChart = function() {
                       alignWithLabel: true
                     },
                     // prettier-ignore
-                    data: ['전국', '경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주'],
+                    //data: ['전국', '경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주'],
+                    data: ['전국', '강원', '경기', '경남', '경북', '전남', '전북', '제주', '충남', '충북'],
                     axisLabel: {
                     	color: '#fff',
                     }
@@ -60,7 +61,7 @@ var EchartsBarChart = function() {
                 		type: 'value',
                 		name: '평년대비저수율(%)',
                 		min: 0,
-                		max: 150,
+                		max: 100,
                 		position: 'left',
                 		nameLocation: "middle",
                 		nameTextStyle: {

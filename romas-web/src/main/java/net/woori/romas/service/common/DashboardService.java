@@ -1,6 +1,5 @@
 package net.woori.romas.service.common;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -9,13 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import net.woori.romas.domain.DashboardInfo;
-import net.woori.romas.domain.TableInfo;
 import net.woori.romas.domain.DashboardInfo.UpDown;
+import net.woori.romas.domain.TableInfo;
 import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirOperation.OperationType;
 import net.woori.romas.domain.param.SearchParam;
 import net.woori.romas.service.ReservoirLevelService;
 import net.woori.romas.service.ReservoirOperationService;
+import net.woori.romas.util.DateUtil;
 
 /**
  * 대쉬보드 관리 서비스
@@ -25,8 +25,6 @@ import net.woori.romas.service.ReservoirOperationService;
  */
 @Service
 public class DashboardService {
-	
-	private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 	
 	@Autowired
 	private ReservoirLevelService reservoirLevelService;
@@ -44,8 +42,8 @@ public class DashboardService {
 	 */
 	public DashboardInfo createDashboardInfo(String name) {
 		
-		String day1 = getDate(-1);
-		String day2 = getDate(-2);
+		String day1 = DateUtil.getDate(-1);
+		String day2 = DateUtil.getDate(-2);
 		
 		float value1 = 0;
 		float value2 = 0;
@@ -123,16 +121,34 @@ public class DashboardService {
 		
 		return tableInfos;
 	}
-	
+
 	/**
-	 * 날짜 가져오기
-	 * @param value
+	 * 저수율 조회
 	 * @return
 	 */
-	private String getDate(int value) {
-		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, value);
+	public DashboardInfo getRateInfo() {
 		
-		return dateFormat.format(calendar.getTime());
+		Calendar calendar = Calendar.getInstance();
+		int year = calendar.get(Calendar.YEAR);
+		
+		String startDate = year + "-01-01";
+		String endDate = year + "-12-31";
+		
+		Float value1 = reservoirLevelService.getRateAllList(DateUtil.getDate(-1));
+		Float value2 = reservoirLevelService.getAvgList(startDate, endDate);
+		
+		DashboardInfo dashboardInfo = new DashboardInfo();
+		dashboardInfo.setTodayValue(value1);
+		dashboardInfo.setCommonYearValue(value2);
+		
+		if (value1 > value2) {
+			dashboardInfo.setGap((int)Math.round((value1 / value2) * 100));
+		} else if (value1 == value2) {
+			dashboardInfo.setGap(100);
+		} else {
+			dashboardInfo.setGap((int)Math.round(value2 / value1) * 100);
+		}
+		
+		return dashboardInfo;
 	}
 }

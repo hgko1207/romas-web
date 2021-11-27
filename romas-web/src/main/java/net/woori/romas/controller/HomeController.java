@@ -55,6 +55,16 @@ public class HomeController {
 	}
 	
 	/**
+	 * 차트 정보 조회
+	 * @return
+	 */
+	@GetMapping("rate")
+	@ResponseBody
+	public DashboardInfo rate() {
+		return dashboardService.getRateInfo();
+	}
+	
+	/**
 	 * 대쉬보드 정보 조회
 	 * @param name
 	 * @return
@@ -84,7 +94,6 @@ public class HomeController {
 	@PostMapping("table")
 	@ResponseBody
 	public List<TableInfo> getTableInfo(@RequestBody SearchParam param) {
-		System.err.println(param);
 		return dashboardService.getTableInfo(param);
 	}
 }

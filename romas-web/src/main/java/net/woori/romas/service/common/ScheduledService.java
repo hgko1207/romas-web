@@ -61,7 +61,7 @@ public class ScheduledService {
 	/**
 	 * 저수지 수위 정보 삽입
 	 */
-	@Scheduled(cron = "0 0 18 * * *")
+	@Scheduled(cron = "0 0 01 * * *")
 //	@PostConstruct
 	public void insertReservoirWaterLevel() {
 		
@@ -201,7 +201,7 @@ public class ScheduledService {
 	private String createUrl(String url, String facCode) {
 		
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, -1);
+		calendar.add(Calendar.DATE, -7);
 		
 		String yesterday = dateFormat.format(calendar.getTime());
 		String today = dateFormat.format(new Date());
