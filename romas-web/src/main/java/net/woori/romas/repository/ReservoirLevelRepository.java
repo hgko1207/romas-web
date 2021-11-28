@@ -9,6 +9,8 @@ import net.woori.romas.domain.db.ReservoirLevel.CompositePK;
 
 public interface ReservoirLevelRepository extends DefaultRepository<ReservoirLevel, CompositePK> {
 
+	final String SELECT = "check_date, fac_code, country, fac_name, water_level, create_date, branch, regional_head";
+	
 	@Query(value = "SELECT round(avg(water_level)) FROM tb_reservoir_level WHERE create_date = ?1", nativeQuery = true)
 	float getAllList(String date);
 	
@@ -26,4 +28,7 @@ public interface ReservoirLevelRepository extends DefaultRepository<ReservoirLev
 
 	@Query(value = "SELECT round(avg(rate)) FROM tb_reservoir_level WHERE check_date BETWEEN ?1 ANd ?2", nativeQuery = true)
 	Float getAvgList(String startDate, String endDate);
+
+	@Query(value = "SELECT " + SELECT + ", round(avg(rate)) as rate FROM tb_reservoir_level WHERE fac_code = ?1 AND check_date BETWEEN ?2 ANd ?3 GROUP BY MONTH(check_date)", nativeQuery = true)
+	List<ReservoirLevel> getMonthGroupList(String facCode, String startDate, String endDate);
 }

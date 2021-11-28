@@ -34,4 +34,6 @@ public interface ReservoirOperationRepository extends DefaultRepository<Reservoi
 	@Query(value = "SELECT * FROM tb_reservoir_operation WHERE facCode = ?1", nativeQuery = true)
 	List<ReservoirOperation> getList(String facCode, Date startDate, Date endDate);
 
+	ReservoirOperation findByFacCodeAndMonthAndEml(String facCode, int month, String eml);
+
 }

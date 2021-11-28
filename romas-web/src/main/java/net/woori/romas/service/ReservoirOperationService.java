@@ -1,5 +1,6 @@
 package net.woori.romas.service;
 
+import java.util.Date;
 import java.util.List;
 
 import net.woori.romas.domain.db.ReservoirOperation;
@@ -20,5 +21,7 @@ public interface ReservoirOperationService extends CRUDService<ReservoirOperatio
 	List<ReservoirOperation> getFacilityList(String branch);
 
 	List<ReservoirOperation> getList(FacilitySearchParam param);
+
+	ReservoirOperation get(String facCode, Date checkDate);
 
 }

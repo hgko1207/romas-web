@@ -28,6 +28,7 @@ import net.woori.romas.util.DateUtil;
 public class ChartService {
 	
 	private SimpleDateFormat dateFormat = new SimpleDateFormat("MM.dd");
+	private SimpleDateFormat monthFormat = new SimpleDateFormat("MM월");
 	
 	@Autowired
 	private ReservoirOperationService reservoirOperationService;
@@ -60,6 +61,45 @@ public class ChartService {
 	}
 	
 	/**
+	 * 시설별 현황 그래프 조회
+	 * @param param 
+	 * @return
+	 */
+	public List<ReservoirOperation> createGoogleChartInfo(FacilitySearchParam param) {
+		
+		long diffDays = DateUtil.calDiffDays(param.getStartDate(), param.getEndDate());
+		param.setGroupType(diffDays > 31 ? GroupType.MONTH : GroupType.DAY);
+		
+		List<ReservoirOperation> reservoirOperations = new ArrayList<>();
+		
+		reservoirLevelService.getList(param).forEach(data -> {
+			String date = "";
+			if (param.getGroupType() == GroupType.DAY) {
+				date = dateFormat.format(data.getCheckDate());
+			} else {
+				date = monthFormat.format(data.getCheckDate());
+			}
+			ReservoirOperation reservoirOperation = reservoirOperationService.get(data.getFacCode(), data.getCheckDate());
+			reservoirOperations.add(new ReservoirOperation(date, reservoirOperation, data.getRate()));
+		});
+
+//		reservoirOperations.add(new ReservoirOperation("1.10", 58, 1, 2, 3, 14, 52));
+//		reservoirOperations.add(new ReservoirOperation("2.10", 64, 1, 2, 3, 18, 54));
+//		reservoirOperations.add(new ReservoirOperation("3.10", 71, 1, 2, 4, 16, 60));
+//		reservoirOperations.add(new ReservoirOperation("4.10", 68, 1, 2, 3, 14, 70));
+//		reservoirOperations.add(new ReservoirOperation("5.10", 40, 2, 4, 5, 18, 46));
+//		reservoirOperations.add(new ReservoirOperation("6.10", 21, 2, 4, 4, 21, 35));
+//		reservoirOperations.add(new ReservoirOperation("7.10", 29.5f, 1.5f, 1, 3, 22, 75));
+//		reservoirOperations.add(new ReservoirOperation("8.10", 38, 2, 4, 4, 20, 77));
+//		reservoirOperations.add(new ReservoirOperation("9.10", 41, 2, 3, 3, 21, 82));
+//		reservoirOperations.add(new ReservoirOperation("10.10", 48, 2, 4, 4, 17, 89));
+//		reservoirOperations.add(new ReservoirOperation("11.10", 54, 2, 3, 4, 14, 87));
+//		reservoirOperations.add(new ReservoirOperation("12.10", 59, 1, 2, 2, 18, 90));
+		
+		return reservoirOperations;
+	}
+	
+	/**
 	 * 
 	 * @param param
 	 * @return
@@ -89,40 +129,5 @@ public class ChartService {
 		chartInfo.addLineChartSeries(lineChartSeries);
 		
 		return chartInfo;
-	}
-	
-	/**
-	 * 
-	 * @param param 
-	 * @return
-	 */
-	public List<ReservoirOperation> createGoogleChartInfo(FacilitySearchParam param) {
-		
-		long diffDays = DateUtil.calDiffDays(param.getStartDate(), param.getEndDate());
-		param.setGroupType(diffDays > 31 ? GroupType.MONTH : GroupType.DAY);
-		
-//		reservoirOperationService.getList(param);
-		
-		List<ReservoirOperation> reservoirOperations = new ArrayList<>();
-		
-		reservoirLevelService.getList(param).forEach(data -> {
-			String date = dateFormat.format(data.getCheckDate());
-			reservoirOperations.add(new ReservoirOperation(date, 0, 0, 0, 0, 0, data.getRate()));
-		});
-
-//		reservoirOperations.add(new ReservoirOperation("1.10", 58, 1, 2, 3, 14, 52));
-//		reservoirOperations.add(new ReservoirOperation("2.10", 64, 1, 2, 3, 18, 54));
-//		reservoirOperations.add(new ReservoirOperation("3.10", 71, 1, 2, 4, 16, 60));
-//		reservoirOperations.add(new ReservoirOperation("4.10", 68, 1, 2, 3, 14, 70));
-//		reservoirOperations.add(new ReservoirOperation("5.10", 40, 2, 4, 5, 18, 46));
-//		reservoirOperations.add(new ReservoirOperation("6.10", 21, 2, 4, 4, 21, 35));
-//		reservoirOperations.add(new ReservoirOperation("7.10", 29.5f, 1.5f, 1, 3, 22, 75));
-//		reservoirOperations.add(new ReservoirOperation("8.10", 38, 2, 4, 4, 20, 77));
-//		reservoirOperations.add(new ReservoirOperation("9.10", 41, 2, 3, 3, 21, 82));
-//		reservoirOperations.add(new ReservoirOperation("10.10", 48, 2, 4, 4, 17, 89));
-//		reservoirOperations.add(new ReservoirOperation("11.10", 54, 2, 3, 4, 14, 87));
-//		reservoirOperations.add(new ReservoirOperation("12.10", 59, 1, 2, 2, 18, 90));
-		
-		return reservoirOperations;
 	}
 }

@@ -36,7 +36,7 @@ public class ReservoirOperation implements Domain {
 	
 	/** 저장날짜 순*/
 	@Id
-	private String eml;
+	private String eml = "";
 	
 	/** 지역본부 */
 	@Column(nullable = false, length = 20)
@@ -89,6 +89,17 @@ public class ReservoirOperation implements Domain {
 		this.emptyLevel = emptyLevel;
 	}
 	
+	public ReservoirOperation(String date, ReservoirOperation reservoirOperation, float rate) {
+		
+		this.resultDate = date;
+		this.rate = rate;
+		this.emptyLevel = 0;
+		this.seriousWaterLevel = reservoirOperation.getSeriousWaterLevel() - this.emptyLevel;
+		this.boudaryWaterLevel = reservoirOperation.getBoudaryWaterLevel() - reservoirOperation.getSeriousWaterLevel();
+		this.cautionWaterLevel = reservoirOperation.getCautionWaterLevel() - reservoirOperation.getBoudaryWaterLevel();
+		this.attentionWaterLevel = reservoirOperation.getAttentionWaterLevel() - reservoirOperation.getCautionWaterLevel();
+	}
+
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor

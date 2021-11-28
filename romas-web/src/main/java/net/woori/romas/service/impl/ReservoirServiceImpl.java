@@ -25,7 +25,7 @@ public class ReservoirServiceImpl implements ReservoirService {
 	
 	@Override
 	public Reservoir get(String id) {
-		return reservoirRepository.findById(id).get();
+		return reservoirRepository.findById(id).orElse(null);
 	}
 
 	@Transactional(readOnly = true)

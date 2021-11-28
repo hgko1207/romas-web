@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import net.woori.romas.domain.Enums.GroupType;
 import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirLevel.CompositePK;
 import net.woori.romas.domain.param.FacilitySearchParam;
@@ -91,7 +92,11 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 		String startDate = dateFormat.format(param.getStartDate()) + " 00:00:00";
 		String endDate = dateFormat.format(param.getEndDate()) + " 23:59:59";
 		
-		return reservoirLevelRepository.getList(param.getFacCode(), startDate, endDate);
+		if (param.getGroupType() == GroupType.DAY) {
+			return reservoirLevelRepository.getList(param.getFacCode(), startDate, endDate);
+		} else {
+			return reservoirLevelRepository.getMonthGroupList(param.getFacCode(), startDate, endDate);
+		}
 	}
 
 	/**

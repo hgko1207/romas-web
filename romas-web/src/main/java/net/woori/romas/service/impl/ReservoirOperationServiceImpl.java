@@ -1,6 +1,7 @@
 package net.woori.romas.service.impl;
 
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,11 +107,38 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 	@Transactional(readOnly = true)
 	@Override
 	public List<ReservoirOperation> getList(String facilityName) {
-		String eml = "";
 		
 		Calendar calendar = Calendar.getInstance();
 		int month = calendar.get(Calendar.MONTH) + 1;
 		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		
+		String eml = getEml(day);
+		
+		return reservoirLevelRepository.findByFacilityNameContainingAndMonthAndEml(facilityName, month, eml);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<ReservoirOperation> getList(FacilitySearchParam param) {
+		return reservoirLevelRepository.getList(param.getFacCode(), param.getStartDate(), param.getEndDate());
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public ReservoirOperation get(String facCode, Date checkDate) {
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(checkDate);
+		
+		int month = calendar.get(Calendar.MONTH) + 1;
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+		String eml = getEml(day);
+		
+		return reservoirLevelRepository.findByFacCodeAndMonthAndEml(facCode, month, eml);
+	}
+	
+	private String getEml(int day) {
+		
+		String eml = "";
 		
 		if (day >= 1 && day <= 10) {
 			eml = "1초순";
@@ -120,11 +148,6 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 			eml = "3하순";
 		}
 		
-		return reservoirLevelRepository.findByFacilityNameContainingAndMonthAndEml(facilityName, month, eml);
-	}
-
-	@Override
-	public List<ReservoirOperation> getList(FacilitySearchParam param) {
-		return reservoirLevelRepository.getList(param.getFacCode(), param.getStartDate(), param.getEndDate());
+		return eml;
 	}
 }
