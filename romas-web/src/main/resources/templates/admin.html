@@ -5,7 +5,6 @@
 	layout:decorator="layout/default_layout">
 
 <th:block layout:fragment="css">
-	<link rel="stylesheet" th:href="@{/css/page/admin.css}" >
 </th:block>
 
 <th:block layout:fragment="content">
@@ -78,83 +77,94 @@
 	</div>
 
 	<div id="setUp" class="modal mobile" style="display: none;">
-		<div class="modal-container mobile">
-			<h3 class="modal-title">
-				신규저수지 제원 정보
-				<span onclick="document.getElementById('setUp').style.display='none'" class="close-btn">&times;</span>
-			</h3>
-			<div class="modal-content">
-				<ul class="new-reservoir-info">
-					<li>
-						<label for="" class="mobile">표준코드</label> 
-						<input id="" type="text">
-					</li>
-					<li>
-						<label for="" class="mobile">시설명</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">주소</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">위도</label> 
-						<input id="" type="text">
-					</li>
-					<li>
-						<label for="" class="mobile">경도</label> 
-						<input id="" type="text">
-					</li>
-					<li>
-						<label for="" class="mobile">수원공구분</label> 
-						<input id="" type="text">
-					</li>
-					<li>
-						<label for="" class="mobile">종별</label> 
-						<input id="" type="text">
-					</li>
-					<li>
-						<label for="" class="mobile">제체길이</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">제체높이</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">총저수</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">유효저수</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">유요면적</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">유역면적</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">수해면적</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">만수면적</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">관리자</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">관리자주소</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">착공일</label> 
-						<input id="" type="text"></li>
-					<li>
-						<label for="" class="mobile">준공일</label> 
-						<input id="" type="text">
-					</li>
-				</ul>
+		<form id="registForm" th:action="@{/admin/reservoir}" method="post">
+			<div class="modal-container mobile">
+				<h3 class="modal-title">
+					신규저수지 제원 정보
+					<span onclick="document.getElementById('setUp').style.display='none'" class="close-btn">&times;</span>
+				</h3>
+				<div class="modal-content">
+					<ul class="new-reservoir-info">
+						<li>
+							<label for="facCodeText" class="mobile">표준코드</label> 
+							<input id="facCodeText" type="text" name="facCode" required>
+						</li>
+						<li>
+							<label for="facilityNameText" class="mobile">시설명</label> 
+							<input id="facilityNameText" type="text" name="facilityName" required>
+						</li>
+						<li>
+							<label for="addressText" class="mobile">주소</label> 
+							<input id="addressText" type="text" name="address">
+						</li>
+						<li>
+							<label for="latitudeText" class="mobile">위도</label> 
+							<input id="latitudeText" type="number" name="latitude" value="0">
+						</li>
+						<li>
+							<label for="longitudeText" class="mobile">경도</label> 
+							<input id="longitudeText" type="number" name="longitude" value="0">
+						</li>
+						<li>
+							<label for="waterClassText" class="mobile">수원공구분</label> 
+							<input id="waterClassText" type="text" name="waterClass" value="주수원">
+						</li>
+						<li>
+							<label for="classificationText" class="mobile">종별</label> 
+							<input id="classificationText" type="number" name="classification" value="1">
+						</li>
+						<li>
+							<label for="lengthText" class="mobile">제체길이</label> 
+							<input id="lengthText" type="number" name="length" value="0">
+						</li>
+						<li>
+							<label for="heightText" class="mobile">제체높이</label> 
+							<input id="heightText" type="number" name="height" value="0">
+						</li>
+						<li>
+							<label for="totalStroageCapacityText" class="mobile">총저수</label> 
+							<input id="totalStroageCapacityText" type="number" name="totalStroageCapacity" value="0">
+						</li>
+						<li>
+							<label for="enableStorageCapacityText" class="mobile">유요저수</label> 
+							<input id="enableStorageCapacityText" type="number" name="enableStorageCapacity" value="0">
+						</li>
+						<li>
+							<label for="watershedAreaText" class="mobile">유역면적</label> 
+							<input id="watershedAreaText" type="text" name="watershedArea" value="0">
+						</li>
+						<li>
+							<label for="beneAreaText" class="mobile">수혜면적</label> 
+							<input id="beneAreaText" type="text" name="beneArea" value="0">
+						</li>
+						<li>
+							<label for="pullAreaText" class="mobile">만수면적</label> 
+							<input id="pullAreaText" type="number" name="pullArea" value="0">
+						</li>
+						<li>
+							<label for="" class="mobile">관리자</label> 
+							<input id="" type="text">
+						</li>
+						<li>
+							<label for="mgmtAdressText" class="mobile">관리자주소</label> 
+							<input id="mgmtAdressText" type="text" name="mgmtAdress">
+						</li>
+						<li>
+							<label for="startDateText" class="mobile">착공일</label> 
+							<input id="startDateText" type="date" name="startDate">
+						</li>
+						<li>
+							<label for="completionDateText" class="mobile">준공일</label> 
+							<input id="completionDateText" type="date" name="completionDate">
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn rm-secondary-btn mr12" onclick="document.getElementById('setUp').style.display='none'">취소</button>
+					<button type="submit" class="btn rm-primary-btn">저장</button>
+				</div>
 			</div>
-			<div class="modal-footer">
-				<button class="btn rm-secondary-btn mr12">취소</button>
-				<button class="btn rm-primary-btn">저장</button>
-			</div>
-		</div>
+		</form>
 	</div>
 </th:block>
 

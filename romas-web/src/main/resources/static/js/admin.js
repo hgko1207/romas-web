@@ -119,4 +119,29 @@ $(document).ready(function() {
 		
 		Datatables.rowsAdd(DataTable.table, contextPath + "/admin/search", param);
 	});
+	
+	$("#registForm").submit(function(e) {
+		e.preventDefault();
+		var form = $(this);
+		var url = form.attr('action');
+		
+		document.getElementById('setUp').style.display='none';
+		
+	    $.ajax({
+	       	url: url,
+			type: "POST",
+	       	data: form.serializeObject(), // serializes the form's elements.
+	       	success: function(response) {
+	       		swalInit.fire({
+	   				title: "저수지 정보가 등록 되었습니다.", 
+	   				type: "success"
+	   			}).then(function(e) {
+	   				
+	   			});
+	       	},
+	        error: function(response) {
+	        	swalInit.fire({title: "저수지 정보 등록을 실패하였습니다.", type: "error"})
+	        }
+		});
+	});
 });

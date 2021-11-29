@@ -27,7 +27,7 @@ public class ReservoirMgmt implements Domain {
 	/** 소재지 */
 	private String address;
 
-	/** classification */
+	/** 종별 */
 	private int classification;
 
 	/** 제체길이 */

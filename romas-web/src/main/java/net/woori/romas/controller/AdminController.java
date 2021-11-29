@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import net.woori.romas.domain.db.Reservoir;
 import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.param.AdminSearchParam;
@@ -111,5 +112,16 @@ public class AdminController {
 	public ResponseEntity<?> getFacilityList(String branch) {
 		
 		return new ResponseEntity<>(reservoirOperationService.getFacilityList(branch), HttpStatus.OK);
+	}
+	
+	/**
+	 * 저수지 정보 등록
+	 * @return
+	 */
+	@PostMapping("reservoir")
+	@ResponseBody
+	public ResponseEntity<?> registReservoir(Reservoir reservoir) {
+		System.err.println(reservoir);
+		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }
