@@ -44,7 +44,7 @@ public class AdminController {
 	 * @param model
 	 */
 	@GetMapping("")
-	public void admin(Model model) {
+	public String admin(Model model) {
 		
 		List<Integer> months = new ArrayList<>();
 		for (int i = 1; i <= 12; i++) {
@@ -68,6 +68,8 @@ public class AdminController {
 				model.addAttribute("facilitys", facilityNames);
 			}
 		}
+		
+		return "admin";
 	}
 	
 	/**

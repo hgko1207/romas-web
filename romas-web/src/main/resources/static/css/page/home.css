@@ -44,7 +44,7 @@ svg {
 /*******************************************************************************************************
  대쉬보드 디자인
 *******************************************************************************************************/
-.rm-reservoir-rate-group.status-up {background:url(../images/status_arrow_up.png) 156px top no-repeat;}
+.rm-reservoir-rate-group.status-up {background:url(../../images/status_arrow_up.png) 156px top no-repeat;}
 
 .reservoir-equal {color:#BDBDBD;}
 

@@ -38,10 +38,12 @@ public class HomeController {
 	
 	@Autowired
 	private ReservoirService reservoirService;
-
+	
 	@GetMapping("")
-	public void home(Model model) {
+	public String home(Model model) {
 		model.addAttribute("view", "home");
+		
+		return "home";
 	}
 	
 	/**

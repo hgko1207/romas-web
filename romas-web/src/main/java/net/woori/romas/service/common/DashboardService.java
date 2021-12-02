@@ -61,13 +61,15 @@ public class DashboardService {
 		
 		if (value1 > value2) {
 			dashboardInfo.setUpDown(UpDown.UP);
-			dashboardInfo.setGap((int)Math.round((value1 / value2 - 1) * 100));
+			//dashboardInfo.setGap((int)Math.round((value1 / value2 - 1) * 100));
+			dashboardInfo.setGap((int)Math.round((value1 / value2) * 100));
 		} else if (value1 == value2) {
 			dashboardInfo.setUpDown(UpDown.EQUAL);
 			dashboardInfo.setGap(0);
 		} else {
 			dashboardInfo.setUpDown(UpDown.DOWN);
-			dashboardInfo.setGap((int)Math.round(value2 / value1 * 100));
+			//dashboardInfo.setGap((int)Math.round(value2 / value1 * 100));
+			dashboardInfo.setGap((int)Math.round(value2 / value1) * 100);
 		}
 		
 		return dashboardInfo;
