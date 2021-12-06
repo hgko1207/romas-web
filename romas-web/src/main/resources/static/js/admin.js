@@ -26,13 +26,68 @@ var DataTable = {
 	}
 };
 
+
+/**
+ * 엑셀 파일 읽기
+ * @returns
+ */
 function importData() {
+	var facCode;
+	
+	var reader = new FileReader();
+    reader.onload = function(){
+        var fileData = reader.result;
+        var wb = XLSX.read(fileData, {type : 'binary'});
+        wb.SheetNames.forEach(function(sheetName){
+	        var rowObj = XLSX.utils.sheet_to_json(wb.Sheets[sheetName]);
+	        //console.log(JSON.stringify(rowObj));
+	        var reservoirOperations = [];
+	        
+	        $.each(rowObj, function (i, data) {
+	        	let operation = new Object();
+	        	operation.facCode = facCode;
+	        	operation.month = data['월'];
+	        	operation.eml = data['순'];
+	        	operation.attentionWaterLevel = data['관심'];
+	        	operation.cautionWaterLevel = data['주의'];
+	        	operation.boudaryWaterLevel = data['경계'];
+	        	operation.seriousWaterLevel = data['심각'];
+	        	
+	        	reservoirOperations.push(operation);
+			});
+	        
+	        $.ajax({
+				url: contextPath + "/admin/reservoir",
+				type: "PUT",
+				data: JSON.stringify(reservoirOperations),
+				contentType: "application/json",
+				success: function(response) {
+					swalInit.fire({title: "저수지 정보가 수정 되었습니다.", type: "success"});
+		       	},
+		        error: function(response) {
+		        	swalInit.fire({title: "저수지 정보 수정을 실패하였습니다.", type: "error"});
+		        }
+			}); 
+        })
+    };
+	
 	let input = document.createElement('input');
 	input.type = 'file';
 	input.onchange = _ => {
 		// you can use this method to get file and perform respective operations
         let files = Array.from(input.files);
-        console.log(files);
+        if (files[0].name) {
+        	var name = files[0].name.trim().replace(/(.xlsx|.jpg|.jpeg|.png)$/,'');
+        	var str = name.split('_');
+        	facCode = str[str.length - 1];
+        	if (facCode) {
+        		reader.readAsBinaryString(input.files[0]);
+        	} else {
+        		swalInit.fire({title: "엑셀 이름에 시설 코드가 없습니다.", type: "error"});
+        	}
+        } else {
+        	swalInit.fire({title: "엑셀 형식이 잘못되었습니다.", type: "error"});
+        }
     };
     input.click();
 }
@@ -136,11 +191,10 @@ $(document).ready(function() {
 	   				title: "저수지 정보가 등록 되었습니다.", 
 	   				type: "success"
 	   			}).then(function(e) {
-	   				
 	   			});
 	       	},
 	        error: function(response) {
-	        	swalInit.fire({title: "저수지 정보 등록을 실패하였습니다.", type: "error"})
+	        	swalInit.fire({title: "저수지 정보 등록을 실패하였습니다.", type: "error"});
 	        }
 		});
 	});

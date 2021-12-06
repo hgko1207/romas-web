@@ -23,5 +23,7 @@ public interface ReservoirOperationService extends CRUDService<ReservoirOperatio
 	List<ReservoirOperation> getList(FacilitySearchParam param);
 
 	ReservoirOperation get(String facCode, Date checkDate);
+	
+	boolean update(List<ReservoirOperation> reservoirOperations);
 
 }

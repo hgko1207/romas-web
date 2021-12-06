@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -125,5 +126,19 @@ public class AdminController {
 	public ResponseEntity<?> registReservoir(Reservoir reservoir) {
 		System.err.println(reservoir);
 		return new ResponseEntity<>(HttpStatus.OK);
+	}
+	
+	/**
+	 * 저수지 정보 등록
+	 * @return
+	 */
+	@PutMapping("reservoir")
+	@ResponseBody
+	public ResponseEntity<?> updateReservoir(@RequestBody List<ReservoirOperation> reservoirOperations) {
+		
+		if (reservoirOperationService.update(reservoirOperations))
+			return new ResponseEntity<>(HttpStatus.OK);
+		
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 }

@@ -69,7 +69,6 @@ var Datatables = {
 			data: JSON.stringify(param),
 			contentType: "application/json",
 			success: function(data) {
-				console.log(data);
 				table.rows.add(data).draw();
 		   	}
 		});
