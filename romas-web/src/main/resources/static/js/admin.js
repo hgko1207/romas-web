@@ -8,11 +8,31 @@ var DataTable = {
 			{ data: "regionalHead" },
 			{ data: "branch" },
 			{ data: "facilityName" },
-			{ data: "currentWaterLevel" },
-			{ data: "attentionWaterLevel" },
-			{ data: "cautionWaterLevel" },
-			{ data: "boudaryWaterLevel" },
-			{ data: "seriousWaterLevel" },
+			{
+				render: function(data, type, row, meta) {
+		    		return round(row.currentWaterLevel);
+		    	}
+			},
+			{
+				render: function(data, type, row, meta) {
+		    		return round(row.attentionWaterLevel);
+		    	}
+			},
+			{
+				render: function(data, type, row, meta) {
+		    		return round(row.cautionWaterLevel);
+		    	}
+			},
+			{
+				render: function(data, type, row, meta) {
+		    		return round(row.boudaryWaterLevel);
+		    	}
+			},
+			{
+				render: function(data, type, row, meta) {
+		    		return round(row.seriousWaterLevel);
+		    	}
+			},
 			{
 		    	width: "100px",
 		    	render: function(data, type, row, meta) {
@@ -25,7 +45,6 @@ var DataTable = {
 		this.table = Datatables.basic(this.ele, this.option);
 	}
 };
-
 
 /**
  * 엑셀 파일 읽기

@@ -53,3 +53,8 @@ var swalInit = swal.mixin({
     confirmButtonClass: 'btn btn-primary',
     cancelButtonClass: 'btn btn-light'
 });
+
+
+function round(value) {
+	return +(Math.round(value + "e+2")  + "e-2");
+}
