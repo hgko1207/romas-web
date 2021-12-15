@@ -111,9 +111,9 @@ $(document).ready(function() {
 			data: JSON.stringify(param),
 			contentType: "application/json",
 			success: function(response) {
-				console.log(response);
 				const reservoir = response.reservoir;
 				const reservoirMgmt = response.reservoirMgmt;
+				
 				if (reservoir != null) {
 					$("#facCodeText").text(reservoir.facCode);
 					$("#facilityNameText").text(reservoir.facilityName);
@@ -146,7 +146,6 @@ $(document).ready(function() {
 			data: JSON.stringify(param),
 			contentType: "application/json",
 			success: function(response) {
-				console.log(response);
 				if (response.length > 0) {
 					var arrayData = [];
 					var legends = ['date', '', '저수율', '심각', '경계', '주의', '관심'];

@@ -97,7 +97,7 @@ public class ReservoirOperation implements Domain {
 		this.seriousWaterLevel = reservoirOperation.getSeriousWaterLevel() - this.emptyLevel;
 		this.boudaryWaterLevel = reservoirOperation.getBoudaryWaterLevel() - reservoirOperation.getSeriousWaterLevel();
 		this.cautionWaterLevel = reservoirOperation.getCautionWaterLevel() - reservoirOperation.getBoudaryWaterLevel();
-		this.attentionWaterLevel = reservoirOperation.getAttentionWaterLevel() - reservoirOperation.getCautionWaterLevel();
+		this.attentionWaterLevel = 100 - (this.seriousWaterLevel + this.boudaryWaterLevel + this.cautionWaterLevel);
 	}
 
 	@Data
