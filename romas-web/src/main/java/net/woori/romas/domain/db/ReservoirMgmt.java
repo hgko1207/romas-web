@@ -7,7 +7,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import net.woori.romas.domain.Domain;
+import net.woori.romas.domain.ReservoirInfo;
 
 /**
  * 저수지 공사 정보
@@ -18,6 +20,7 @@ import net.woori.romas.domain.Domain;
 @Entity
 @Table(name = "tb_reservoir_mgmt")
 @Data
+@NoArgsConstructor
 public class ReservoirMgmt implements Domain {
 
 	/** 장비표준코드 */
@@ -48,5 +51,16 @@ public class ReservoirMgmt implements Domain {
 	/** 준공일 */
 	private Date completionDate;
 		
+	public ReservoirMgmt(ReservoirInfo info) {
+		this.facCode = info.getFacCode();
+		this.address = info.getAddress();
+		this.classification = info.getClassification();
+		this.length = info.getLength();
+		this.height = info.getHeight();
+		this.pullArea = info.getPullArea();
+		this.mgmtAdress = info.getMgmtAdress();
+		this.startDate = info.getStartDate();
+		this.completionDate = info.getCompletionDate();
+	}
 
 }

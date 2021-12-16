@@ -17,11 +17,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import net.woori.romas.domain.ReservoirInfo;
 import net.woori.romas.domain.db.Reservoir;
 import net.woori.romas.domain.db.ReservoirLevel;
+import net.woori.romas.domain.db.ReservoirMgmt;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.param.AdminSearchParam;
+import net.woori.romas.service.ReservoirMgmtService;
 import net.woori.romas.service.ReservoirOperationService;
+import net.woori.romas.service.ReservoirService;
 import net.woori.romas.service.common.ReservoirInfoService;
 
 /**
@@ -33,6 +37,12 @@ import net.woori.romas.service.common.ReservoirInfoService;
 @Controller
 @RequestMapping("admin")
 public class AdminController {
+	
+	@Autowired
+	private ReservoirService reservoirService;
+	
+	@Autowired
+	private ReservoirMgmtService reservoirMgmtService;
 	
 	@Autowired
 	private ReservoirOperationService reservoirOperationService;
@@ -123,9 +133,19 @@ public class AdminController {
 	 */
 	@PostMapping("reservoir")
 	@ResponseBody
-	public ResponseEntity<?> registReservoir(Reservoir reservoir) {
-		System.err.println(reservoir);
-		return new ResponseEntity<>(HttpStatus.OK);
+	public ResponseEntity<?> registReservoir(ReservoirInfo reservoirInfo) {
+		System.err.println(reservoirInfo);
+		
+		boolean result = false;
+		
+		if (reservoirService.get(reservoirInfo.getFacCode()) != null) {
+			return new ResponseEntity<>("등록된 시설입니다.", HttpStatus.BAD_REQUEST);
+		}
+		
+//		new Reservoir(reservoirInfo);
+		result = reservoirMgmtService.regist(new ReservoirMgmt(reservoirInfo));
+		
+		return result ? new ResponseEntity<>(HttpStatus.OK) : new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 	
 	/**

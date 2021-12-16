@@ -6,7 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import net.woori.romas.domain.Domain;
+import net.woori.romas.domain.ReservoirInfo;
 
 /**
  * 저수지 제원 정보
@@ -17,6 +19,7 @@ import net.woori.romas.domain.Domain;
 @Entity
 @Table(name = "tb_reservoir")
 @Data
+@NoArgsConstructor
 public class Reservoir implements Domain {
 
 	/** 장비표준코드 */
@@ -81,5 +84,9 @@ public class Reservoir implements Domain {
 	 * 3 : 심각 빨강
 	 * */
 	private int level;
+
+	public Reservoir(ReservoirInfo info) {
+		this.facCode = info.getFacCode();
+	}
 
 }

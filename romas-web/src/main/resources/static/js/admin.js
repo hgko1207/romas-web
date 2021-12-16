@@ -213,7 +213,11 @@ $(document).ready(function() {
 	   			});
 	       	},
 	        error: function(response) {
-	        	swalInit.fire({title: "저수지 정보 등록을 실패하였습니다.", type: "error"});
+	        	if (response.responseText) {
+	        		swalInit.fire({title: response.responseText, type: "warning"});
+				} else {
+					swalInit.fire({title: "저수지 정보 등록을 실패하였습니다.", type: "error"});
+				}
 	        }
 		});
 	});
