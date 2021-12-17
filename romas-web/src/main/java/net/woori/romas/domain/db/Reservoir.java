@@ -77,6 +77,15 @@ public class Reservoir implements Domain {
 	/** 유역 면적 */
 	private String watershedArea;
 	
+	/** 지역코드 도, 특별시*/
+	private String areaSpark;
+	
+	/** 지역코드 시, 군*/
+	private String areaSiGun;
+	
+	/** 지역코드 동, 면, 읍*/
+	private String areaDong;
+	
 	/** 관심 단계 
 	 * 0 : 관심 파랑
 	 * 1 : 주의 노랑
