@@ -35,5 +35,15 @@ public interface ReservoirOperationRepository extends DefaultRepository<Reservoi
 	List<ReservoirOperation> getList(String facCode, Date startDate, Date endDate);
 
 	ReservoirOperation findByFacCodeAndMonthAndEml(String facCode, int month, String eml);
+	
+	String select = "SELECT fac_code, month, eml, regional_head, branch, facility_name, current_water_level, "
+			+ "avg(attention_water_level) as attention_water_level, avg(caution_water_level) as caution_water_level, "
+			+ "avg(boudary_water_level) as boudary_water_level, avg(serious_water_level) as serious_water_level";
+	
+	@Query(value = select + " FROM tb_reservoir_operation WHERE month = ?1 AND eml = ?2 GROUP BY regional_head", nativeQuery = true)
+	List<ReservoirOperation> getRegionalHeadList(int month, String eml);
+	
+	@Query(value = select + " FROM tb_reservoir_operation WHERE regional_head = ?1 AND month = ?2 AND eml = ?3 GROUP BY branch", nativeQuery = true)
+	List<ReservoirOperation> getBranchList(String regionalHead, int month, String eml);
 
 }

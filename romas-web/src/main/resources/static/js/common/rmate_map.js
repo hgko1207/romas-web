@@ -19,29 +19,74 @@ var mapApp, mapRoot;
 function mapcomp() {
 	var mapObj = mapRoot.getMap();
 	
-	var testData = [];
-	document.getElementById('map1').setData(testData);
+//	var testData = [{"codeA": 80305, "facCode": "1", "facilityName": "test"}];
+//	document.getElementById('map1').setData(testData);
+	
+//	$.ajax({
+//		url: contextPath + "/home/reservoir",
+//		type: "GET",
+//		success: function(response) {
+//			var mapData = [];
+//			
+//			$.each(response, function(i, item) {
+//				const rand_h = Math.floor(Math.random() * 20);
+//				const rand_v = Math.floor(Math.random() * 20);
+//				
+//				let data = {"facCode": item.facCode, "facilityName": item.facilityName, "h": rand_h, "v": rand_v};
+//				
+//				if (item.areaSiGun != null && item.areaSiGun != 0) {
+//					if (item.level == 0) 
+//						data["codeA"] = item.areaSiGun;
+//					else if (item.level == 1) 
+//						data["codeB"] = item.areaSiGun;
+//					else if (item.level == 2) 
+//						data["codeC"] = item.areaSiGun;
+//					else if (item.level == 3) 
+//						data["codeD"] = item.areaSiGun;
+//					mapData.push(data);
+//				}
+//				
+//				if (item.areaDong != null && item.areaDong != 0) {
+//					if (item.level == 0) 
+//						data["codeA"] = item.areaDong;
+//					else if (item.level == 1) 
+//						data["codeB"] = item.areaDong;
+//					else if (item.level == 2) 
+//						data["codeC"] = item.areaDong;
+//					else if (item.level == 3) 
+//						data["codeD"] = item.areaDong;
+//					mapData.push(data);
+//				}
+//			});
+//			
+//			document.getElementById('map1').setData(mapData);
+//		}
+//	});
+	
+	var mapData = [];
 	
 	$.ajax({
-		url: contextPath + "/home/reservoir",
+		url: contextPath + "/home/reservoir/level",
 		type: "GET",
 		success: function(response) {
-			var mapData = [];
+			mapData.push({"code":100, "sales":100});
+			mapData.push({"code":101, "sales":200});
+			mapData.push({"code":102, "sales":300});
+			mapData.push({"code":103, "sales":400});
+			mapData.push({"code":104, "sales":500});
 			
 			$.each(response, function(i, item) {
-				let data = {"facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "value": 100};
+				let data = {"code": item.code};
 				
-				if (item.areaSpark != null) {
-					mapData.push({"code": item.areaSpark, "facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "value": 100});
-				}
-				
-				if (item.areaSiGun != null) {
-					mapData.push({"code": item.areaSiGun, "facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "value": 100});
-				}
-				
-				if (item.areaDong != null) {
-					mapData.push({"code": item.areaDong, "facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "value": 100});
-				}
+				if (item.level == 0) 
+					data["sales"] = 200;
+				if (item.level == 1) 
+					data["sales"] = 300;
+				else if (item.level == 2) 
+					data["sales"] = 400;
+				else if (item.level == 3) 
+					data["sales"] = 500;
+				mapData.push(data);
 			});
 			
 			document.getElementById('map1').setData(mapData);
@@ -76,12 +121,26 @@ var sourceURL = contextPath + "/rMateMapChartH5/MapSource/SouthKoreaDrillDownUMD
 //  5. 맵차트의 세로 사이즈 (생략 가능, 생략 시 100%)
 rMateMapChartH5.create("map1", "mapHolder", mapVars, "100%", "100%");
 
+function dataTipFunction(seriesId, code, label, data) {
+  if (seriesId == "plot1" || seriesId == "plot2" || seriesId == "plot3" || seriesId == "plot4") {
+       return "시설 : " + data.facilityName;
+  } else
+      return label;
+}
+
+function itemClickFunction(seriesId, code, label, data) {
+    location.href = contextPath + "/facility/" + data.facCode;
+}
+
 var layoutStr = '\
 <?xml version="1.0" encoding="utf-8"?>\
 <rMateMapChart>\
-	<MapChart id="mainMap1" showDataTips="true" dataTipType="Type4" dataTipFill="#fff0f0" dataTipBorderColor="#fff0f0" dataTipColor="#ffffff" dataTipAlpha="1">\
+	<MapChart id="mainMap" showDataTips="true" dataTipJsFunction="dataTipFunction" itemClickJsFunction="itemClickFunction"\
+				dataTipType="Type3" dataTipFill="#2e7dca" dataTipBorderColor="#fff0f0" dataTipColor="#ffffff" dataTipAlpha="1">\
 		<series>\
-			<MapSeries id="mapseries" interactive="true" selectionMarking="line" color="#777777" labelPosition="none" displayName="Map" useGis="true" dataTipFill="#ff007e" dataTipBorderColor="#ff007e" dataTipColor="#ffffff" dataTipAlpha="1" hideOverSizeLabel="false">\
+			<MapSeries id="mapseries" interactive="true" selectionMarking="line" color="#353535" labelPosition="inside" displayName="Map Series"\
+						localFillByRange="[#EBF0F4,#3266FE,#F3F42E,#FF6700,#FE0000]" rangeLegendDataField="sales"\
+						useGis="true" dataTipFill="#ff007e" dataTipBorderColor="#ff007e" dataTipColor="#ffffff" dataTipAlpha="1" hideOverSizeLabel="false">\
 				<stroke>\
 					<Stroke color="#CAD7E0" weight="0.5" alpha="1"/>\
 				</stroke>\
@@ -92,12 +151,36 @@ var layoutStr = '\
 					<SolidColor color="#EBF0F4"/>\
 				</localFill>\
 			</MapSeries>\
-			<MapPlotSeries id="plot1" areaCodeField="code" labelField="facilityName" horizontalCenterGapField="h" verticalCenterGapField="v" adjustedRadius="5" fill="#ff007e" color="#888888" fontWeight="bold" labelPosition="bottom" displayName="지점" rangeLegendDataField="value" useGis="true" itemRenderer="CircleItemRenderer">\
-				<stroke>\
-					<Stroke color="#ff007e" weight="0" alpha="1"/>\
-				</stroke>\
+			<MapPlotSeries id="plot1" areaCodeField="codeA" labelField="facilityName" adjustedRadius="6" fill="#3266FE" color="#888888"\
+							fontWeight="bold" labelPosition="bottom" displayName="관심"\
+							horizontalCenterGapField="h" verticalCenterGapField="v">\
+		    	<stroke>\
+			     	<Stroke color="#3266FE" weight="0" alpha="1"/>\
+			 	</stroke>\
+			</MapPlotSeries>\
+			<MapPlotSeries id="plot2" areaCodeField="codeB" labelField="facilityName" adjustedRadius="6" fill="#F3F42E" color="#888888"\
+							fontWeight="bold" labelPosition="bottom" displayName="주의"\
+							horizontalCenterGapField="h" verticalCenterGapField="v">\
+		    	<stroke>\
+			     	<Stroke color="#F3F42E" weight="0" alpha="1"/>\
+			 	</stroke>\
+			</MapPlotSeries>\
+			<MapPlotSeries id="plot3" areaCodeField="codeC" labelField="facilityName" adjustedRadius="6" fill="#FF6700" color="#888888"\
+							fontWeight="bold" labelPosition="bottom" displayName="경계"\
+							horizontalCenterGapField="h" verticalCenterGapField="v">\
+			    <stroke>\
+			     	<Stroke color="#FF6700" weight="0" alpha="1"/>\
+			 	</stroke>\
+			</MapPlotSeries>\
+			<MapPlotSeries id="plot4" areaCodeField="codeD" labelField="facilityName" adjustedRadius="6" fill="#FE0000" color="#888888"\
+							fontWeight="bold" labelPosition="bottom" displayName="심각"\
+							horizontalCenterGapField="h" verticalCenterGapField="v">\
+		    	<stroke>\
+		     		<Stroke color="#FE0000" weight="0" alpha="1"/>\
+		 		</stroke>\
 			</MapPlotSeries>\
 		</series>\
 	</MapChart>\
+	<Legend dataProvider="{mainMap}" height="30" useVisibleCheck="false" horizontalGap="3" direction="horizontal" borderStyle="solid" defaultMouseOverAction="true"/>\
 </rMateMapChart>\
 ';

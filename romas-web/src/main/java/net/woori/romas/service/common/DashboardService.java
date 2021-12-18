@@ -11,6 +11,7 @@ import net.woori.romas.domain.DashboardInfo;
 import net.woori.romas.domain.DashboardInfo.UpDown;
 import net.woori.romas.domain.TableInfo;
 import net.woori.romas.domain.db.ReservoirLevel;
+import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.db.ReservoirOperation.OperationType;
 import net.woori.romas.domain.param.SearchParam;
 import net.woori.romas.service.ReservoirLevelService;
@@ -52,8 +53,8 @@ public class DashboardService {
 			value1 = reservoirLevelService.getAllList(day1);
 			value2 = reservoirLevelService.getAllList(day2);
 		} else {
-			value1 = reservoirLevelService.getList(day1, name);
-			value2 = reservoirLevelService.getList(day2, name);
+			value1 = reservoirLevelService.getRegionalList(day1, name);
+			value2 = reservoirLevelService.getRegionalList(day2, name);
 		}
 		
 		DashboardInfo dashboardInfo = new DashboardInfo(name);
@@ -84,26 +85,24 @@ public class DashboardService {
 		
 		List<TableInfo> tableInfos = new ArrayList<>();
 		
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DATE, -1);
+		int month = calendar.get(Calendar.MONTH) + 1;
+		int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+		String eml = getEml(day);
+		
 		if (param.getType() == 1) {
-			tableInfos.add(new TableInfo("경기", OperationType.Attention, 673));
-			tableInfos.add(new TableInfo("강원", OperationType.Caution, 417));
-			tableInfos.add(new TableInfo("충북", OperationType.Attention, 526));
-			tableInfos.add(new TableInfo("충남", OperationType.Serious, 103));
-			tableInfos.add(new TableInfo("전북", OperationType.Attention, 673));
-			tableInfos.add(new TableInfo("전남", OperationType.Caution, 470));
-			tableInfos.add(new TableInfo("경북", OperationType.Attention, 570));
-			tableInfos.add(new TableInfo("경남", OperationType.Attention, 560));
-			tableInfos.add(new TableInfo("제주", OperationType.Attention, 610));
+			reservoirOperationService.getListFromRegionalHead(month, eml).forEach(data -> {
+				float value = reservoirLevelService.getRegionalList(DateUtil.getDate(-1), data.getRegionalHead());
+				tableInfos.add(new TableInfo(data.getRegionalHead(), getType(data, value), value));
+			});
 		} else if (param.getType() == 2) {
-			tableInfos.add(new TableInfo("강화.옹진", OperationType.Attention, 91));
-			tableInfos.add(new TableInfo("김포", OperationType.Caution, 34));
-			tableInfos.add(new TableInfo("안성", OperationType.Caution, 65));
-			tableInfos.add(new TableInfo("양평.광주.서울", OperationType.Attention, 98));
-			tableInfos.add(new TableInfo("여주.이천", OperationType.Boudary, 40));
-			tableInfos.add(new TableInfo("연천.포천.가평", OperationType.Boudary, 58));
-			tableInfos.add(new TableInfo("파주", OperationType.Attention, 96));
-			tableInfos.add(new TableInfo("평택", OperationType.Attention, 92));
-			tableInfos.add(new TableInfo("화성.수원", OperationType.Caution, 88));
+			reservoirOperationService.getListFromBranch(param.getRegionalHead(), month, eml).forEach(data -> {
+				Float value = reservoirLevelService.getBranchList(DateUtil.getDate(-1), data.getBranch());
+				if (value != null)
+					tableInfos.add(new TableInfo(data.getBranch(), getType(data, value), value));
+			});
 		} else if (param.getType() == 3) {
 			if (!param.getFacilityName().isEmpty() ) {
 				reservoirOperationService.getList(param.getFacilityName()).forEach(data -> {
@@ -122,6 +121,21 @@ public class DashboardService {
 		}
 		
 		return tableInfos;
+	}
+	
+	private OperationType getType(ReservoirOperation operation, float value) {
+	
+		if (operation.getSeriousWaterLevel() <= value && value < operation.getBoudaryWaterLevel()) {
+			return OperationType.Serious;
+		} else if (operation.getBoudaryWaterLevel() <= value && value < operation.getCautionWaterLevel()) {
+			return OperationType.Boudary;
+		} else if (operation.getCautionWaterLevel() <= value && value < operation.getAttentionWaterLevel()) {
+			return OperationType.Caution;
+		} else if (operation.getAttentionWaterLevel() <= value) {
+			return OperationType.Attention;
+		} else {
+			return OperationType.Serious;
+		}
 	}
 
 	/**
@@ -152,5 +166,20 @@ public class DashboardService {
 		}
 		
 		return dashboardInfo;
+	}
+	
+	private String getEml(int day) {
+
+		String eml = "";
+
+		if (day >= 1 && day <= 10) {
+			eml = "1초순";
+		} else if (day >= 11 && day <= 20) {
+			eml = "2중순";
+		} else if (day >= 21 && day <= 31) {
+			eml = "3하순";
+		}
+
+		return eml;
 	}
 }

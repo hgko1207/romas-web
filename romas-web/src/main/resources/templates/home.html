@@ -5,7 +5,7 @@
 	layout:decorator="layout/default_layout">
 
 <th:block layout:fragment="css">
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css"> -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/css/ol.css" type="text/css">
 	<link rel="stylesheet" th:href="@{/css/page/home.css}" >
 </th:block>
 
@@ -109,6 +109,7 @@
 					<div class="rm-mapchart mobile">
 						<!-- <img src="images/img_map_chart.png" alt="맵차트"> -->
 						<div class="map-container" id="mapHolder"></div>
+						<div class="map-container display-none" id="vworldMap"></div>
 						<!-- 지도 위에 팝업이 나타날 부분 -->
 					    <div id="popup">
 					    	<div id="popup-content"></div>
@@ -158,7 +159,7 @@
 					</div>
 					<!-- <span class="rm-region-period mobile">기간: 21.05.23 ~ 21.09.25</span> -->
 					<div class="rm-region-table-group rm-scroll mobile">
-						<table class="rm-region-table" id="reservoirTable">
+						<table class="rm-region-table table-hover" id="reservoirTable">
 							<caption class="blind">지역/지사/시 저수율현</caption>
 							<colgroup>
 								<col width="120">
@@ -198,8 +199,8 @@
 </th:block>
 
 <th:block layout:fragment="script">
-	<!-- <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
-   	<script th:src="@{/js/common/vworld_map.js}"></script> -->
+	<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.5.0/build/ol.js"></script>
+   	<script th:src="@{/js/common/vworld_map.js}"></script>
    	
    	<script th:src="@{/js/common/rmate_map.js}"></script>
 	<script th:src="@{/js/common/bar_chart.js}"></script>

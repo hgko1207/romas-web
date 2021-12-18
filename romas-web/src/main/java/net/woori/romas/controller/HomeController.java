@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.woori.romas.domain.DashboardInfo;
+import net.woori.romas.domain.LevelInfo;
 import net.woori.romas.domain.TableInfo;
 import net.woori.romas.domain.chart.ChartInfo;
 import net.woori.romas.domain.db.Reservoir;
@@ -86,6 +87,17 @@ public class HomeController {
 	@ResponseBody
 	public List<Reservoir> getReservoir() {
 		return reservoirService.getList();
+	}
+	
+	/**
+	 * 저수지 정보 조회
+	 * @param name
+	 * @return
+	 */
+	@GetMapping("reservoir/level")
+	@ResponseBody
+	public List<LevelInfo> getReservoirLevel() {
+		return reservoirService.getLevelList();
 	}
 	
 	/**

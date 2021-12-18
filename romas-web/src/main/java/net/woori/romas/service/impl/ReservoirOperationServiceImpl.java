@@ -173,4 +173,22 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 
 		return result;
 	}
+
+	/**
+	 * 본부별 평균데이터 조회
+	 */
+	@Transactional(readOnly = true)
+	@Override
+	public List<ReservoirOperation> getListFromRegionalHead(int month, String eml) {
+		return reservoirLevelRepository.getRegionalHeadList(month, eml);
+	}
+
+	/**
+	 * 지사별 평균데이터 조회
+	 */
+	@Transactional(readOnly = true)
+	@Override
+	public List<ReservoirOperation> getListFromBranch(String regionalHead, int month, String eml) {
+		return reservoirLevelRepository.getBranchList(regionalHead, month, eml);
+	}
 }

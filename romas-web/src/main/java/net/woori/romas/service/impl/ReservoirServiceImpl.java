@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import net.woori.romas.domain.LevelInfo;
 import net.woori.romas.domain.db.Reservoir;
 import net.woori.romas.repository.ReservoirRepository;
 import net.woori.romas.service.ReservoirService;
@@ -60,5 +61,11 @@ public class ReservoirServiceImpl implements ReservoirService {
 
 	private boolean isNew(Reservoir domain) {
 		return !reservoirRepository.existsById(domain.getFacCode());
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<LevelInfo> getLevelList() {
+		return reservoirRepository.getLevelList();
 	}
 }

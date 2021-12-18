@@ -68,48 +68,6 @@ function getNewsInfo() {
 	});
 }
 
-function showPopup(map) {
-	var hover = null; //마우스 이벤트에 사용될 변수
-	var container = document.getElementById('popup'); //팝업 컨테이너
-	var popupContent = document.getElementById('popup-content'); //팝업 내용
-	
-	//맵 오버레이 선언 : 지도 위에 팝업 옵션을 사용할 때
-	var mapOverlay = new ol.Overlay(({ element: container })); //Overlay 생성, 요소는 컨테이너
-	
-	map.on('pointermove', function(evt) { //마우스 올렸을 때
-		var coordinate = evt.coordinate; //마우스가 올려진 좌표값
-		
-		//마커가 있는 곳에 마우스가 올려지면 커서의 스타일을 pointer로 설정
-        map.getTargetElement().style.cursor = map.hasFeatureAtPixel(evt.pixel) ? 'pointer': '';
-        
-        //마우스를 다른 곳으로 옮길 때를 위해 스위치역할
-        if (hover != null) {
-        	hover = null;
-        }
-        
-        //마우스가 올려진 곳의 마커를 가져와 hover에 저장
-        map.forEachFeatureAtPixel(evt.pixel, function(f) {
-            hover = f;
-            return true;
-        });
-        
-        //마커가 있을 경우
-        if (hover){
-        	const content = `<div class='map-content'>${hover.get('name')}</div>`;
-        	
-        	//popup-content 부분에 content를 넣어줌
-        	popupContent.innerHTML = content;
-
-        	map.addOverlay(mapOverlay);
-        	
-            //오버레이의 좌표를 정해줌
-            mapOverlay.setPosition(coordinate);
-        } else {
-        	popupContent.innerHTML = '';
-    	}
-	});
-}
-
 /** 우측 대쉬보드 정보 조회 */
 function getDashboardInfo(name) {
 	$.ajax({
@@ -203,52 +161,19 @@ $(document).ready(function() {
 	getChartInfo();
 	getRateInfo();
 	showDashboardInfo();
-
-	//RMateMap.init();
-	/*setTimeout(function() {
-    	map = VWorldMap.init('vMap');
-    	if (map) {
-    		$.ajax({
-    			url: contextPath + "/home/reservoir",
-    			type: "GET",
-    			success: function(response) {
-    				$.each(response, function(i, data) {
-    					var name = `<div>지역: ${data.branch}</div><div>시설: ${data.facilityName}</div>`;
-    					VWorldMap.addMarker(map, data.longitude, data.latitude, data.facCode, name, data.level);
-    				});
-    			}
-    		});
-    		
-    		showPopup(map);
-    		
-    		let clicker = null;
-    		map.on('click', function(evt) {
-    			map.forEachFeatureAtPixel(evt.pixel, function(f) {
-    				clicker = f;
-    				return true;
-    			});
-    			
-    			if (clicker != null) {
-    				var id = clicker.get('id');
-    				location.href = contextPath + "/facility/" + id;
-    				clicker = null;
-    			}
-    		});
-    	}
-	}, 500);*/
 	
-	dummyData(1);
+	setTableData(1);
 	
 	$('#areaBtn').click(function() {
 		$('#search_condition').addClass('display-none');
 		$('.rm-region-table-group').removeClass('table-group-top');
-		dummyData(1);
+		setTableData(1);
 	});
 	
 	$('#branchBtn').click(function() {
 		$('#search_condition').addClass('display-none');
 		$('.rm-region-table-group').removeClass('table-group-top');
-		dummyData(2);
+		setTableData(2, '경기');
 	});
 	
 	$('#facilityBtn').click(function() {
@@ -258,15 +183,36 @@ $(document).ready(function() {
 	
 	$('#searchBtn').click(function() {
 		var name = $('#nameText').val();
-		dummyData(3, name);
+		setTableData(3, '', name);
 	});
 });
 
-function dummyData(type, facilityName) {
+$('#reservoirTable tbody').on("click", "tr", function(){
+	var tdArr = new Array();    // 배열 선언
+
+	var tr = $(this);
+	var td = tr.children();
+	
+	// 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
+    td.each(function(i){
+        tdArr.push(td.eq(i).text());
+    });
+    
+    var regionalHead = td.eq(0).text();
+    
+    $('#areaBtn').removeClass('selected'); 
+    $('#branchBtn').addClass('selected'); 
+    
+    setTableData(2, regionalHead);
+});
+
+/** 두번째 테이블 표출 */
+function setTableData(type, regionalHead, facilityName) {
 	$('#reservoirTable > tbody').empty();
 	
 	let param = new Object();
 	param.type = type;
+	param.regionalHead = regionalHead;
 	param.facilityName = facilityName;
 	
 	$.ajax({

@@ -24,4 +24,6 @@ public class SearchParam {
 	
 	/** 시설이름 */
 	private String facilityName;
+	
+	private String regionalHead;
 }

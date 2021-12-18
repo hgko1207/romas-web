@@ -111,6 +111,10 @@ function importData() {
     input.click();
 }
 
+$('[name="startDate"]').formatter({
+    pattern: '{{9999}}-{{99}}-{{99}}'
+});
+
 $(document).ready(function() {
 	DataTable.init();
 	

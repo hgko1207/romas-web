@@ -1,7 +1,5 @@
 package net.woori.romas.domain;
 
-import java.util.Date;
-
 import lombok.Data;
 
 /**
@@ -59,8 +57,9 @@ public class ReservoirInfo {
 	private String mgmtAdress;
 	
 	/** 착공일 */
-	private Date startDate;
+	private String startDate;
 	
 	/** 준공일 */
-	private Date completionDate;
+	private String completionDate;
+
 }

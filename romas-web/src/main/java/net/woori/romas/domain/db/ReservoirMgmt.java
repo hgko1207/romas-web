@@ -1,5 +1,6 @@
 package net.woori.romas.domain.db;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -38,19 +39,19 @@ public class ReservoirMgmt implements Domain {
 
 	/** 제체높이 */
 	private int height;
-	
+
 	/** 만수면적 */
 	private int pullArea;
-	
+
 	/** 관리자 주소 */
 	private String mgmtAdress;
-	
+
 	/** 착공일 */
 	private Date startDate;
-	
+
 	/** 준공일 */
 	private Date completionDate;
-		
+
 	public ReservoirMgmt(ReservoirInfo info) {
 		this.facCode = info.getFacCode();
 		this.address = info.getAddress();
@@ -59,8 +60,12 @@ public class ReservoirMgmt implements Domain {
 		this.height = info.getHeight();
 		this.pullArea = info.getPullArea();
 		this.mgmtAdress = info.getMgmtAdress();
-		this.startDate = info.getStartDate();
-		this.completionDate = info.getCompletionDate();
+		try {
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			this.startDate = dateFormat.parse(info.getStartDate());
+			this.completionDate = dateFormat.parse(info.getCompletionDate());
+		} catch (Exception e) {
+		}
 	}
 
 }

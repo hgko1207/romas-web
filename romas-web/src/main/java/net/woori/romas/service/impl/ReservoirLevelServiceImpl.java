@@ -79,10 +79,22 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 		return reservoirLevelRepository.getAllList(date);
 	}
 
+	/**
+	 * 본부를 통해 평균데이터 조회
+	 */
 	@Transactional(readOnly = true)
 	@Override
-	public float getList(String date, String area) {
-		return reservoirLevelRepository.getList(date, area);
+	public float getRegionalList(String date, String area) {
+		return reservoirLevelRepository.getRegionalList(date, area);
+	}
+	
+	/**
+	 * 지사를 통해 평균데이터 조회
+	 */
+	@Transactional(readOnly = true)
+	@Override
+	public Float getBranchList(String date, String branch) {
+		return reservoirLevelRepository.getBranchList(date, branch);
 	}
 
 	@Transactional(readOnly = true)
@@ -117,8 +129,10 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 		return reservoirLevelRepository.getList(date);
 	}
 
+	@Transactional(readOnly = true)
 	@Override
 	public Float getAvgList(String startDate, String endDate) {
 		return reservoirLevelRepository.getAvgList(startDate, endDate);
 	}
+
 }
