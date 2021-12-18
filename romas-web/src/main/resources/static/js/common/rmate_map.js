@@ -17,7 +17,6 @@ var mapVars = "rMateOnLoadCallFunction=mapReadyHandler";
 var mapApp, mapRoot;
 
 function mapcomp() {
-	console.log(222);
 	var mapObj = mapRoot.getMap();
 	
 	var testData = [];
@@ -30,8 +29,19 @@ function mapcomp() {
 			var mapData = [];
 			
 			$.each(response, function(i, item) {
-				var data = {"code": 0, "address": "", "facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "sales":100};
-				mapData.push(data);
+				let data = {"facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "value": 100};
+				
+				if (item.areaSpark != null) {
+					mapData.push({"code": item.areaSpark, "facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "value": 100});
+				}
+				
+				if (item.areaSiGun != null) {
+					mapData.push({"code": item.areaSiGun, "facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "value": 100});
+				}
+				
+				if (item.areaDong != null) {
+					mapData.push({"code": item.areaDong, "facCode": item.facCode, "facilityName": item.facilityName, "lat": item.latitude, "lng": item.longitude, "value": 100});
+				}
 			});
 			
 			document.getElementById('map1').setData(mapData);
@@ -82,7 +92,7 @@ var layoutStr = '\
 					<SolidColor color="#EBF0F4"/>\
 				</localFill>\
 			</MapSeries>\
-			<MapPlotSeries id="plot1" areaCodeField="code" labelField="address" horizontalCenterGapField="h" verticalCenterGapField="v" adjustedRadius="5" fill="#ff007e" color="#888888" fontWeight="bold" labelPosition="bottom" displayName="지점" rangeLegendDataField="value" useGis="true" itemRenderer="CircleItemRenderer">\
+			<MapPlotSeries id="plot1" areaCodeField="code" labelField="facilityName" horizontalCenterGapField="h" verticalCenterGapField="v" adjustedRadius="5" fill="#ff007e" color="#888888" fontWeight="bold" labelPosition="bottom" displayName="지점" rangeLegendDataField="value" useGis="true" itemRenderer="CircleItemRenderer">\
 				<stroke>\
 					<Stroke color="#ff007e" weight="0" alpha="1"/>\
 				</stroke>\

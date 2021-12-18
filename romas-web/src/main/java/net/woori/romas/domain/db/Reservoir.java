@@ -78,13 +78,13 @@ public class Reservoir implements Domain {
 	private String watershedArea;
 	
 	/** 지역코드 도, 특별시*/
-	private String areaSpark;
+	private Integer areaSpark;
 	
 	/** 지역코드 시, 군*/
-	private String areaSiGun;
+	private Integer areaSiGun;
 	
 	/** 지역코드 동, 면, 읍*/
-	private String areaDong;
+	private Integer areaDong;
 	
 	/** 관심 단계 
 	 * 0 : 관심 파랑
