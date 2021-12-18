@@ -171,7 +171,6 @@ function getRateInfo() {
 		url: contextPath + "/home/rate",
 		type: "GET",
 		success: function(response) {
-			console.log(response);
 			$('#gapText').text(response.gap + "% ");
 			$('#rateText').text(`(금일:${response.todayValue}%, 평년:${response.commonYearValue}%)`);
 		}
@@ -204,10 +203,9 @@ $(document).ready(function() {
 	getChartInfo();
 	getRateInfo();
 	showDashboardInfo();
-	
-	let map;
-	
-	setTimeout(function() {
+
+	//RMateMap.init();
+	/*setTimeout(function() {
     	map = VWorldMap.init('vMap');
     	if (map) {
     		$.ajax({
@@ -237,7 +235,7 @@ $(document).ready(function() {
     			}
     		});
     	}
-	}, 500);
+	}, 500);*/
 	
 	dummyData(1);
 	

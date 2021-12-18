@@ -121,7 +121,7 @@ h2.rm-news-title {display:inline-block;margin-bottom:4px;font-size:1rem;font-wei
 .rm-news-date {position:absolute;right:0;bottom:0;font-size:0.75rem;font-weight:500;color:#767676;}
 
 /* 맵차트 */
-.rm-mapchart {padding:20px;height:100%;text-align:center;}
+.rm-mapchart {padding:20px;height:100%;}
 .rm-mapchart img {height:770px;}
 
 /* 저수율현황 */
