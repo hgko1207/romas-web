@@ -1,6 +1,6 @@
-var VWorldMap = function() {
-	const createMap = function(id) {
-		var map; //맵 변수 선언 : 지도 객체
+var VWorldMap = {
+	map: null,
+	init: function(id) {
 		var mapLayer; //맵 레이어 선언 : 지도 그림(타일) 설정
 		var mapView; //맵 뷰 선언 : 보여지는 지도 부분 설정
 		
@@ -15,22 +15,21 @@ var VWorldMap = function() {
 		
 		mapView = new ol.View({ //뷰 생성
 			projection : 'EPSG:3857', //좌표계 설정 (EPSG:3857은 구글에서 사용하는 좌표계) 
-			center : new ol.geom.Point([ 127.5, 36 ]) //처음 중앙에 보여질 경도, 위도 
+			center : new ol.geom.Point([ 127, 36.5 ]) //처음 중앙에 보여질 경도, 위도 
 					.transform('EPSG:4326', 'EPSG:3857') //GPS 좌표계 -> 구글 좌표계
 					.getCoordinates(), //포인트의 좌표를 리턴함
-			zoom : 7.3 //초기지도 zoom의 정도값
+			zoom : 10 //초기지도 zoom의 정도값
 		});
 		
-		map = new ol.Map({ //맵 생성	
+		this.map = new ol.Map({ //맵 생성	
 			target : 'vMap', //html 요소 id 값
 			layers : [mapLayer], //레이어
 			view : mapView //뷰
 		});
 		
-		return map;
-	};
-	
-	const addMarker = function(map, lon, lat, id, name, level) { //경도 위도 이름값(마커들을 구분하기위해)
+		return this.map;
+	},
+	addMarker: function(map, lon, lat, id, name, level) { //경도 위도 이름값(마커들을 구분하기위해)
 		
 		// 마커 feature 설정
 		var feature = new ol.Feature({
@@ -83,17 +82,15 @@ var VWorldMap = function() {
 	    
 	    // 지도에 마커가 그려진 레이어 추가
 	    map.addLayer(markerLayer);
-	};
-	
-	return {
-        init: function(id) {
-        	return createMap(id);
-        },
-        addMarker: function(map, lon, lat, id, name, level) {
-        	return addMarker(map, lon, lat, id, name, level);
-        },
-    }
-}();
+	},
+	centerMap: function(lon, lat) {
+	    this.map.getView().setCenter(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
+	    //map.getView().setZoom(10);
+	},
+	getMap: function() {
+		return this.map;
+	}
+};
 
 function showPopup(map) {
 	var hover = null; //마우스 이벤트에 사용될 변수
@@ -137,36 +134,41 @@ function showPopup(map) {
 	});
 }
 
-$(document).ready(function() {
-	/*setTimeout(function() {
-	map = VWorldMap.init('vMap');
-		if (map) {
-			$.ajax({
-				url: contextPath + "/home/reservoir",
-				type: "GET",
-				success: function(response) {
-					$.each(response, function(i, data) {
-						var name = `<div>지역: ${data.branch}</div><div>시설: ${data.facilityName}</div>`;
-						VWorldMap.addMarker(map, data.longitude, data.latitude, data.facCode, name, data.level);
-					});
-				}
-			});
-			
-			showPopup(map);
-			
-			let clicker = null;
-			map.on('click', function(evt) {
-				map.forEachFeatureAtPixel(evt.pixel, function(f) {
-					clicker = f;
-					return true;
+function initWorldMap(lon, lat) {
+	setTimeout(function() {
+		if (VWorldMap.getMap() == null) {
+			var map = VWorldMap.init('vMap');
+			if (map) {
+				$.ajax({
+					url: contextPath + "/home/reservoir",
+					type: "GET",
+					success: function(response) {
+						$.each(response, function(i, data) {
+							var name = `<div>지역: ${data.branch}</div><div>시설: ${data.facilityName}</div>`;
+							VWorldMap.addMarker(map, data.longitude, data.latitude, data.facCode, name, data.level);
+						});
+					}
 				});
 				
-				if (clicker != null) {
-					var id = clicker.get('id');
-					location.href = contextPath + "/facility/" + id;
-					clicker = null;
-				}
-			});
+				showPopup(map);
+				
+				let clicker = null;
+				map.on('click', function(evt) {
+					map.forEachFeatureAtPixel(evt.pixel, function(f) {
+						clicker = f;
+						return true;
+					});
+					
+					if (clicker != null) {
+						var id = clicker.get('id');
+						location.href = contextPath + "/facility/" + id;
+						clicker = null;
+					}
+				});
+			}
+		} else {
+			VWorldMap.centerMap(lon, lat);
 		}
-	}, 500);*/
-});
+	}, 500);
+}
+

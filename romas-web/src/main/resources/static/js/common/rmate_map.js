@@ -69,23 +69,23 @@ function mapcomp() {
 		url: contextPath + "/home/reservoir/level",
 		type: "GET",
 		success: function(response) {
-			mapData.push({"code":100, "sales":100});
-			mapData.push({"code":101, "sales":200});
-			mapData.push({"code":102, "sales":300});
-			mapData.push({"code":103, "sales":400});
-			mapData.push({"code":104, "sales":500});
+			mapData.push({"code":100, "level":100});
+			mapData.push({"code":101, "level":200});
+			mapData.push({"code":102, "level":300});
+			mapData.push({"code":103, "level":400});
+			mapData.push({"code":104, "level":500});
 			
 			$.each(response, function(i, item) {
 				let data = {"code": item.code};
 				
 				if (item.level == 0) 
-					data["sales"] = 200;
+					data["level"] = 200;
 				if (item.level == 1) 
-					data["sales"] = 300;
+					data["level"] = 300;
 				else if (item.level == 2) 
-					data["sales"] = 400;
+					data["level"] = 400;
 				else if (item.level == 3) 
-					data["sales"] = 500;
+					data["level"] = 500;
 				mapData.push(data);
 			});
 			
@@ -132,14 +132,40 @@ function itemClickFunction(seriesId, code, label, data) {
     location.href = contextPath + "/facility/" + data.facCode;
 }
 
+function clickFunction(code, label, data) {
+	if (label == '경기도') {
+	} else if (label == '강원도') {
+		initWorldMap(128.34652853368348, 37.750174547038476);
+	} else if (label == '충청북도') {
+		initWorldMap(127.63308137873065, 36.67464493679185);
+	} else if (label == '충청남도') {
+		initWorldMap(126.90366459133672, 36.55025699120413);
+	} else if (label == '경상북도') {
+		initWorldMap(128.74121345720187, 36.587247368002615);
+	} else if (label == '경상남도') {
+		initWorldMap(128.35972451038734, 35.40262829035685);
+	} else if (label == '전라북도') {
+		initWorldMap(127.18130434578022, 35.77963772942307);
+	} else if (label == '전라남도') {
+		initWorldMap(127.02799724321814, 34.93837178858539);
+	} else if (label == '제주도') {
+		initWorldMap(126.5661352113117, 33.38662515740234);
+	}
+	
+	if (label.length != 2) {
+		$('#mapHolder').addClass('display-none');
+		$('#vMap').removeClass('display-none');
+	}
+}
+
 var layoutStr = '\
 <?xml version="1.0" encoding="utf-8"?>\
 <rMateMapChart>\
-	<MapChart id="mainMap" showDataTips="true" dataTipJsFunction="dataTipFunction" itemClickJsFunction="itemClickFunction"\
+	<MapChart id="mainMap" drillDownEnabled="false" showDataTips="true" dataTipJsFunction="dataTipFunction" itemClickJsFunction="itemClickFunction" mapChangeJsFunction="clickFunction"\
 				dataTipType="Type3" dataTipFill="#2e7dca" dataTipBorderColor="#fff0f0" dataTipColor="#ffffff" dataTipAlpha="1">\
 		<series>\
 			<MapSeries id="mapseries" interactive="true" selectionMarking="line" color="#353535" labelPosition="inside" displayName="Map Series"\
-						localFillByRange="[#EBF0F4,#3266FE,#F3F42E,#FF6700,#FE0000]" rangeLegendDataField="sales"\
+						localFillByRange="[#EBF0F4,#3266FE,#F3F42E,#FF6700,#FE0000]" rangeLegendDataField="level"\
 						useGis="true" dataTipFill="#ff007e" dataTipBorderColor="#ff007e" dataTipColor="#ffffff" dataTipAlpha="1" hideOverSizeLabel="false">\
 				<stroke>\
 					<Stroke color="#CAD7E0" weight="0.5" alpha="1"/>\

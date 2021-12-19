@@ -90,7 +90,18 @@ svg {
 	height: 180px;
 }
 
+.ol-viewport {
+	top: -32px;
+	bottom: -32px;
+	z-index: 0;
+}
 
-#backImage {
-	
+.rm-button-group {
+	position: relative;
+	z-index: 1;
+}
+
+.rm-button-group button {
+	width: 80px;
+	border-radius: 0px;
 }

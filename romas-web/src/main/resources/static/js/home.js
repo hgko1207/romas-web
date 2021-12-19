@@ -185,6 +185,11 @@ $(document).ready(function() {
 		var name = $('#nameText').val();
 		setTableData(3, '', name);
 	});
+	
+	$('#mapBtn').click(function() {
+		$('#mapHolder').removeClass('display-none');
+		$('#vMap').addClass('display-none');
+	});
 });
 
 $('#reservoirTable tbody').on("click", "tr", function(){
