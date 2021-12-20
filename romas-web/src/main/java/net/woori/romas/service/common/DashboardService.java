@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 import net.woori.romas.domain.DashboardInfo;
 import net.woori.romas.domain.DashboardInfo.UpDown;
 import net.woori.romas.domain.TableInfo;
-import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.db.ReservoirOperation.OperationType;
 import net.woori.romas.domain.param.SearchParam;
@@ -32,9 +31,6 @@ public class DashboardService {
 	
 	@Autowired
 	private ReservoirOperationService reservoirOperationService;
-	
-	@Autowired
-	private ReservoirInfoService reservoirInfoService;
 	
 	/**
 	 * 대쉬보드 정보 생성
@@ -106,16 +102,9 @@ public class DashboardService {
 		} else if (param.getType() == 3) {
 			if (!param.getFacilityName().isEmpty() ) {
 				reservoirOperationService.getList(param.getFacilityName()).forEach(data -> {
-					TableInfo tableInfo = new TableInfo();
-					tableInfo.setName(data.getFacilityName());
-					tableInfo.setType(OperationType.Attention);
-					
-					List<ReservoirLevel> reservoirLevels = reservoirInfoService.getReservoirWaterLevel(data.getFacCode());
-					if (reservoirLevels.size() > 0) {
-						tableInfo.setWaterLevel(reservoirLevels.get(0).getWaterLevel());
-					}
-					
-					tableInfos.add(tableInfo);
+					Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
+					if (value != null)
+						tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
 				});
 			}
 		}

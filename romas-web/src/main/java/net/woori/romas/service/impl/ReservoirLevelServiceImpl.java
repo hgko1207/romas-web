@@ -96,6 +96,14 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	public Float getBranchList(String date, String branch) {
 		return reservoirLevelRepository.getBranchList(date, branch);
 	}
+	
+	/**
+	 * 시설코드를 통해 수위 조회
+	 */
+	@Override
+	public Float getFacCodeList(String date, String facCode) {
+		return reservoirLevelRepository.getFacCodeList(date, facCode);
+	}
 
 	@Transactional(readOnly = true)
 	@Override
@@ -139,5 +147,4 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	public ReservoirLevel getLastOne(String facCode) {
 		return reservoirLevelRepository.getLastOne(facCode);
 	}
-
 }

@@ -20,10 +20,10 @@ import net.woori.romas.domain.db.ReservoirOperation;
  * @author 주기적으로 업데이트해야 될 스케쥴 관리
  * 
  */
-
 @Service
 @Transactional
 public class ScheduleService {
+	
 	private static final int UPDATE_TIME_MILLISECONDS = 12 * 60 * 60 * 1000; // 1시간을 기준으로
 	private static final int INIT_TIME_MILLISECONDS = 1 * 10 * 1000; 
 	
@@ -41,7 +41,6 @@ public class ScheduleService {
 	@Autowired
 	private TransactionTemplate txTemplate;
 
-	
 	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
 	public void levelUpdate() {
 		txTemplate.execute(new TransactionCallbackWithoutResult() {

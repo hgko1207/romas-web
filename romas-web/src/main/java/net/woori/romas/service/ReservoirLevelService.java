@@ -13,17 +13,19 @@ public interface ReservoirLevelService extends CRUDService<ReservoirLevel, Compo
 	float getAllList(String date);
 	
 	float getRegionalList(String date, String area);
-	
-	Float getBranchList(String date, String branch);
 
 	List<ReservoirLevel> getList(FacilitySearchParam param);
-
-	Float getRateAllList(String date);
 	
 	List<Float> getList(String date);
 
 	Float getAvgList(String startDate, String endDate);
 	
 	ReservoirLevel getLastOne(String facCode);
+	
+	Float getBranchList(String date, String branch);
+	
+	Float getRateAllList(String date);
+
+	Float getFacCodeList(String date, String facCode);
 
 }
