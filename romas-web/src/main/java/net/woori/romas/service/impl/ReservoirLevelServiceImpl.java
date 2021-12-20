@@ -135,4 +135,9 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 		return reservoirLevelRepository.getAvgList(startDate, endDate);
 	}
 
+	@Override
+	public ReservoirLevel getLastOne(String facCode) {
+		return reservoirLevelRepository.getLastOne(facCode);
+	}
+
 }

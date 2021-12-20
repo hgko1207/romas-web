@@ -34,4 +34,7 @@ public interface ReservoirLevelRepository extends DefaultRepository<ReservoirLev
 
 	@Query(value = "SELECT " + SELECT + ", round(avg(rate)) as rate FROM tb_reservoir_level WHERE fac_code = ?1 AND check_date BETWEEN ?2 ANd ?3 GROUP BY MONTH(check_date)", nativeQuery = true)
 	List<ReservoirLevel> getMonthGroupList(String facCode, String startDate, String endDate);
+	
+	@Query(value = "SELECT * FROM tb_reservoir_level where fac_code=?1 order by check_date desc limit 1", nativeQuery = true)
+	ReservoirLevel getLastOne(String facCode);
 }

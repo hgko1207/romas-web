@@ -36,6 +36,8 @@ public interface ReservoirOperationRepository extends DefaultRepository<Reservoi
 
 	ReservoirOperation findByFacCodeAndMonthAndEml(String facCode, int month, String eml);
 	
+	ReservoirOperation findByFacCode(String facCode);
+	
 	String select = "SELECT fac_code, month, eml, regional_head, branch, facility_name, current_water_level, "
 			+ "avg(attention_water_level) as attention_water_level, avg(caution_water_level) as caution_water_level, "
 			+ "avg(boudary_water_level) as boudary_water_level, avg(serious_water_level) as serious_water_level";
