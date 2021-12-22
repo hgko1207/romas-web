@@ -85,7 +85,7 @@ var VWorldMap = {
 	},
 	centerMap: function(lon, lat) {
 	    this.map.getView().setCenter(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
-	    //map.getView().setZoom(10);
+	    this.map.getView().setZoom(10);
 	},
 	getMap: function() {
 		return this.map;

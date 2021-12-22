@@ -5,6 +5,38 @@ function getEventTarget(e) {
     return e.target || e.srcElement; 
 }
 
+function searchChart(param) {
+	$.ajax({
+		url: contextPath + "/facility/chart/search",
+		type: "POST",
+		data: JSON.stringify(param),
+		contentType: "application/json",
+		success: function(response) {
+			if (response.length > 0) {
+				var arrayData = [];
+				var legends = ['date', '', '저수율', '심각', '경계', '주의', '관심'];
+				arrayData.push(legends);
+				
+				$.each(response, function(i, data) {
+					var results = [data.resultDate, data.emptyLevel, data.rate, data.seriousWaterLevel, 
+						data.boudaryWaterLevel, data.cautionWaterLevel, data.attentionWaterLevel];
+					arrayData.push(results);
+				});
+				
+				GoogleComboChart.init('google-combo', arrayData);
+			}
+		}
+	}); 
+}
+
+function init(startDate, endDate) {
+	
+	
+	
+	
+	//searchChart(param);
+}
+
 $(document).ready(function() {
 	const dateFormat = 'YYYY-MM-DD';
 	let startDate = moment().subtract(7, 'days').format(dateFormat);
@@ -48,6 +80,13 @@ $(document).ready(function() {
 	    $('#inptPeriod').data('daterangepicker').setStartDate(changeDate.format(dateFormat));
 	    $('#inptPeriod').data('daterangepicker').setEndDate(moment().format(dateFormat));
 	};
+	
+	let param = new Object();
+	param.facCode = $("#facCodeText").text();
+	param.startDate = startDate;
+	param.endDate = endDate;
+	
+	searchChart(param);
 	
 	$("#seltHq").change(function() {
 		$("#seltBranch").empty();
@@ -140,26 +179,6 @@ $(document).ready(function() {
 			}
 		}); 
 		
-		$.ajax({
-			url: contextPath + "/facility/chart/search",
-			type: "POST",
-			data: JSON.stringify(param),
-			contentType: "application/json",
-			success: function(response) {
-				if (response.length > 0) {
-					var arrayData = [];
-					var legends = ['date', '', '저수율', '심각', '경계', '주의', '관심'];
-					arrayData.push(legends);
-					
-					$.each(response, function(i, data) {
-						var results = [data.resultDate, data.emptyLevel, data.rate, data.seriousWaterLevel, 
-							data.boudaryWaterLevel, data.cautionWaterLevel, data.attentionWaterLevel];
-						arrayData.push(results);
-					});
-					
-					GoogleComboChart.init('google-combo', arrayData);
-				}
-			}
-		}); 
+		searchChart(param);
 	});
 });

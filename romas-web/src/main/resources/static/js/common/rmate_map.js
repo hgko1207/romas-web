@@ -69,23 +69,26 @@ function mapcomp() {
 		url: contextPath + "/home/reservoir/level",
 		type: "GET",
 		success: function(response) {
-			mapData.push({"code":100, "level":100});
-			mapData.push({"code":101, "level":200});
-			mapData.push({"code":102, "level":300});
-			mapData.push({"code":103, "level":400});
-			mapData.push({"code":104, "level":500});
+			mapData.push({"code":90000, "level":500});
+			mapData.push({"code":110000, "level":500});
+			mapData.push({"code":70000, "level":500});
+			mapData.push({"code":1700, "level":500});
+			mapData.push({"code":50000, "level":500});
+			mapData.push({"code":60000, "level":500});
+			mapData.push({"code":80000, "level":500});
+			mapData.push({"code":100000, "level":500});
 			
 			$.each(response, function(i, item) {
 				let data = {"code": item.code};
 				
 				if (item.level == 0) 
-					data["level"] = 200;
+					data["level"] = 100;
 				if (item.level == 1) 
-					data["level"] = 300;
+					data["level"] = 200;
 				else if (item.level == 2) 
+					data["level"] = 300;
+				else if (item.level == 3)
 					data["level"] = 400;
-				else if (item.level == 3) 
-					data["level"] = 500;
 				mapData.push(data);
 			});
 			
@@ -134,6 +137,7 @@ function itemClickFunction(seriesId, code, label, data) {
 
 function clickFunction(code, label, data) {
 	if (label == '경기도') {
+		initWorldMap(127.13699953245381, 37.64702385594684);
 	} else if (label == '강원도') {
 		initWorldMap(128.34652853368348, 37.750174547038476);
 	} else if (label == '충청북도') {
@@ -165,7 +169,7 @@ var layoutStr = '\
 				dataTipType="Type3" dataTipFill="#2e7dca" dataTipBorderColor="#fff0f0" dataTipColor="#ffffff" dataTipAlpha="1">\
 		<series>\
 			<MapSeries id="mapseries" interactive="true" selectionMarking="line" color="#353535" labelPosition="inside" displayName="Map Series"\
-						localFillByRange="[#EBF0F4,#3266FE,#F3F42E,#FF6700,#FE0000]" rangeLegendDataField="level"\
+						localFillByRange="[#3266FE,#F3F42E,#FF6700,#FE0000,#EBF0F4]" rangeLegendDataField="level"\
 						useGis="true" dataTipFill="#ff007e" dataTipBorderColor="#ff007e" dataTipColor="#ffffff" dataTipAlpha="1" hideOverSizeLabel="false">\
 				<stroke>\
 					<Stroke color="#CAD7E0" weight="0.5" alpha="1"/>\
