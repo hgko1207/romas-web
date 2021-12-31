@@ -16,8 +16,9 @@ import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirOperation;
 
 /**
+ * 주기적으로 업데이트해야 될 스케쥴 관리
  * 
- * @author 주기적으로 업데이트해야 될 스케쥴 관리
+ * @author 
  * 
  */
 @Service
@@ -25,23 +26,23 @@ import net.woori.romas.domain.db.ReservoirOperation;
 public class ScheduleService {
 	
 	private static final int UPDATE_TIME_MILLISECONDS = 12 * 60 * 60 * 1000; // 1시간을 기준으로
-	private static final int INIT_TIME_MILLISECONDS = 1 * 10 * 1000; 
-	
-	SimpleDateFormat format1 = new SimpleDateFormat ( "yyyy-MM-dd HH:mm:ss");
-	
+	private static final int INIT_TIME_MILLISECONDS = 1 * 10 * 1000;
+
+	SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
 	@Autowired
 	private ReservoirService reservoirService;
-	
+
 	@Autowired
 	private ReservoirOperationService reservoirOperationService;
-	
+
 	@Autowired
 	private ReservoirLevelService reservoirLevelService;
-	
+
 	@Autowired
 	private TransactionTemplate txTemplate;
 
-	//@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
+	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
 	public void levelUpdate() {
 		txTemplate.execute(new TransactionCallbackWithoutResult() {
 			
@@ -53,20 +54,24 @@ public class ScheduleService {
 					Date date = new Date(System.currentTimeMillis());
 					ReservoirOperation ro = reservoirOperationService.get(rv.getFacCode(),date);
 					ReservoirLevel rl = reservoirLevelService.getLastOne(rv.getFacCode());
-					
-					if(rl != null && ro != null) {
+
+					if (rl != null && ro != null) {
 						ro.setCurrentWaterLevel(rl.getWaterLevel());
 						reservoirOperationService.update(ro);
 					}
-					
-					if(ro != null) {
-						if(ro.getCurrentWaterLevel() >= ro.getCautionWaterLevel()) rv.setLevel(0); //관심
-						else if(ro.getCurrentWaterLevel() > ro.getBoudaryWaterLevel() 
-								&& ro.getCurrentWaterLevel() <= ro.getCautionWaterLevel()) rv.setLevel(1); // 주의
-						else if(ro.getCurrentWaterLevel() > ro.getSeriousWaterLevel() 
-								&& ro.getCurrentWaterLevel() <= ro.getBoudaryWaterLevel()) rv.setLevel(2); // 경계
-						else if(ro.getCurrentWaterLevel() <= ro.getSeriousWaterLevel()) rv.setLevel(3); // 심각
-						
+
+					if (ro != null) {
+						if (ro.getCurrentWaterLevel() >= ro.getCautionWaterLevel())
+							rv.setLevel(0); // 관심
+						else if (ro.getCurrentWaterLevel() > ro.getBoudaryWaterLevel()
+								&& ro.getCurrentWaterLevel() <= ro.getCautionWaterLevel())
+							rv.setLevel(1); // 주의
+						else if (ro.getCurrentWaterLevel() > ro.getSeriousWaterLevel()
+								&& ro.getCurrentWaterLevel() <= ro.getBoudaryWaterLevel())
+							rv.setLevel(2); // 경계
+						else if (ro.getCurrentWaterLevel() <= ro.getSeriousWaterLevel())
+							rv.setLevel(3); // 심각
+
 						reservoirService.update(rv);
 						System.err.println("TEST rv update" + rv.toString());
 					}

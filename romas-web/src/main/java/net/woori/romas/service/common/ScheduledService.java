@@ -124,8 +124,6 @@ public class ScheduledService {
 		
 		List<ReservoirLevel> reservoirLevels = new ArrayList<>();
 		
-		System.err.println(result);
-		
 		try {
 			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = factory.newDocumentBuilder();
@@ -201,7 +199,7 @@ public class ScheduledService {
 	private String createUrl(String url, String facCode) {
 		
 		Calendar calendar = Calendar.getInstance();
-		calendar.add(Calendar.DATE, -1);
+		calendar.add(Calendar.DATE, -6);
 		
 		String yesterday = dateFormat.format(calendar.getTime());
 		String today = dateFormat.format(new Date());
