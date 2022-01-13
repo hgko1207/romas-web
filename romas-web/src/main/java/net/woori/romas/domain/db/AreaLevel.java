@@ -3,14 +3,14 @@ package net.woori.romas.domain.db;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.woori.romas.domain.Domain;
-import net.woori.romas.domain.ReservoirInfo;
-
+import net.woori.romas.domain.db.AreaLevel.CompositeAreaLevelPK;
 /**
  * 시, 광역시, 군, 구에 대한 위험도를 저장하는 DB
  * 
@@ -18,7 +18,8 @@ import net.woori.romas.domain.ReservoirInfo;
  *
  */
 @Entity
-@Table(name = "tb_areaLevel")
+@Table(name = "tb_area_Level")
+@IdClass(CompositeAreaLevelPK.class) 
 @Data
 @NoArgsConstructor
 public class AreaLevel implements Domain {
@@ -60,7 +61,7 @@ public class AreaLevel implements Domain {
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor
-	public static class CompositeOperationPK implements Domain {
+	public static class CompositeAreaLevelPK implements Domain {
 				
 		/** 시,도 */
 		private int province;
