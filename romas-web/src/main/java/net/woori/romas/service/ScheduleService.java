@@ -102,7 +102,7 @@ public class ScheduleService {
 		});
 	}
 	
-	//@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
+	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
 	public void levelUpdate() {
 		txTemplate.execute(new TransactionCallbackWithoutResult() {
 			
