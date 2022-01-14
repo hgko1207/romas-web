@@ -18,7 +18,7 @@ var VWorldMap = {
 			center : new ol.geom.Point([ 127, 36.5 ]) //처음 중앙에 보여질 경도, 위도 
 					.transform('EPSG:4326', 'EPSG:3857') //GPS 좌표계 -> 구글 좌표계
 					.getCoordinates(), //포인트의 좌표를 리턴함
-			zoom : 10 //초기지도 zoom의 정도값
+			zoom : 12 //초기지도 zoom의 정도값
 		});
 		
 		this.map = new ol.Map({ //맵 생성	
@@ -171,4 +171,3 @@ function initWorldMap(lon, lat) {
 		}
 	}, 500);
 }
-

@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import net.woori.romas.domain.DashboardInfo;
-import net.woori.romas.domain.LevelInfo;
 import net.woori.romas.domain.TableInfo;
 import net.woori.romas.domain.chart.ChartInfo;
+import net.woori.romas.domain.db.AreaLevel;
 import net.woori.romas.domain.db.Reservoir;
 import net.woori.romas.domain.param.SearchParam;
+import net.woori.romas.service.AreaLevelService;
 import net.woori.romas.service.ReservoirService;
 import net.woori.romas.service.common.ChartService;
 import net.woori.romas.service.common.DashboardService;
@@ -39,6 +40,9 @@ public class HomeController {
 	
 	@Autowired
 	private ReservoirService reservoirService;
+	
+	@Autowired
+	private AreaLevelService areaLevelService;
 	
 	@GetMapping("")
 	public String home(Model model) {
@@ -96,8 +100,8 @@ public class HomeController {
 	 */
 	@GetMapping("reservoir/level")
 	@ResponseBody
-	public List<LevelInfo> getReservoirLevel() {
-		return reservoirService.getLevelList();
+	public List<AreaLevel> getReservoirLevel() {
+		return areaLevelService.findByType(1);
 	}
 	
 	/**

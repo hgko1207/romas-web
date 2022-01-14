@@ -15,105 +15,38 @@ var mapVars = "rMateOnLoadCallFunction=mapReadyHandler";
 // 6. setMapDataBaseURLEx - MapData XML 경로를 지시합니다.
 // 7. setSourceURLEx - Map Source 경로를 지시합니다.
 var mapApp, mapRoot;
+var mapData = [];
 
-function mapcomp() {
-	var mapObj = mapRoot.getMap();
-	
-//	var testData = [{"codeA": 80305, "facCode": "1", "facilityName": "test"}];
-//	document.getElementById('map1').setData(testData);
-	
-//	$.ajax({
-//		url: contextPath + "/home/reservoir",
-//		type: "GET",
-//		success: function(response) {
-//			var mapData = [];
-//			
-//			$.each(response, function(i, item) {
-//				const rand_h = Math.floor(Math.random() * 20);
-//				const rand_v = Math.floor(Math.random() * 20);
-//				
-//				let data = {"facCode": item.facCode, "facilityName": item.facilityName, "h": rand_h, "v": rand_v};
-//				
-//				if (item.areaSiGun != null && item.areaSiGun != 0) {
-//					if (item.level == 0) 
-//						data["codeA"] = item.areaSiGun;
-//					else if (item.level == 1) 
-//						data["codeB"] = item.areaSiGun;
-//					else if (item.level == 2) 
-//						data["codeC"] = item.areaSiGun;
-//					else if (item.level == 3) 
-//						data["codeD"] = item.areaSiGun;
-//					mapData.push(data);
-//				}
-//				
-//				if (item.areaDong != null && item.areaDong != 0) {
-//					if (item.level == 0) 
-//						data["codeA"] = item.areaDong;
-//					else if (item.level == 1) 
-//						data["codeB"] = item.areaDong;
-//					else if (item.level == 2) 
-//						data["codeC"] = item.areaDong;
-//					else if (item.level == 3) 
-//						data["codeD"] = item.areaDong;
-//					mapData.push(data);
-//				}
-//			});
-//			
-//			document.getElementById('map1').setData(mapData);
-//		}
-//	});
-	
-	var mapData = [];
-	
+function mapReadyHandler(id) {
 	$.ajax({
 		url: contextPath + "/home/reservoir/level",
 		type: "GET",
 		success: function(response) {
-			mapData.push({"code":90000, "level":500});
-			mapData.push({"code":110000, "level":500});
-			mapData.push({"code":70000, "level":500});
-			mapData.push({"code":1700, "level":500});
-			mapData.push({"code":50000, "level":500});
-			mapData.push({"code":60000, "level":500});
-			mapData.push({"code":80000, "level":500});
-			mapData.push({"code":100000, "level":500});
+			var mapData = [];
 			
 			$.each(response, function(i, item) {
-				let data = {"code": item.code};
-				
-				if (item.level == 0) 
-					data["level"] = 100;
-				if (item.level == 1) 
-					data["level"] = 200;
-				else if (item.level == 2) 
-					data["level"] = 300;
-				else if (item.level == 3)
-					data["level"] = 400;
+				let data = {"code": item.country, "level": item.level, "longitude": item.longitude, "latitude": item.latitude};
 				mapData.push(data);
 			});
 			
-			document.getElementById('map1').setData(mapData);
+			document.getElementById(id).setData(mapData);
+			document.getElementById(id).setLayout(layoutStr);
+			document.getElementById(id).setMapDataBaseURLEx(mapDataBaseURL);
+			document.getElementById(id).setSourceURLEx(sourceURL);
+			
+			mapApp = document.getElementById(id);
+			mapRoot = mapApp.getRoot();
 		}
 	});
 }
 
-function mapReadyHandler(id) {
-	document.getElementById(id).setLayout(layoutStr);
-	document.getElementById(id).setMapDataBaseURLEx(mapDataBaseURL);
-	document.getElementById(id).setSourceURLEx(sourceURL);
-
-	mapApp = document.getElementById(id);
-	mapRoot = mapApp.getRoot();
-	mapRoot.addEventListener("creationComplete", mapcomp);
-}
-
 // Map Data 경로 정의
 // setMapDataBase함수로 mapDataBase를 문자열로 넣어줄 경우 주석처리나 삭제하십시오.
-var mapDataBaseURL = contextPath + "/rMateMapChartH5/MapDataBaseXml/SouthKoreaDrillDownUMD_GIS.xml";
+var mapDataBaseURL = contextPath + "/rMateMapChartH5/MapDataBaseXml/SouthKoreaDrillDown_opacity.xml";
 
 // MapChart Source 선택
 // MapSource 디렉토리의 지도 이미지중 택일가능하며, 이외에 사용자가 작성한 별도의 Svg이미지를 지정할 수 있습니다.(매뉴얼 참조)
-var sourceURL = contextPath + "/rMateMapChartH5/MapSource/SouthKoreaDrillDownUMD_GIS.svg";
+var sourceURL = contextPath + "/rMateMapChartH5/MapSource/SouthKoreaDrillDown.svg";
 
 // rMateMapChart 를 생성합니다.
 // 파라메터 (순서대로) 
@@ -131,32 +64,28 @@ function dataTipFunction(seriesId, code, label, data) {
       return label;
 }
 
-function itemClickFunction(seriesId, code, label, data) {
-    location.href = contextPath + "/facility/" + data.facCode;
+/// level에 따른 컬러 지정
+function colorFunction(code, label, data) {
+	let color = "#EBF0F4";
+	if (data){
+		if (data.level == 0) 
+			color = "#3266FE";
+		else if (data.level == 1) 
+			color = "#F3F42E";
+		else if (data.level == 2) 
+			color = "#FF6700";
+		else if (data.level == 3)
+			color = "#FE0000";
+	}
+	return color;
 }
 
+
 function clickFunction(code, label, data) {
-	if (label == '경기도') {
-		initWorldMap(127.13699953245381, 37.64702385594684);
-	} else if (label == '강원도') {
-		initWorldMap(128.34652853368348, 37.750174547038476);
-	} else if (label == '충청북도') {
-		initWorldMap(127.63308137873065, 36.67464493679185);
-	} else if (label == '충청남도') {
-		initWorldMap(126.90366459133672, 36.55025699120413);
-	} else if (label == '경상북도') {
-		initWorldMap(128.74121345720187, 36.587247368002615);
-	} else if (label == '경상남도') {
-		initWorldMap(128.35972451038734, 35.40262829035685);
-	} else if (label == '전라북도') {
-		initWorldMap(127.18130434578022, 35.77963772942307);
-	} else if (label == '전라남도') {
-		initWorldMap(127.02799724321814, 34.93837178858539);
-	} else if (label == '제주도') {
-		initWorldMap(126.5661352113117, 33.38662515740234);
-	}
-	
-	if (label.length != 2) {
+	const str = label.substr(-1);
+	if (str == '구' || str == '시' || str == '군') {
+		initWorldMap(data.longitude, data.latitude);
+		
 		$('#mapHolder').addClass('display-none');
 		$('#vMap').removeClass('display-none');
 	}
@@ -165,11 +94,11 @@ function clickFunction(code, label, data) {
 var layoutStr = '\
 <?xml version="1.0" encoding="utf-8"?>\
 <rMateMapChart>\
-	<MapChart id="mainMap" drillDownEnabled="false" showDataTips="true" dataTipJsFunction="dataTipFunction" itemClickJsFunction="itemClickFunction" mapChangeJsFunction="clickFunction"\
+	<MapChart id="mainMap" drillDownEnabled="true" showDataTips="true" backImageY="25" dataTipJsFunction="dataTipFunction" mapChangeJsFunction="clickFunction"\
 				dataTipType="Type3" dataTipFill="#2e7dca" dataTipBorderColor="#fff0f0" dataTipColor="#ffffff" dataTipAlpha="1">\
 		<series>\
 			<MapSeries id="mapseries" interactive="true" selectionMarking="line" color="#353535" labelPosition="inside" displayName="Map Series"\
-						localFillByRange="[#3266FE,#F3F42E,#FF6700,#FE0000,#EBF0F4]" rangeLegendDataField="level"\
+						rangeLegendDataField="level" localFillJsFunction="colorFunction"\
 						useGis="true" dataTipFill="#ff007e" dataTipBorderColor="#ff007e" dataTipColor="#ffffff" dataTipAlpha="1" hideOverSizeLabel="false">\
 				<stroke>\
 					<Stroke color="#CAD7E0" weight="0.5" alpha="1"/>\

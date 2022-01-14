@@ -35,7 +35,12 @@ public class AreaLevel implements Domain {
 	@Column(nullable = false, length = 20)
 	private int type;
 
-	/** level */
+	/** 관심 단계 
+	 * 0 : 관심 파랑
+	 * 1 : 주의 노랑
+	 * 2 : 경계 주황
+	 * 3 : 심각 빨강
+	 * */
 	@Column(nullable = false, length = 20)
 	private int level;
 
@@ -50,13 +55,6 @@ public class AreaLevel implements Domain {
 	/** label */
 	@Column(nullable = false)
 	private String label;
-	
-	/** 관심 단계 
-	 * 0 : 관심 파랑
-	 * 1 : 주의 노랑
-	 * 2 : 경계 주황
-	 * 3 : 심각 빨강
-	 * */
 	
 	@Data
 	@AllArgsConstructor
