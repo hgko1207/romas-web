@@ -62,11 +62,4 @@ public class AreaLevelServiceImpl implements AreaLevelService {
 	private boolean isNew(AreaLevel domain) {
 		return !areaLevelRepository.existsById(new CompositeAreaLevelPK(domain.getProvince(), domain.getCountry()));
 	}
-
-	@Transactional(readOnly = true)
-	@Override
-	public List<AreaLevel> findByType(int type) {
-		return areaLevelRepository.findAll();
-	}
-
 }

@@ -101,7 +101,7 @@ public class HomeController {
 	@GetMapping("reservoir/level")
 	@ResponseBody
 	public List<AreaLevel> getReservoirLevel() {
-		return areaLevelService.findByType(1);
+		return areaLevelService.getList();
 	}
 	
 	/**
