@@ -229,30 +229,32 @@ function setTableData(type, regionalHead, facilityName) {
 			var html = '';
 			
 			$.each(response, function(i, data) {
-				html += '<tr>';
-				html += `<th scope="row">${data.name}</th>`;
-				if (data.type == 'Attention') {
-					html += `<td><span class="rm-region-status care">${data.waterLevel}</span></td>`;
-					html += '<td></td>';
-					html += '<td></td>';
-					html += '<td></td>';
-				} else if (data.type == 'Caution') {
-					html += '<td></td>';
-					html += `<td><span class="rm-region-status caution">${data.waterLevel}</span></td>`;
-					html += '<td></td>';
-					html += '<td></td>';
-				} else if (data.type == 'Boudary') {
-					html += '<td></td>';
-					html += '<td></td>';
-					html += `<td><span class="rm-region-status boudary">${data.waterLevel}</span></td>`;
-					html += '<td></td>';
-				} else if (data.type == 'Serious') {
-					html += '<td></td>';
-					html += '<td></td>';
-					html += '<td></td>';
-					html += `<td><span class="rm-region-status serious">${data.waterLevel}</span></td>`;
+				if (data.waterLevel != 0) {
+					html += '<tr>';
+					html += `<th scope="row">${data.name}</th>`;
+					if (data.type == 'Attention') {
+						html += `<td><span class="rm-region-status care">${data.waterLevel}</span></td>`;
+						html += '<td></td>';
+						html += '<td></td>';
+						html += '<td></td>';
+					} else if (data.type == 'Caution') {
+						html += '<td></td>';
+						html += `<td><span class="rm-region-status caution">${data.waterLevel}</span></td>`;
+						html += '<td></td>';
+						html += '<td></td>';
+					} else if (data.type == 'Boudary') {
+						html += '<td></td>';
+						html += '<td></td>';
+						html += `<td><span class="rm-region-status boudary">${data.waterLevel}</span></td>`;
+						html += '<td></td>';
+					} else if (data.type == 'Serious') {
+						html += '<td></td>';
+						html += '<td></td>';
+						html += '<td></td>';
+						html += `<td><span class="rm-region-status serious">${data.waterLevel}</span></td>`;
+					}
+					html += '</tr>';
 				}
-				html += '</tr>';
 			});
 			
 			$("#reservoirTable").append(html);

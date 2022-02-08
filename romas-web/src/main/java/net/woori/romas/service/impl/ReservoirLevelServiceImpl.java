@@ -76,7 +76,8 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	@Transactional(readOnly = true)
 	@Override
 	public float getAllList(String date) {
-		return reservoirLevelRepository.getAllList(date);
+		Float result = reservoirLevelRepository.getAllList(date);
+		return result == null ? 0 : result.floatValue();
 	}
 
 	/**
@@ -85,7 +86,8 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	@Transactional(readOnly = true)
 	@Override
 	public float getRegionalList(String date, String area) {
-		return reservoirLevelRepository.getRegionalList(date, area);
+		Float result = reservoirLevelRepository.getRegionalList(date, area);
+		return result == null ? 0 : result.floatValue();
 	}
 	
 	/**
@@ -93,16 +95,18 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	 */
 	@Transactional(readOnly = true)
 	@Override
-	public Float getBranchList(String date, String branch) {
-		return reservoirLevelRepository.getBranchList(date, branch);
+	public float getBranchList(String date, String branch) {
+		Float result = reservoirLevelRepository.getBranchList(date, branch);
+		return result == null ? 0 : result.floatValue();
 	}
 	
 	/**
 	 * 시설코드를 통해 수위 조회
 	 */
 	@Override
-	public Float getFacCodeList(String date, String facCode) {
-		return reservoirLevelRepository.getFacCodeList(date, facCode);
+	public float getFacCodeList(String date, String facCode) {
+		Float result = reservoirLevelRepository.getFacCodeList(date, facCode);
+		return result == null ? 0 : result.floatValue();
 	}
 
 	@Transactional(readOnly = true)
@@ -124,8 +128,9 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	 */
 	@Transactional(readOnly = true)
 	@Override
-	public Float getRateAllList(String date) {
-		return reservoirLevelRepository.getRateAllList(date);
+	public float getRateAllList(String date) {
+		Float result = reservoirLevelRepository.getRateAllList(date);
+		return result == null ? 0 : result.floatValue();
 	}
 
 	/**
@@ -139,8 +144,9 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 
 	@Transactional(readOnly = true)
 	@Override
-	public Float getAvgList(String startDate, String endDate) {
-		return reservoirLevelRepository.getAvgList(startDate, endDate);
+	public float getAvgList(String startDate, String endDate) {
+		Float result = reservoirLevelRepository.getAvgList(startDate, endDate);
+		return result == null ? 0 : result.floatValue();
 	}
 
 	@Override

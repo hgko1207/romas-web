@@ -44,7 +44,7 @@ public class ChartService {
 		
 		String day = DateUtil.getDate(-1);
 		
-		Float value = reservoirLevelService.getRateAllList(day);
+		float value = reservoirLevelService.getRateAllList(day);
 		
 		BarChartSeries barChartSeries = new BarChartSeries();
 		barChartSeries.addDataItem(value);

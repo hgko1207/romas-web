@@ -139,8 +139,11 @@ public class DashboardService {
 		String startDate = year + "-01-01";
 		String endDate = year + "-12-31";
 		
-		Float value1 = reservoirLevelService.getRateAllList(DateUtil.getDate(-1));
-		Float value2 = reservoirLevelService.getAvgList(startDate, endDate);
+		Float result1 = reservoirLevelService.getRateAllList(DateUtil.getDate(-1));
+		Float result2 = reservoirLevelService.getAvgList(startDate, endDate);
+		
+		float value1 = result1 == null ? 0 : result1.floatValue();
+		float value2 = result2 == null ? 0 : result2.floatValue();
 		
 		DashboardInfo dashboardInfo = new DashboardInfo();
 		dashboardInfo.setTodayValue(value1);

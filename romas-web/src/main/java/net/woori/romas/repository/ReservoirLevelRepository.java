@@ -12,10 +12,10 @@ public interface ReservoirLevelRepository extends DefaultRepository<ReservoirLev
 	final String SELECT = "check_date, fac_code, country, fac_name, water_level, create_date, branch, regional_head";
 	
 	@Query(value = "SELECT round(avg(water_level)) FROM tb_reservoir_level WHERE create_date = ?1", nativeQuery = true)
-	float getAllList(String date);
+	Float getAllList(String date);
 	
 	@Query(value = "SELECT round(avg(water_level)) FROM tb_reservoir_level WHERE create_date = ?1 AND regional_head = ?2", nativeQuery = true)
-	float getRegionalList(String date, String area);
+	Float getRegionalList(String date, String area);
 	
 	@Query(value = "SELECT round(avg(water_level)) FROM tb_reservoir_level WHERE create_date = ?1 AND branch = ?2", nativeQuery = true)
 	Float getBranchList(String date, String branch);
