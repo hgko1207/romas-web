@@ -128,8 +128,6 @@ public class FacilityController {
 	@PostMapping("/chart/search")
 	public ResponseEntity<?> searchChart(@RequestBody FacilitySearchParam param) {
 		
-		System.err.println(param);
-		
 		return new ResponseEntity<>(chartService.createGoogleChartInfo(param), HttpStatus.OK);
 	}
 }

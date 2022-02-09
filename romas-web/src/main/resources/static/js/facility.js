@@ -29,14 +29,6 @@ function searchChart(param) {
 	}); 
 }
 
-function init(startDate, endDate) {
-	
-	
-	
-	
-	//searchChart(param);
-}
-
 $(document).ready(function() {
 	const dateFormat = 'YYYY-MM-DD';
 	let startDate = moment().subtract(7, 'days').format(dateFormat);
@@ -177,7 +169,7 @@ $(document).ready(function() {
 				
 				$("#rateText").text(response.rate + "%");
 			}
-		}); 
+		});
 		
 		searchChart(param);
 	});
