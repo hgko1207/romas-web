@@ -9,7 +9,8 @@ var VWorldMap = {
 			visible : true, //보여짐 여부
 			type : 'base', //지도 종류(일반) ---(야간(midnight), 위성(satellite) 등)
 			source : new ol.source.XYZ({ //vworld api 사용
-				url : 'http://api.vworld.kr/req/wmts/1.0.0/45A1571F-5735-359F-9136-BCD6CF4CC339/Satellite/{z}/{y}/{x}.jpeg'
+				url : 'http://api.vworld.kr/req/wmts/1.0.0/45A1571F-5735-359F-9136-BCD6CF4CC339/Satellite/{z}/{y}/{x}.jpeg',
+				crossOrigin: 'anonymous'
 			})
 		});
 		
