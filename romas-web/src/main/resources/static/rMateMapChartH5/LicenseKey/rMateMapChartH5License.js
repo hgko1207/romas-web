@@ -1,12 +1,13 @@
+<!--
 // -----------------------------------------------------------------------------
 // rMate MapChart License Key 
 //
 // Product Name : rMate MapChart for HTML5 v5.5
 // License Type : Enterprise Trial License
-// Product No : 7F9A-150E-E62D-A04F
+// Product No : 10FD-8A98-62A8-9C9G
 // Authenticated server Info : undefined
-// Expiration date : 2022/02/28
+// Expiration date : 2022/05/31
 //
-var rMateMapChartH5License = "09c382aac5794df16d60fc855a2c75cb5f59e4eebd20e1170bd88b5995240140:3500300b653a484244504f2020464c3456303a41322d2e44303220365045562d3a454d3035352d31352d2e4135392d464537563a414c4c20203845324c2f3a327430202f43323a3232303032323a31453120312a323a3948";
+var rMateMapChartH5License = "6bb0556509eaeee0ef2553255d7cd69f0dead4e300fa031aa9556db1312cabe8:6100390b383a484244504f2020474c3956433a39322d2e38304120325036562d3a384d3935412d38352d2e4435462d304531563a414c4c20203145334c2f3a357430202f43323a3232303032323a32453020322a323a3548";
 // -----------------------------------------------------------------------------
 // -->

@@ -3,6 +3,8 @@ package net.woori.romas.service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;

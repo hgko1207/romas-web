@@ -17,6 +17,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -47,7 +48,9 @@ import net.woori.romas.service.ReservoirService;
 public class ScheduledService {
 	
 //	private final String BASE_URL = "http://210.90.40.182/openapi/svc/reservoirlevel/";
-	private final String BASE_URL = "http://rawris.uirri.kr/svc_temp/reservoirlevel/";
+//	private final String BASE_URL = "http://rawris.uirri.kr/svc_temp/reservoirlevel/";
+	private final String BASE_URL = "http://210.90.40.211/svc_temp/reservoirlevel/";
+	
 	private final String serviceKey = "bTm7%2FgmDLl%2Brg1Kzp1NgwASontpVfDI9JIPD%2FN%2FsuUHosT7w4nOd9IUafIfHX2OOCoDHgQub%2BGSmtDisbWnjQQ%3D%3D";
 	
 	private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
