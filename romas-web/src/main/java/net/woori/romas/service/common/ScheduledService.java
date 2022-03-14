@@ -49,7 +49,7 @@ public class ScheduledService {
 	
 //	private final String BASE_URL = "http://210.90.40.182/openapi/svc/reservoirlevel/";
 //	private final String BASE_URL = "http://rawris.uirri.kr/svc_temp/reservoirlevel/";
-	private final String BASE_URL = "http://210.90.40.211/svc_temp/reservoirlevel/";
+	private final String BASE_URL = "http://210.90.40.66:58080/svc_temp/reservoirlevel/";
 	
 	private final String serviceKey = "bTm7%2FgmDLl%2Brg1Kzp1NgwASontpVfDI9JIPD%2FN%2FsuUHosT7w4nOd9IUafIfHX2OOCoDHgQub%2BGSmtDisbWnjQQ%3D%3D";
 	
@@ -64,7 +64,8 @@ public class ScheduledService {
 	/**
 	 * 저수지 수위 정보 삽입
 	 */
-	@Scheduled(cron = "0 0 16 * * *")
+//	@Scheduled(cron = "0 0 16 * * *")
+	@Scheduled(fixedDelay = 12 * 60 * 60 * 1000, initialDelay = 1 * 60 * 1000)
 //	@PostConstruct
 	public void insertReservoirWaterLevel() {
 		
