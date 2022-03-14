@@ -62,4 +62,10 @@ public class AreaLevelServiceImpl implements AreaLevelService {
 	private boolean isNew(AreaLevel domain) {
 		return !areaLevelRepository.existsById(new CompositeAreaLevelPK(domain.getProvince(), domain.getCountry()));
 	}
+
+	@Override
+	public AreaLevel getLabel(String name) {
+		// TODO Auto-generated method stub
+		return areaLevelRepository.getLabel(name);
+	}
 }
