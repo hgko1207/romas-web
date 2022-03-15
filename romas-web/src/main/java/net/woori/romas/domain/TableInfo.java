@@ -1,16 +1,16 @@
 package net.woori.romas.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import net.woori.romas.domain.db.ReservoirOperation.OperationType;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class TableInfo {
 
 	private String name;
+	
+	private String regionalHead;
 	
 	private OperationType type;
 	
@@ -33,6 +33,15 @@ public class TableInfo {
 	public TableInfo(String name, int country, int attentionCount, int cautionCount, int boundaryCount, int seriousCount) {
 		this.name = name;
 		this.country = country;
+		this.attentionCount = attentionCount;
+		this.cautionCount = cautionCount;
+		this.boundaryCount = boundaryCount;
+		this.seriousCount = seriousCount;
+	}
+	
+	public TableInfo(String name, String regionalHead, int attentionCount, int cautionCount, int boundaryCount, int seriousCount) {
+		this.name = name;
+		this.regionalHead = regionalHead;
 		this.attentionCount = attentionCount;
 		this.cautionCount = cautionCount;
 		this.boundaryCount = boundaryCount;

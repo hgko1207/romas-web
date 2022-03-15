@@ -191,4 +191,9 @@ public class ReservoirOperationServiceImpl implements ReservoirOperationService 
 	public List<ReservoirOperation> getListFromBranch(String regionalHead, int month, String eml) {
 		return reservoirLevelRepository.getBranchList(regionalHead, month, eml);
 	}
+
+	@Override
+	public List<ReservoirOperation> getList(String regionalHead, String branch, int month, String eml) {
+		return reservoirLevelRepository.getList(month, eml, regionalHead, branch);
+	}
 }

@@ -26,4 +26,6 @@ public class SearchParam {
 	private String facilityName;
 	
 	private String regionalHead;
+	
+	private String branch;
 }

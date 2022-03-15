@@ -108,18 +108,19 @@ public class DashboardService {
 		} else if (param.getType() == 2) {
 			reservoirService.getListFromBranch(param.getRegionalHead()).forEach(data -> {
 				AreaLevel areaLevel = areaLevelService.findByCountry(data.getAreaSiGun());
-				tableInfos.add(new TableInfo(data.getBranch(), 0, areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
+				tableInfos.add(new TableInfo(data.getBranch(), data.getRegionalHead(), areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
 			});
 		} else if (param.getType() == 3) {
-//			reservoirService.getListFromBranch(param.getRegionalHead()).forEach(data -> {
-//				AreaLevel areaLevel = areaLevelService.findByCountry(data.getAreaSiGun());
-//				tableInfos.add(new TableInfo(data.getBranch(), 0, areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
-//			});
+			reservoirOperationService.getList(param.getRegionalHead(), param.getBranch(), month, eml).forEach(data -> {
+				Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
+				if (value != null && value != 0)
+					tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
+			});
 		} else if (param.getType() == 4) {
 			if (!param.getFacilityName().isEmpty() ) {
 				reservoirOperationService.getList(param.getFacilityName()).forEach(data -> {
 					Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
-					if (value != null)
+					if (value != null && value != 0)
 						tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
 				});
 			}
@@ -128,6 +129,12 @@ public class DashboardService {
 		return tableInfos;
 	}
 	
+	/**
+	 * 
+	 * @param operation
+	 * @param value
+	 * @return
+	 */
 	private OperationType getType(ReservoirOperation operation, float value) {
 	
 		if (operation.getSeriousWaterLevel() <= value && value < operation.getBoudaryWaterLevel()) {
@@ -176,6 +183,11 @@ public class DashboardService {
 		return dashboardInfo;
 	}
 	
+	/**
+	 * 
+	 * @param day
+	 * @return
+	 */
 	private String getEml(int day) {
 
 		String eml = "";

@@ -3,10 +3,7 @@ package net.woori.romas.service;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.annotation.PostConstruct;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
@@ -105,19 +102,19 @@ public class ScheduleService {
 						if(levelSum != 0) level = levelSum / areaCount;
 						if(level > 3) al.setLevel(3);
 						else al.setLevel(level);
-						al.setAttention_count(attention_cnt_1);
-						al.setCaution_count(caution_cnt_1);
-						al.setBoundary_count(boudary_cnt_1);
-						al.setSerious_count(serious_cnt_1);
+						al.setAttentionCount(attention_cnt_1);
+						al.setCautionCount(caution_cnt_1);
+						al.setBoundaryCount(boudary_cnt_1);
+						al.setSeriousCount(serious_cnt_1);
 						System.err.println("level sum:"+levelSum+",count:"+areaCount+",level 계산 결과: "+level+", 지역 이름 : " + al.getLabel());
 					}else {
 						if(doLevelSum != 0) level = doLevelSum / doAreaCount;
 						if(level > 3) al.setLevel(3);
 						else al.setLevel(level);
-						al.setAttention_count(attention_cnt_2);
-						al.setCaution_count(caution_cnt_2);
-						al.setBoundary_count(boudary_cnt_2);
-						al.setSerious_count(serious_cnt_2);
+						al.setAttentionCount(attention_cnt_2);
+						al.setCautionCount(caution_cnt_2);
+						al.setBoundaryCount(boudary_cnt_2);
+						al.setSeriousCount(serious_cnt_2);
 						System.err.println("level sum:"+doLevelSum+",count:"+doAreaCount+",level 계산 완료 : "+level+", 지역 이름 : " + al.getLabel());
 					}
 					areaLevelService.update(al);
