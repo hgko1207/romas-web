@@ -44,18 +44,6 @@ public class AreaLevel implements Domain {
 	@Column(nullable = false, length = 20)
 	private int level;
 	
-	/**
-	 * 각 지역에 만큼 관심, 주의, 경계, 심각 개수를 표기해야 함 
-	 */
-	private int attention_count;
-	
-	private int caution_count;
-	
-	private int boundary_count;
-	
-	private int serious_count;
-	
-	private int index_code;
 
 	/** 경도 */
 	@Column(nullable = true)
@@ -80,6 +68,10 @@ public class AreaLevel implements Domain {
 	
 	/** 심각 개수 */
 	private int seriousCount;
+	
+	/** 내림차순 관련 컬럼 **/
+	private int indexCode;
+
 	
 	@Data
 	@AllArgsConstructor
