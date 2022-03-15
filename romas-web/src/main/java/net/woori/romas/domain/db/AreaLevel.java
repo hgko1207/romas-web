@@ -68,6 +68,8 @@ public class AreaLevel implements Domain {
 	/** 심각 개수 */
 	private int seriousCount;
 	
+	private int indexCode;
+	
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor

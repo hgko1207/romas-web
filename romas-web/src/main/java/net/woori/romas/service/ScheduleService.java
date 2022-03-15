@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
@@ -45,7 +46,7 @@ public class ScheduleService {
 	@Autowired
 	private TransactionTemplate txTemplate;
 	
-	//@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
+//	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
 	public void areaLevelUpdate() {
 		txTemplate.execute(new TransactionCallbackWithoutResult() {
 			
@@ -141,23 +142,23 @@ public class ScheduleService {
 					if (rl != null && ro != null) {
 						ro.setCurrentWaterLevel(rl.getWaterLevel());
 						reservoirOperationService.update(ro);
-					}
-					
-					if (ro != null) {
-						if (ro.getCurrentWaterLevel() >= ro.getCautionWaterLevel())
+						if (rl.getRate() >= ro.getCautionWaterLevel())
 							rv.setLevel(0); // 관심
-						else if (ro.getCurrentWaterLevel() > ro.getBoudaryWaterLevel()
-								&& ro.getCurrentWaterLevel() <= ro.getCautionWaterLevel())
+						else if (rl.getRate() > ro.getBoudaryWaterLevel()
+								&& rl.getRate() <= ro.getCautionWaterLevel())
 							rv.setLevel(1); // 주의
-						else if (ro.getCurrentWaterLevel() > ro.getSeriousWaterLevel()
-								&& ro.getCurrentWaterLevel() <= ro.getBoudaryWaterLevel())
+						else if (rl.getRate() > ro.getSeriousWaterLevel()
+								&& rl.getRate() <= ro.getBoudaryWaterLevel())
 							rv.setLevel(2); // 경계
-						else if (ro.getCurrentWaterLevel() <= ro.getSeriousWaterLevel())
+						else if (rl.getRate() <= ro.getSeriousWaterLevel())
 							rv.setLevel(3); // 심각
 						
 						reservoirService.update(rv);
 						System.err.println("TEST rv update" + rv.toString());
 					}
+					
+//					if (ro != null ) {
+//					}
 				}
 			}
 		});

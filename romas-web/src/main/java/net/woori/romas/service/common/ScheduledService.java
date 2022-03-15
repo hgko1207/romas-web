@@ -22,6 +22,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.CharacterData;
 import org.w3c.dom.Document;
@@ -62,7 +63,7 @@ public class ScheduledService {
 	/**
 	 * 저수지 수위 정보 삽입
 	 */
-//	@Scheduled(cron = "0 0 16 * * *")
+	@Scheduled(cron = "0 0 16 * * *")
 //	@Scheduled(fixedDelay = 12 * 60 * 60 * 1000, initialDelay = 1 * 60 * 1000)
 //	@PostConstruct
 	public void insertReservoirWaterLevel() {
