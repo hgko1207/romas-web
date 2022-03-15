@@ -24,6 +24,7 @@ public class AreaLevelServiceImpl implements AreaLevelService {
 	@Autowired
 	private AreaLevelRepository areaLevelRepository;
 	
+	@Transactional(readOnly = true)
 	@Override
 	public AreaLevel get(CompositeAreaLevelPK id) {
 		return areaLevelRepository.findById(id).orElse(null);
@@ -63,9 +64,15 @@ public class AreaLevelServiceImpl implements AreaLevelService {
 		return !areaLevelRepository.existsById(new CompositeAreaLevelPK(domain.getProvince(), domain.getCountry()));
 	}
 
+	@Transactional(readOnly = true)
 	@Override
-	public AreaLevel getLabel(String name) {
-		// TODO Auto-generated method stub
-		return areaLevelRepository.getLabel(name);
+	public List<AreaLevel> getListFromProvince() {
+		return areaLevelRepository.getListFromProvince();
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public AreaLevel findByCountry(int country) {
+		return areaLevelRepository.findByCountry(country);
 	}
 }

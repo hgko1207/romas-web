@@ -103,6 +103,7 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	/**
 	 * 시설코드를 통해 수위 조회
 	 */
+	@Transactional(readOnly = true)
 	@Override
 	public float getFacCodeList(String date, String facCode) {
 		Float result = reservoirLevelRepository.getFacCodeList(date, facCode);

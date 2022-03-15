@@ -69,6 +69,18 @@ public class AreaLevel implements Domain {
 	@Column(nullable = false)
 	private String label;
 	
+	/** 관심 개수 */
+	private int attentionCount;
+	
+	/** 주의 개수 */
+	private int cautionCount;
+	
+	/** 경계 개수 */
+	private int boundaryCount;
+	
+	/** 심각 개수 */
+	private int seriousCount;
+	
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor

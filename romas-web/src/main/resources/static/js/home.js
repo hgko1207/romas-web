@@ -154,6 +154,8 @@ function showDashboardInfo() {
 	}, 1000 * 10);
 }
 
+var tableType = 1;
+
 $(document).ready(function() {
 	CurrentDate.init();
 	getWeatherInfo();
@@ -173,17 +175,19 @@ $(document).ready(function() {
 	$('#branchBtn').click(function() {
 		$('#search_condition').addClass('display-none');
 		$('.rm-region-table-group').removeClass('table-group-top');
-		setTableData(2, '경기');
+		setTableData(2, '100');
 	});
 	
 	$('#facilityBtn').click(function() {
 		$('#search_condition').removeClass('display-none');
 		$('.rm-region-table-group').addClass('table-group-top');
+		$('#reservoirTable > tbody').empty();
+		tableType = 3;
 	});
 	
 	$('#searchBtn').click(function() {
 		var name = $('#nameText').val();
-		setTableData(3, '', name);
+		setTableData(4, '', name);
 	});
 	
 	$('#mapBtn').click(function() {
@@ -193,32 +197,37 @@ $(document).ready(function() {
 });
 
 $('#reservoirTable tbody').on("click", "tr", function(){
-	var tdArr = new Array();    // 배열 선언
-
 	var tr = $(this);
 	var td = tr.children();
 	
-	// 반복문을 이용해서 배열에 값을 담아 사용할 수 도 있다.
-    td.each(function(i){
-        tdArr.push(td.eq(i).text());
-    });
-    
-    var regionalHead = td.eq(0).text();
-    
-    $('#areaBtn').removeClass('selected'); 
-    $('#branchBtn').addClass('selected'); 
-    
-    setTableData(2, regionalHead);
+    if (tableType == 1) {
+    	$('#areaBtn').removeClass('selected'); 
+        $('#branchBtn').addClass('selected'); 
+        
+        var regionalHead = td.eq(5).text();
+        setTableData(2, regionalHead);
+    } else if (tableType == 2) {
+    	$('#branchBtn').removeClass('selected'); 
+        $('#facilityBtn').addClass('selected');
+        $('#search_condition').removeClass('display-none');
+		$('.rm-region-table-group').addClass('table-group-top');
+        
+        var branch = td.eq(0).text();
+        setTableData(3, '', '', branch);
+    }
 });
 
 /** 두번째 테이블 표출 */
-function setTableData(type, regionalHead, facilityName) {
+function setTableData(type, regionalHead, facilityName, branch) {
+	tableType = type;
+	
 	$('#reservoirTable > tbody').empty();
 	
 	let param = new Object();
 	param.type = type;
 	param.regionalHead = regionalHead;
 	param.facilityName = facilityName;
+	param.branch = branch;
 	
 	$.ajax({
 		url: contextPath + "/home/table",
@@ -229,9 +238,15 @@ function setTableData(type, regionalHead, facilityName) {
 			var html = '';
 			
 			$.each(response, function(i, data) {
-				if (data.waterLevel != 0) {
-					html += '<tr>';
-					html += `<th scope="row">${data.name}</th>`;
+				html += '<tr>';
+				html += `<th scope="row">${data.name}</th>`;
+				if (type === 1 || type === 2) {
+					html += `<td><span class="rm-region-status care">${data.attentionCount}</span></td>`;
+					html += `<td><span class="rm-region-status caution">${data.cautionCount}</span></td>`;
+					html += `<td><span class="rm-region-status boudary">${data.boundaryCount}</span></td>`;
+					html += `<td><span class="rm-region-status serious">${data.seriousCount}</span></td>`;
+					html += `<td class="display-none">${data.country}</td>`;
+				} else if (type === 3 || type === 4) {
 					if (data.type == 'Attention') {
 						html += `<td><span class="rm-region-status care">${data.waterLevel}</span></td>`;
 						html += '<td></td>';
@@ -253,8 +268,9 @@ function setTableData(type, regionalHead, facilityName) {
 						html += '<td></td>';
 						html += `<td><span class="rm-region-status serious">${data.waterLevel}</span></td>`;
 					}
-					html += '</tr>';
 				}
+
+				html += '</tr>';
 			});
 			
 			$("#reservoirTable").append(html);
