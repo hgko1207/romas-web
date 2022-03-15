@@ -48,13 +48,14 @@ public class ScheduleService {
 	@Autowired
 	private TransactionTemplate txTemplate;
 	
-	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
+	//@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
 	public void areaLevelUpdate() {
 		txTemplate.execute(new TransactionCallbackWithoutResult() {
 			
 			@Override
 			protected void doInTransactionWithoutResult(TransactionStatus status) 
 			{
+				
 				for(AreaLevel al : areaLevelService.getList())
 				{
 					System.err.println("지금 계산하고 있는 지역이름 : " + al.getLabel());
@@ -63,6 +64,9 @@ public class ScheduleService {
 					int doAreaCount=0;		
 					int levelSum=0;
 					int areaCount=0;
+					
+					int attention_cnt_1 = 0, caution_cnt_1=0, boudary_cnt_1=0, serious_cnt_1=0;
+					int attention_cnt_2 = 0, caution_cnt_2=0, boudary_cnt_2=0, serious_cnt_2=0;
 					for(Reservoir rv : reservoirService.getList())
 					{
 						if(al.getType() == 2) //시군구 계산
@@ -73,6 +77,11 @@ public class ScheduleService {
 								{
 									areaCount++;
 									levelSum += rv.getLevel();
+									
+									if(rv.getLevel() == 0) attention_cnt_1++;
+									else if(rv.getLevel() == 1) caution_cnt_1++;
+									else if(rv.getLevel() == 2) boudary_cnt_1++;
+									else if(rv.getLevel() == 3) serious_cnt_1++;
 								}
 							}
 						}
@@ -82,6 +91,11 @@ public class ScheduleService {
 						{
 							doAreaCount++;
 							doLevelSum += rv.getLevel();
+							
+							if(rv.getLevel() == 0) attention_cnt_2++;
+							else if(rv.getLevel() == 1) caution_cnt_2++;
+							else if(rv.getLevel() == 2) boudary_cnt_2++;
+							else if(rv.getLevel() == 3) serious_cnt_2++;
 						}
 						
 					}
@@ -91,11 +105,19 @@ public class ScheduleService {
 						if(levelSum != 0) level = levelSum / areaCount;
 						if(level > 3) al.setLevel(3);
 						else al.setLevel(level);
+						al.setAttention_count(attention_cnt_1);
+						al.setCaution_count(caution_cnt_1);
+						al.setBoundary_count(boudary_cnt_1);
+						al.setSerious_count(serious_cnt_1);
 						System.err.println("level sum:"+levelSum+",count:"+areaCount+",level 계산 결과: "+level+", 지역 이름 : " + al.getLabel());
 					}else {
 						if(doLevelSum != 0) level = doLevelSum / doAreaCount;
 						if(level > 3) al.setLevel(3);
 						else al.setLevel(level);
+						al.setAttention_count(attention_cnt_2);
+						al.setCaution_count(caution_cnt_2);
+						al.setBoundary_count(boudary_cnt_2);
+						al.setSerious_count(serious_cnt_2);
 						System.err.println("level sum:"+doLevelSum+",count:"+doAreaCount+",level 계산 완료 : "+level+", 지역 이름 : " + al.getLabel());
 					}
 					areaLevelService.update(al);
@@ -104,7 +126,7 @@ public class ScheduleService {
 		});
 	}
 	
-	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
+//	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
 	public void levelUpdate() {
 		txTemplate.execute(new TransactionCallbackWithoutResult() {
 			
