@@ -54,6 +54,8 @@ public class AreaLevel implements Domain {
 	private int boundary_count;
 	
 	private int serious_count;
+	
+	private int index_code;
 
 	/** 경도 */
 	@Column(nullable = true)
