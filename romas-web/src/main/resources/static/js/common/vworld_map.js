@@ -166,6 +166,8 @@ function initWorldMap(lon, lat) {
 						clicker = null;
 					}
 				});
+				
+				VWorldMap.centerMap(lon, lat);
 			}
 		} else {
 			VWorldMap.centerMap(lon, lat);

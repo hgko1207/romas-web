@@ -44,7 +44,6 @@ public class AreaLevel implements Domain {
 	@Column(nullable = false, length = 20)
 	private int level;
 	
-
 	/** 경도 */
 	@Column(nullable = true)
 	private float longitude;
@@ -72,7 +71,6 @@ public class AreaLevel implements Domain {
 	/** 내림차순 관련 컬럼 **/
 	private int indexCode;
 
-	
 	@Data
 	@AllArgsConstructor
 	@NoArgsConstructor

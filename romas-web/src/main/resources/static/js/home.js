@@ -213,7 +213,8 @@ $('#reservoirTable tbody').on("click", "tr", function(){
 		$('.rm-region-table-group').addClass('table-group-top');
         
         var branch = td.eq(0).text();
-        setTableData(3, '', '', branch);
+        var regionalHead = td.eq(5).text();
+        setTableData(3, regionalHead, '', branch);
     }
 });
 
@@ -240,12 +241,18 @@ function setTableData(type, regionalHead, facilityName, branch) {
 			$.each(response, function(i, data) {
 				html += '<tr>';
 				html += `<th scope="row">${data.name}</th>`;
-				if (type === 1 || type === 2) {
+				if (type === 1) {
 					html += `<td><span class="rm-region-status care">${data.attentionCount}</span></td>`;
 					html += `<td><span class="rm-region-status caution">${data.cautionCount}</span></td>`;
 					html += `<td><span class="rm-region-status boudary">${data.boundaryCount}</span></td>`;
 					html += `<td><span class="rm-region-status serious">${data.seriousCount}</span></td>`;
 					html += `<td class="display-none">${data.country}</td>`;
+				} else if (type === 2) {
+					html += `<td><span class="rm-region-status care">${data.attentionCount}</span></td>`;
+					html += `<td><span class="rm-region-status caution">${data.cautionCount}</span></td>`;
+					html += `<td><span class="rm-region-status boudary">${data.boundaryCount}</span></td>`;
+					html += `<td><span class="rm-region-status serious">${data.seriousCount}</span></td>`;
+					html += `<td class="display-none">${data.regionalHead}</td>`;
 				} else if (type === 3 || type === 4) {
 					if (data.type == 'Attention') {
 						html += `<td><span class="rm-region-status care">${data.waterLevel}</span></td>`;

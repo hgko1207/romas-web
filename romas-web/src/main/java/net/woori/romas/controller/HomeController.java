@@ -112,7 +112,6 @@ public class HomeController {
 	@PostMapping("table")
 	@ResponseBody
 	public List<TableInfo> getTableInfo(@RequestBody SearchParam param) {
-		System.err.println("kkkk "+param.toString());
 		return dashboardService.getTableInfo(param);
 	}
 }

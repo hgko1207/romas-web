@@ -9,9 +9,9 @@ import net.woori.romas.domain.db.Reservoir;
 
 public interface ReservoirRepository extends DefaultRepository<Reservoir, String> {
 
-	@Query(value = "SELECT area_spark as code, round(avg(level)) as level FROM tb_reservoir group by area_spark", nativeQuery = true)
+	@Query(value = "SELECT area_spark as code, round(avg(level)) as level FROM tb_reservoir GROUP BY area_spark", nativeQuery = true)
 	List<LevelInfo> getLevelList();
 	
-	@Query(value = "SELECT * FROM tb_reservoir WHERE area_spark = ?1 GROUP BY area_si_gun", nativeQuery = true)
+	@Query(value = "SELECT * FROM tb_reservoir WHERE area_spark = ?1 GROUP BY area_si_gun ORDER BY index_code", nativeQuery = true)
 	List<Reservoir> getBranchList(String areaSpark);
 }

@@ -11,7 +11,7 @@ public interface AreaLevelRepository extends DefaultRepository<AreaLevel, Compos
 	
 	List<AreaLevel> findByType(int type);
 	
-	@Query(value = "SELECT * FROM tb_area_level WHERE type = 1 GROUP BY province", nativeQuery = true)
+	@Query(value = "SELECT * FROM tb_area_level WHERE type = 1 GROUP BY province ORDER BY index_code", nativeQuery = true)
 	List<AreaLevel> getListFromProvince();
 	
 	AreaLevel findByCountry(int country);
