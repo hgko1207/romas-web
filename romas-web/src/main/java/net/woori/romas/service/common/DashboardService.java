@@ -11,6 +11,7 @@ import net.woori.romas.domain.DashboardInfo;
 import net.woori.romas.domain.DashboardInfo.UpDown;
 import net.woori.romas.domain.TableInfo;
 import net.woori.romas.domain.db.AreaLevel;
+import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.db.ReservoirOperation.OperationType;
 import net.woori.romas.domain.param.SearchParam;
@@ -107,17 +108,27 @@ public class DashboardService {
 				tableInfos.add(new TableInfo(data.getBranch(), data.getRegionalHead(), areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
 			});
 		} else if (param.getType() == 3) {
+//			reservoirOperationService.getList(param.getRegionalHead(), param.getBranch(), month, eml).forEach(data -> {
+//				Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
+//				if (value != null && value != 0)
+//					tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
+//			});
 			reservoirOperationService.getList(param.getRegionalHead(), param.getBranch(), month, eml).forEach(data -> {
-				Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
-				if (value != null && value != 0)
-					tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
+				ReservoirLevel value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
+				if (value != null && value.getWaterLevel() != 0)
+					tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, (float)value.getRate()), value.getWaterLevel()));
 			});
 		} else if (param.getType() == 4) {
 			if (!param.getFacilityName().isEmpty() ) {
+//				reservoirOperationService.getList(param.getFacilityName()).forEach(data -> {
+//					Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
+//					if (value != null && value != 0)
+//						tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
+//				});
 				reservoirOperationService.getList(param.getFacilityName()).forEach(data -> {
-					Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
-					if (value != null && value != 0)
-						tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
+					ReservoirLevel value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
+					if (value != null && value.getWaterLevel() != 0)
+						tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, (float)value.getRate()), value.getWaterLevel()));
 				});
 			}
 		}
