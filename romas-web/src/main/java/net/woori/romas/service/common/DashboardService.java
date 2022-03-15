@@ -10,11 +10,14 @@ import org.springframework.stereotype.Service;
 import net.woori.romas.domain.DashboardInfo;
 import net.woori.romas.domain.DashboardInfo.UpDown;
 import net.woori.romas.domain.TableInfo;
+import net.woori.romas.domain.db.AreaLevel;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.db.ReservoirOperation.OperationType;
 import net.woori.romas.domain.param.SearchParam;
+import net.woori.romas.service.AreaLevelService;
 import net.woori.romas.service.ReservoirLevelService;
 import net.woori.romas.service.ReservoirOperationService;
+import net.woori.romas.service.ReservoirService;
 import net.woori.romas.util.DateUtil;
 
 /**
@@ -27,10 +30,16 @@ import net.woori.romas.util.DateUtil;
 public class DashboardService {
 	
 	@Autowired
+	private AreaLevelService areaLevelService;
+	
+	@Autowired
 	private ReservoirLevelService reservoirLevelService;
 	
 	@Autowired
 	private ReservoirOperationService reservoirOperationService;
+	
+	@Autowired
+	private ReservoirService reservoirService;
 	
 	/**
 	 * 대쉬보드 정보 생성
@@ -79,6 +88,8 @@ public class DashboardService {
 	 */
 	public List<TableInfo> getTableInfo(SearchParam param) {
 		
+		System.err.println(param);
+		
 		List<TableInfo> tableInfos = new ArrayList<>();
 		
 		Calendar calendar = Calendar.getInstance();
@@ -89,25 +100,49 @@ public class DashboardService {
 		String eml = getEml(day);
 		
 		if (param.getType() == 1) {
-			reservoirOperationService.getListFromRegionalHead(month, eml).forEach(data -> {
-				float value = reservoirLevelService.getRegionalList(DateUtil.getDate(-1), data.getRegionalHead());
-				tableInfos.add(new TableInfo(data.getRegionalHead(), getType(data, value), value));
+			areaLevelService.getListFromProvince().stream().forEach(data -> {
+				tableInfos.add(new TableInfo(data.getLabel(), data.getCountry(), data.getAttentionCount(), data.getCautionCount(), data.getBoundaryCount(), data.getSeriousCount()));
 			});
 		} else if (param.getType() == 2) {
-			reservoirOperationService.getListFromBranch(param.getRegionalHead(), month, eml).forEach(data -> {
-				Float value = reservoirLevelService.getBranchList(DateUtil.getDate(-1), data.getBranch());
-				if (value != null)
-					tableInfos.add(new TableInfo(data.getBranch(), getType(data, value), value));
+			reservoirService.getListFromBranch(param.getRegionalHead()).forEach(data -> {
+				AreaLevel areaLevel = areaLevelService.findByCountry(data.getAreaSiGun());
+				tableInfos.add(new TableInfo(data.getBranch(), 0, areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
 			});
 		} else if (param.getType() == 3) {
+//			reservoirService.getListFromBranch(param.getRegionalHead()).forEach(data -> {
+//				AreaLevel areaLevel = areaLevelService.findByCountry(data.getAreaSiGun());
+//				tableInfos.add(new TableInfo(data.getBranch(), 0, areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
+//			});
+		} else if (param.getType() == 4) {
 			if (!param.getFacilityName().isEmpty() ) {
-				reservoirOperationService.getList(param.getFacilityName()).forEach(data -> {
-					Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
-					if (value != null)
-						tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
-				});
-			}
+			reservoirOperationService.getList(param.getFacilityName()).forEach(data -> {
+				Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
+				if (value != null)
+					tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
+			});
 		}
+	}
+		
+//		if (param.getType() == 1) {
+//			reservoirOperationService.getListFromRegionalHead(month, eml).forEach(data -> {
+//				float value = reservoirLevelService.getRegionalList(DateUtil.getDate(-1), data.getRegionalHead());
+//				tableInfos.add(new TableInfo(data.getRegionalHead(), getType(data, value), value));
+//			});
+//		} else if (param.getType() == 2) {
+//			reservoirOperationService.getListFromBranch(param.getRegionalHead(), month, eml).forEach(data -> {
+//				Float value = reservoirLevelService.getBranchList(DateUtil.getDate(-1), data.getBranch());
+//				if (value != null)
+//					tableInfos.add(new TableInfo(data.getBranch(), getType(data, value), value));
+//			});
+//		} else if (param.getType() == 3) {
+//			if (!param.getFacilityName().isEmpty() ) {
+//				reservoirOperationService.getList(param.getFacilityName()).forEach(data -> {
+//					Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
+//					if (value != null)
+//						tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));
+//				});
+//			}
+//		}
 		
 		return tableInfos;
 	}

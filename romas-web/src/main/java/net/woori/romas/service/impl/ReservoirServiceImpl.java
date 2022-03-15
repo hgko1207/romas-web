@@ -68,4 +68,16 @@ public class ReservoirServiceImpl implements ReservoirService {
 	public List<LevelInfo> getLevelList() {
 		return reservoirRepository.getLevelList();
 	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Reservoir> getListFromBranch(String regionalHead) {
+		return reservoirRepository.getBranchList(regionalHead);
+	}
+
+	@Transactional(readOnly = true)
+	@Override
+	public List<Reservoir> getListFromFacility(String branch) {
+		return null;
+	}
 }
