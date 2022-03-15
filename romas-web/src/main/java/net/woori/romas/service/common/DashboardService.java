@@ -88,8 +88,6 @@ public class DashboardService {
 	 */
 	public List<TableInfo> getTableInfo(SearchParam param) {
 		
-		System.err.println(param);
-		
 		List<TableInfo> tableInfos = new ArrayList<>();
 		
 		Calendar calendar = Calendar.getInstance();
@@ -98,8 +96,6 @@ public class DashboardService {
 		int day = calendar.get(Calendar.DAY_OF_MONTH);
 
 		String eml = getEml(day);
-		
-		System.err.println("Param : "+param.toString());
 		
 		if (param.getType() == 1) {
 			areaLevelService.getListFromProvince().stream().forEach(data -> {

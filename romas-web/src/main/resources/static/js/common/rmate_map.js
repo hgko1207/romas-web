@@ -84,10 +84,10 @@ function colorFunction(code, label, data) {
 function clickFunction(code, label, data) {
 	const str = label.substr(-1);
 	if (str == '구' || str == '시' || str == '군') {
-		initWorldMap(data.longitude, data.latitude);
-		
 		$('#mapHolder').addClass('display-none');
 		$('#vMap').removeClass('display-none');
+		
+		initWorldMap(data.longitude, data.latitude);
 	}
 }
 
