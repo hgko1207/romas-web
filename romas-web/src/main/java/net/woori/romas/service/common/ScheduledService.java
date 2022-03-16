@@ -64,7 +64,7 @@ public class ScheduledService {
 	/**
 	 * 저수지 수위 정보 삽입
 	 */
-//	@Scheduled(cron = "0 0 16 * * *")
+	@Scheduled(cron = "0 0 16 * * *")
 //	@Scheduled(fixedDelay = 12 * 60 * 60 * 1000, initialDelay = 1 * 60 * 1000)
 //	@PostConstruct
 	public void insertReservoirWaterLevel() {

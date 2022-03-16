@@ -51,7 +51,7 @@ public class ScheduleService {
 	@Autowired
 	private TransactionTemplate txTemplate;
 	
-	//@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
+	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
 	public void areaLevelUpdate() {
 		txTemplate.execute(new TransactionCallbackWithoutResult() {
 			
@@ -151,7 +151,7 @@ public class ScheduleService {
 		});
 	}
 	
-//	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
+	@Scheduled(fixedDelay = UPDATE_TIME_MILLISECONDS, initialDelay = INIT_TIME_MILLISECONDS)
 	public void levelUpdate() {
 		txTemplate.execute(new TransactionCallbackWithoutResult() {
 			
