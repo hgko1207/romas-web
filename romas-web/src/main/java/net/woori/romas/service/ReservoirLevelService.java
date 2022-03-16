@@ -26,8 +26,6 @@ public interface ReservoirLevelService extends CRUDService<ReservoirLevel, Compo
 	
 	float getRateAllList(String date);
 
-//	float getFacCodeList(String date, String facCode);
-	
-	ReservoirLevel getFacCodeList(String date, String facCode);
+	float getFacCodeList(String date, String facCode);
 
 }

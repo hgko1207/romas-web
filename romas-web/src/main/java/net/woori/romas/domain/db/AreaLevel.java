@@ -69,7 +69,7 @@ public class AreaLevel implements Domain {
 	private int seriousCount;
 	
 	/** 내림차순 관련 컬럼 **/
-	private int indexCode;
+	private String indexCode;
 
 	@Data
 	@AllArgsConstructor

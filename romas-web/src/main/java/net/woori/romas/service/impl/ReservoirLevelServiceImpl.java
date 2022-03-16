@@ -105,15 +105,10 @@ public class ReservoirLevelServiceImpl implements ReservoirLevelService {
 	 */
 	@Transactional(readOnly = true)
 	@Override
-//	public float getFacCodeList(String date, String facCode) {
-//		Float result = reservoirLevelRepository.getFacCodeList(date, facCode);
-//		return result == null ? 0 : result.floatValue();
-//	}
-	public ReservoirLevel getFacCodeList(String date, String facCode) {
-		ReservoirLevel result = reservoirLevelRepository.getFacCodeList(facCode);
-		return result;
+	public float getFacCodeList(String date, String facCode) {
+		Float result = reservoirLevelRepository.getFacCodeList(date, facCode);
+		return result == null ? 0 : result.floatValue();
 	}
-
 
 	@Transactional(readOnly = true)
 	@Override

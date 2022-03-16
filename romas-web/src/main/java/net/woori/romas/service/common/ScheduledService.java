@@ -17,6 +17,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -63,7 +64,7 @@ public class ScheduledService {
 	/**
 	 * 저수지 수위 정보 삽입
 	 */
-	@Scheduled(cron = "0 0 16 * * *")
+//	@Scheduled(cron = "0 0 16 * * *")
 //	@Scheduled(fixedDelay = 12 * 60 * 60 * 1000, initialDelay = 1 * 60 * 1000)
 //	@PostConstruct
 	public void insertReservoirWaterLevel() {

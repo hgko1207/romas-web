@@ -94,7 +94,12 @@ public class Reservoir implements Domain {
 	 * */
 	private int level;
 	
-	private Long indexCode;
+	//내림차순 기준
+	private String indexCode;
+	
+	//행정코드
+	private Long departCode;
+		
 
 	public Reservoir(ReservoirInfo info) {
 		this.facCode = info.getFacCode();
