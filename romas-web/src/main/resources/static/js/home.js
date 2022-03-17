@@ -254,7 +254,7 @@ function setTableData(type, regionalHead, facilityName, branch) {
 			if (type === 1) {
 				html += '<tr>';
 				html += `<th scope="row">전국</th>`;
-				html += `<td><span class="">${allCount}</span></td>`;
+				html += `<td>${allCount}</td>`;
 				html += `<td></td>`;
 				html += `<td></td>`;
 				html += `<td></td>`;
