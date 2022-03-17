@@ -182,6 +182,7 @@ $(document).ready(function() {
 		$('#search_condition').removeClass('display-none');
 		$('.rm-region-table-group').addClass('table-group-top');
 		$('#reservoirTable > tbody').empty();
+		$('#all_level').addClass('display-none');
 		tableType = 3;
 	});
 	
@@ -201,11 +202,13 @@ $('#reservoirTable tbody').on("click", "tr", function(){
 	var td = tr.children();
 	
     if (tableType == 1) {
-    	$('#areaBtn').removeClass('selected'); 
-        $('#branchBtn').addClass('selected'); 
-        
-        var regionalHead = td.eq(5).text();
-        setTableData(2, regionalHead);
+    	var regionalHead = td.eq(6).text();
+    	if (regionalHead != '전국') {
+    		$('#areaBtn').removeClass('selected'); 
+            $('#branchBtn').addClass('selected'); 
+            
+        	setTableData(2, regionalHead);
+		}
     } else if (tableType == 2) {
     	$('#branchBtn').removeClass('selected'); 
         $('#facilityBtn').addClass('selected');
@@ -213,7 +216,7 @@ $('#reservoirTable tbody').on("click", "tr", function(){
 		$('.rm-region-table-group').addClass('table-group-top');
         
         var branch = td.eq(0).text();
-        var regionalHead = td.eq(5).text();
+        var regionalHead = td.eq(6).text();
         setTableData(3, regionalHead, '', branch);
     }
 });
@@ -230,6 +233,12 @@ function setTableData(type, regionalHead, facilityName, branch) {
 	param.facilityName = facilityName;
 	param.branch = branch;
 	
+	if (type === 1 || type === 2) {
+		$('#all_level').removeClass('display-none');
+	} else {
+		$('#all_level').addClass('display-none');
+	}
+	
 	$.ajax({
 		url: contextPath + "/home/table",
 		type: "POST",
@@ -238,16 +247,34 @@ function setTableData(type, regionalHead, facilityName, branch) {
 		success: function(response) {
 			var html = '';
 			
+			const allCount = response.map(data => data.allCount).reduce((accumulator, curr) => {
+				return accumulator + curr;
+			});
+			
+			if (type === 1) {
+				html += '<tr>';
+				html += `<th scope="row">전국</th>`;
+				html += `<td><span class="">${allCount}</span></td>`;
+				html += `<td></td>`;
+				html += `<td></td>`;
+				html += `<td></td>`;
+				html += `<td></td>`;
+				html += `<td class="display-none">전국</td>`;
+				html += '</tr>';
+			}
+			
 			$.each(response, function(i, data) {
 				html += '<tr>';
 				html += `<th scope="row">${data.name}</th>`;
 				if (type === 1) {
+					html += `<td><span class="">${data.allCount}</span></td>`;
 					html += `<td><span class="rm-region-status care">${data.attentionCount}</span></td>`;
 					html += `<td><span class="rm-region-status caution">${data.cautionCount}</span></td>`;
 					html += `<td><span class="rm-region-status boudary">${data.boundaryCount}</span></td>`;
 					html += `<td><span class="rm-region-status serious">${data.seriousCount}</span></td>`;
 					html += `<td class="display-none">${data.country}</td>`;
 				} else if (type === 2) {
+					html += `<td><span class="">${data.allCount}</span></td>`;
 					html += `<td><span class="rm-region-status care">${data.attentionCount}</span></td>`;
 					html += `<td><span class="rm-region-status caution">${data.cautionCount}</span></td>`;
 					html += `<td><span class="rm-region-status boudary">${data.boundaryCount}</span></td>`;

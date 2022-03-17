@@ -16,6 +16,9 @@ public class TableInfo {
 	
 	private float waterLevel;
 	
+	/** 전체 개수 */
+	private int allCount;
+	
 	/** 관심 개수 */
 	private int attentionCount;
 	
@@ -33,6 +36,7 @@ public class TableInfo {
 	public TableInfo(String name, int country, int attentionCount, int cautionCount, int boundaryCount, int seriousCount) {
 		this.name = name;
 		this.country = country;
+		this.allCount = attentionCount + cautionCount + boundaryCount + seriousCount;
 		this.attentionCount = attentionCount;
 		this.cautionCount = cautionCount;
 		this.boundaryCount = boundaryCount;
@@ -42,6 +46,7 @@ public class TableInfo {
 	public TableInfo(String name, String regionalHead, int attentionCount, int cautionCount, int boundaryCount, int seriousCount) {
 		this.name = name;
 		this.regionalHead = regionalHead;
+		this.allCount = attentionCount + cautionCount + boundaryCount + seriousCount;
 		this.attentionCount = attentionCount;
 		this.cautionCount = cautionCount;
 		this.boundaryCount = boundaryCount;
