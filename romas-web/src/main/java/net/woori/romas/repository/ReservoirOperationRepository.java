@@ -26,6 +26,10 @@ public interface ReservoirOperationRepository extends DefaultRepository<Reservoi
 	@Query(value = "SELECT * FROM tb_reservoir_operation WHERE month = ?1 AND eml = ?2 "
 			+ "AND regional_head = ?3 AND branch = ?4", nativeQuery = true)
 	List<ReservoirOperation> getList(int month, String eml, String regionalHead, String branch);
+	
+	@Query(value = "SELECT * FROM tb_reservoir_operation WHERE month = ?1 AND eml = ?2 "
+			+ "AND branch = ?3", nativeQuery = true)
+	List<ReservoirOperation> getList(int month, String eml, String branch);
 
 	List<ReservoirOperation> findByFacilityNameContaining(String facilityName);
 

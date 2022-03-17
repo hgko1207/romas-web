@@ -11,10 +11,13 @@ import net.woori.romas.domain.DashboardInfo;
 import net.woori.romas.domain.DashboardInfo.UpDown;
 import net.woori.romas.domain.TableInfo;
 import net.woori.romas.domain.db.AreaLevel;
+import net.woori.romas.domain.db.AreaLevel.CompositeAreaLevelPK;
+import net.woori.romas.domain.db.ReservoirLevel;
 import net.woori.romas.domain.db.ReservoirOperation;
 import net.woori.romas.domain.db.ReservoirOperation.OperationType;
 import net.woori.romas.domain.param.SearchParam;
 import net.woori.romas.service.AreaLevelService;
+import net.woori.romas.service.JisaLevelService;
 import net.woori.romas.service.ReservoirLevelService;
 import net.woori.romas.service.ReservoirOperationService;
 import net.woori.romas.service.ReservoirService;
@@ -40,6 +43,10 @@ public class DashboardService {
 	
 	@Autowired
 	private ReservoirService reservoirService;
+	
+	@Autowired
+	private JisaLevelService jisaLevelService;
+	
 	
 	/**
 	 * 대쉬보드 정보 생성
@@ -102,12 +109,21 @@ public class DashboardService {
 				tableInfos.add(new TableInfo(data.getLabel(), data.getCountry(), data.getAttentionCount(), data.getCautionCount(), data.getBoundaryCount(), data.getSeriousCount()));
 			});
 		} else if (param.getType() == 2) {
-			reservoirService.getListFromBranch(param.getRegionalHead()).forEach(data -> {
-				AreaLevel areaLevel = areaLevelService.findByCountry(data.getAreaSiGun());
-				tableInfos.add(new TableInfo(data.getBranch(), data.getRegionalHead(), areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
+			AreaLevel al = areaLevelService.get(new CompositeAreaLevelPK(Integer.parseInt(param.getRegionalHead()),Integer.parseInt(param.getRegionalHead())));
+			jisaLevelService.getListContainCode(al.getIndexCode().substring(0,3)+"%").forEach(data ->{
+				tableInfos.add(new TableInfo(data.getBranch(), al.getIndexCode(), data.getAttentionCount(), data.getCautionCount(), data.getBoundaryCount(), data.getSeriousCount()));
 			});
+			
+//			reservoirService.getListFromBranch(param.getRegionalHead()).forEach(data -> {
+//				AreaLevel areaLevel = areaLevelService.findByCountry(data.getAreaSiGun());
+//				tableInfos.add(new TableInfo(data.getBranch(), data.getRegionalHead(), areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
+//			});
 		} else if (param.getType() == 3) {
-			reservoirOperationService.getList(param.getRegionalHead(), param.getBranch(), month, eml).forEach(data -> {
+			System.err.println("KKK 2" + param.toString());
+			System.err.println("KKK 3" + param.getBranch());
+			System.err.println("KKK 4" + month);
+			System.err.println("KKK 5" + eml);
+			reservoirOperationService.getList(param.getBranch(), month, eml).forEach(data -> {
 				Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
 				if (value != null && value != 0)
 					tableInfos.add(new TableInfo(data.getFacilityName(), getType(data, value), value));

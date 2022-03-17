@@ -38,6 +38,6 @@ public interface ReservoirLevelRepository extends DefaultRepository<ReservoirLev
 	@Query(value = "SELECT * FROM tb_reservoir_level where fac_code=?1 order by check_date desc limit 1", nativeQuery = true)
 	ReservoirLevel getLastOne(String facCode);
 
-	@Query(value = "SELECT round(avg(water_level)) FROM tb_reservoir_level WHERE create_date = ?1 AND fac_code = ?2", nativeQuery = true)
+	@Query(value = "SELECT round(avg(rate)) FROM tb_reservoir_level WHERE create_date = ?1 AND fac_code = ?2", nativeQuery = true)
 	Float getFacCodeList(String date, String facCode);
 }

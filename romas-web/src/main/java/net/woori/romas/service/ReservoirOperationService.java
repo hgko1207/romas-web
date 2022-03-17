@@ -30,6 +30,8 @@ public interface ReservoirOperationService extends CRUDService<ReservoirOperatio
 
 	List<ReservoirOperation> getListFromBranch(String regionalHead, int month, String eml);
 	
+	List<ReservoirOperation> getList(String branch, int month, String eml);
+	
 	List<ReservoirOperation> getList(String regionalHead, String branch, int month, String eml);
 	
 }
