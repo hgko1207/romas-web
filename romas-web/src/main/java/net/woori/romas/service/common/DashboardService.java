@@ -119,10 +119,6 @@ public class DashboardService {
 //				tableInfos.add(new TableInfo(data.getBranch(), data.getRegionalHead(), areaLevel.getAttentionCount(), areaLevel.getCautionCount(), areaLevel.getBoundaryCount(), areaLevel.getSeriousCount()));
 //			});
 		} else if (param.getType() == 3) {
-			System.err.println("KKK 2" + param.toString());
-			System.err.println("KKK 3" + param.getBranch());
-			System.err.println("KKK 4" + month);
-			System.err.println("KKK 5" + eml);
 			reservoirOperationService.getList(param.getBranch(), month, eml).forEach(data -> {
 				Float value = reservoirLevelService.getFacCodeList(DateUtil.getDate(-1), data.getFacCode());
 				if (value != null && value != 0)
